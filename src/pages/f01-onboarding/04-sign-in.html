@@ -1,85 +1,167 @@
-<!--page {"nav":"season","header":"guest","links":{"signin":"04-sign-in.html"}} -->
+<header class="app-header"><div class="row gap-6"><a class="brand" href="#/f01-onboarding/01-landing" aria-label="onchain.cc Funded home"><img src="DATAURI_ba808351f1" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></a><nav class="nav-track" aria-label="Main"><a class="nav-item" href="#/f01-onboarding/01-landing" aria-current="page"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" /> <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" /> <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" /> <path d="M4 22h16" /> <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" /> <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" /> </svg>Season</a><a class="nav-item" href="#/f01-onboarding/02-leaderboard"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11 5h10" /> <path d="M11 12h10" /> <path d="M11 19h10" /> <path d="M4 4h1v5" /> <path d="M4 9h2" /> <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" /> </svg>Leaderboard</a><a class="nav-item" href="#/f01-onboarding/05-payouts"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 18V6" /> </svg>Payouts</a><a class="nav-item" href="#/f01-onboarding/03-rules"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 3v18" /> <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /> <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M7 21h10" /> </svg>Rules</a></nav></div><div class="header-right"><span class="chip season-chip"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /> </svg><span><span class="k">Qualification ends in</span> 11d 14h</span></span>
+<a class="btn btn-ghost btn-sm" href="https://onchain.cc">onchain.cc</a>
+<a class="btn btn-glass btn-sm" href="#/f01-onboarding/04-sign-in">Sign in</a></div></header>
+
 <main>
   <div class="under land" aria-hidden="true">
-    <section class="hero grid-bg">
-      <h1 class="hero-title">Trade Bitso's USDC. <span class="brand-em">Keep 80%.</span></h1>
-      <p class="hero-sub">No fee, no application. The top 60 traders get $5,000 to $200,000.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-glass btn-lg hero-ghost" href="02-leaderboard.html" tabindex="-1">See the leaderboard</a>
-        <a class="btn-shiny" href="04-sign-in.html" tabindex="-1">Start trading</a>
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-card panel">
+      <p class="hero-eyebrow"><span class="live-dot" aria-hidden="true"></span>Qualification <span class="muted">·</span> Oct 20 to Nov 18 <span class="muted">·</span> 11 days left</p>
+      <h1 id="hero-h" class="hero-title">Trade your way. Get funded.</h1>
+      <p class="hero-sub">Free to enter. Keep 100% of your own profit. The best traders get a funded seat of up to 5,000 USDC, with positions up to $25,000, and keep 80% of the profit.</p>
+      <div class="gate panel-deep" aria-labelledby="gate-h">
+        <h2 id="gate-h" class="section-title">Two steps to the leaderboard</h2>
+        <ul class="gate-list">
+          <li class="check"><span class="check-ico ring"></span><span class="check-title">Deposit $100</span><span class="check-sub">$0 / $100</span></li>
+          <li class="check"><span class="check-ico ring"></span><span class="check-title">Trade $1,000 of perps volume</span><span class="check-sub">$0 / $1,000</span></li>
+        </ul>
+        <p class="gate-foot t-small muted">Then your score counts.</p>
       </div>
-      <div class="term-frame under-frame"><div class="term-frame-bar"><i></i><i></i><i></i><span>funded.onchain.cc/leaderboard</span></div><div class="under-stairs"><i style="height:100%"></i><i style="height:76%"></i><i style="height:56%"></i><i style="height:40%"></i><i style="height:27%"></i><i style="height:12%"></i></div></div>
-    </section>
+      <div class="row gap-4 mt-6">
+        <a class="btn btn-primary btn-lg" href="#/f01-onboarding/04-sign-in" tabindex="-1">Get started<svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /> </svg></a>
+        <a class="btn btn-glass btn-lg" href="#/f01-onboarding/03-rules" tabindex="-1">See how it works</a>
+      </div>
+    </div>
+
+    <aside class="hero-side" aria-label="Live now">
+      <a class="panel side-paid" href="#/f01-onboarding/05-payouts" tabindex="-1">
+        <span class="section-title">Paid to funded traders</span>
+        <span class="t-figure num mt-3">$48,210 <span class="paid-unit">USDC</span></span>
+        <span class="t-small muted row gap-2 mt-2"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="m16 9-5.5 5.5L8 12" /> </svg>Every payout public, onchain</span>
+      </a>
+      <section class="panel side-now" aria-labelledby="ep-h">
+        <h2 id="ep-h" class="section-title">Right now</h2>
+        <div class="ep-stats mt-4">
+          <div class="stat"><span class="v-lg">2,314</span><span class="k">on the board</span></div>
+          <div class="stat"><span class="v-lg">61</span><span class="k">seats on Nov 19</span></div>
+          <div class="stat"><span class="v-lg">70</span><span class="k">score to beat</span></div>
+        </div>
+      </section>
+      <section class="panel side-top" aria-labelledby="top-h">
+        <div class="row-between"><h2 id="top-h" class="section-title">Top of the board</h2><a class="link t-small" href="#/f01-onboarding/02-leaderboard" tabindex="-1">All 2,314 traders</a></div>
+        <table class="table tob mt-3">
+          <thead><tr><th>#</th><th>Trader</th><th class="r">Score</th><th class="r">Return</th><th class="r">Max drawdown</th><th class="r">Trading days</th><th>Seat today</th></tr></thead>
+          <tbody>
+          <tr><td class="rank">1</td><td><span class="trader"><span class="avatar" style="filter:hue-rotate(355deg) saturate(0.55)">O</span><span class="tn">ormond</span></span></td><td class="r w6">94</td><td class="r up">+61.2%</td><td class="r">8.1%</td><td class="r">18</td><td><span class="band band-25">$25K</span></td></tr>
+          <tr><td class="rank">2</td><td><span class="trader"><span class="avatar" style="filter:hue-rotate(9deg) saturate(0.55)">T</span><span class="tn">tidewater</span></span></td><td class="r w6">92</td><td class="r up">+48.3%</td><td class="r">6.4%</td><td class="r">17</td><td><span class="band band-25">$25K</span></td></tr>
+          <tr><td class="rank">3</td><td><span class="trader"><span class="avatar" style="filter:hue-rotate(52deg) saturate(0.55)">Q</span><span class="tn">quillon</span></span></td><td class="r w6">90</td><td class="r up">+72.4%</td><td class="r">12.9%</td><td class="r">16</td><td><span class="band band-25">$25K</span></td></tr>
+          <tr><td class="rank">4</td><td><span class="trader"><span class="avatar" style="filter:hue-rotate(315deg) saturate(0.55)">N</span><span class="tn">nightjar</span></span></td><td class="r w6">89</td><td class="r up">+39.8%</td><td class="r">5.2%</td><td class="r">18</td><td><span class="band band-25">$25K</span></td></tr>
+          <tr><td class="rank">5</td><td><span class="trader"><span class="avatar" style="filter:hue-rotate(210deg) saturate(0.55)">B</span><span class="tn">brasswork</span></span></td><td class="r w6">87</td><td class="r up">+61.3%</td><td class="r">10.2%</td><td class="r">15</td><td><span class="band band-25">$25K</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </aside>
+  </section>
   </div>
   <div class="scrim">
     <div class="modal signin" role="dialog" aria-modal="true" aria-labelledby="si-h">
-      <a class="icon-btn si-close" href="01-landing.html" aria-label="Close">{{icon:x:ico}}</a>
-      <div class="si-art" aria-hidden="true">
-        <span class="si-candles"><i class="c-up" style="--b:18px;--h:34px"></i><i class="c-dn" style="--b:26px;--h:22px"></i><i class="c-up" style="--b:22px;--h:44px"></i><i class="c-up" style="--b:40px;--h:30px"></i><i class="c-dn" style="--b:44px;--h:18px"></i><i class="c-up" style="--b:46px;--h:40px"></i></span>
-        <span class="si-coin">{{icon:hand-coins:ico-lg}}</span>
+      <div class="modal-head">
+        <span></span>
+        <a class="icon-btn" href="#/f01-onboarding/01-landing" aria-label="Close"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M18 6 6 18" /> <path d="m6 6 12 12" /> </svg></a>
       </div>
       <div class="si-top">
-        <h1 id="si-h" class="si-h">Same account as onchain.cc</h1>
-        <p class="dim t-small">New here? Any method creates one.</p>
+        <span class="si-mark"><img src="DATAURI_ba808351f1" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></span>
+        <h1 id="si-h" class="t-heading">Get started</h1>
+        <p class="dim t-small">One account. Trade, climb, get funded.</p>
       </div>
-      <div class="si-body">
-        <label class="input si-input">{{icon:mail:ico-sm muted}}<input type="email" placeholder="your@email.com" aria-label="Email"></label>
-        <a class="btn btn-primary btn-block si-cta" href="{{root}}f02-not-qualified/01-home-new.html" aria-disabled="true" title="Type your email first">Continue</a>
-        <div class="si-or t-caption muted"><span>Or continue with</span></div>
-        <div class="si-grid">
-          <a class="si-btn" href="{{root}}f02-not-qualified/01-home-new.html"><span class="glyph g-google">G</span>Google</a>
-          <a class="si-btn" href="{{root}}f02-not-qualified/01-home-new.html"><span class="glyph g-x">X</span>X</a>
-          <a class="si-btn" href="{{root}}f02-not-qualified/01-home-new.html"><span class="glyph g-mm">{{icon:wallet:ico-sm}}</span>MetaMask<span class="si-det" title="Detected">{{icon:circle-check:ico-sm}}</span></a>
-          <a class="si-btn" href="{{root}}f02-not-qualified/01-home-new.html"><span class="glyph g-wc">{{icon:qr-code:ico-sm}}</span>Other wallets</a>
+      <div class="modal-body">
+        <div class="stack gap-3">
+          <a class="opt" href="#" data-flow="f02-not-qualified" title="Continues in Not qualified yet"><span class="glyph g-google">G</span><span class="grow w5">Continue with Google</span><svg class="ico ico-sm muted" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg></a>
+          <a class="opt" href="#" data-flow="f02-not-qualified" title="Continues in Not qualified yet"><span class="glyph g-apple"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.87-.76-1.47.02-2.83.86-3.59 2.18-1.54 2.66-.39 6.59 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.41 1.2-2.47-.03-.01-2.3-.88-2.32-3.5zM14.2 6.14c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.08 1.96-.49 2.56-1.21z"/></svg></span><span class="grow w5">Continue with Apple</span><svg class="ico ico-sm muted" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg></a>
+          <div class="si-email">
+            <label class="input"><svg class="ico ico-sm muted" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /> </svg><input type="email" placeholder="your@email.com" aria-label="Email"></label>
+            <button class="btn btn-secondary" type="button" disabled aria-describedby="si-mail-hint" title="Type your email first">Continue</button>
+          </div>
+          <p id="si-mail-hint" class="t-caption muted si-hint">Same account as onchain.cc.</p>
+        </div>
+        <div class="si-or" aria-hidden="true"><span>or</span></div>
+        <a class="opt" href="#" data-flow="f02-not-qualified" title="Continues in Not qualified yet"><span class="glyph g-wal"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="grow w5">Connect a wallet</span><svg class="ico ico-sm muted" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg></a>
+        <div class="si-ref">
+          <div class="stack gap-2 grow">
+            <span class="field-label">Referral code</span>
+            <span class="row gap-3"><b class="mono si-code">FROGGO</b><span class="pill pill-up si-ok"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg>Applied</span></span>
+          </div>
+          <span class="t-caption muted">From your invite <span aria-hidden="true">·</span> <a class="link" href="#">change</a></span>
         </div>
       </div>
-      <p class="si-foot t-caption muted">By continuing you accept the <a class="link" href="03-rules.html">Cycle rules</a>. Protected by Privy.</p>
+      <p class="si-foot t-caption muted">By continuing you accept the <a class="link" href="#/f01-onboarding/03-rules">rules</a>. Protected by Privy.</p>
     </div>
   </div>
 </main>
 <style>
-.land { max-width: 1200px; margin: 0 auto; padding: 0 24px 120px; }
-.hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 76px 0 0; }
-.hero-title { font-size: 64px; line-height: 70px; font-weight: 600; letter-spacing: -0.04em; }
-.hero-sub { margin-top: 18px; font-size: 18px; line-height: 28px; color: var(--text-3); }
-.hero-ctas { display: flex; align-items: center; gap: 14px; margin-top: 32px; }
-.hero-ghost { height: 46px; border-radius: 9999px; padding: 0 24px; }
-.btn-shiny { display: inline-flex; align-items: center; }
-.under-frame { width: 100%; margin-top: 48px; }
-.under-stairs { display: flex; align-items: flex-end; gap: 10px; height: 300px; padding: 28px; }
-.under-stairs i { flex: 1; border-radius: 10px 10px 3px 3px; background: linear-gradient(180deg, rgb(255 255 255 / 0.15), rgb(255 255 255 / 0.04)); }
-
-/* sign in modal, glass and violet like the onchain.cc app login */
-.signin { position: relative; max-width: 416px; padding: 28px 28px 22px; border-radius: 28px;
-  background: radial-gradient(120% 70% at 50% 0%, rgb(144 149 253 / 0.16) 0%, rgb(30 30 38 / 0.94) 55%), rgb(30 30 38 / 0.94);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12), 0 0 0 1px rgb(255 255 255 / 0.08), 0 30px 80px rgb(0 0 0 / 0.6); }
-.si-close { position: absolute; top: 14px; right: 14px; }
-.si-art { position: relative; height: 96px; display: flex; align-items: flex-end; justify-content: center; gap: 14px; }
-.si-candles { display: flex; align-items: flex-end; gap: 6px; height: 90px; }
-.si-candles i { position: relative; width: 9px; height: var(--h); margin-bottom: var(--b); border-radius: 2px; }
-.si-candles i::before { content: ""; position: absolute; left: 4px; width: 1px; top: -8px; bottom: -8px; background: inherit; }
-.si-candles .c-up { background: var(--buy); }
-.si-candles .c-dn { background: var(--sell); }
-.si-coin { width: 56px; height: 56px; margin-bottom: 12px; border-radius: 18px; display: grid; place-items: center; color: #fff;
-  background: linear-gradient(160deg, #9095fd, #6e6bed); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35), 0 10px 30px rgb(124 73 227 / 0.4); }
-.si-coin .ico { width: 26px; height: 26px; }
-.si-top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; margin-top: 22px; }
-.si-h { font-size: 20px; line-height: 26px; font-weight: 600; letter-spacing: -0.01em; }
-.si-body { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
-.si-input { height: 46px; border-radius: 9999px; padding: 0 18px; background: rgb(255 255 255 / 0.06); }
-.si-cta { height: 46px; border-radius: 9999px; font-size: 15px; }
-.si-or { display: flex; align-items: center; gap: 12px; margin: 4px 0; }
-.si-or::before, .si-or::after { content: ""; flex: 1; height: 1px; background: rgb(255 255 255 / 0.1); }
-.si-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.si-btn { position: relative; height: 46px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 9999px; font-size: 14px; font-weight: 600;
-  background: rgb(255 255 255 / 0.07); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); transition: background-color var(--fast) ease; }
-.si-btn:hover { background: rgb(255 255 255 / 0.12); }
-.si-det { display: inline-flex; color: var(--buy-light); margin-left: -4px; }
-.glyph { width: 22px; height: 22px; border-radius: 7px; display: grid; place-items: center; font-size: 11px; font-weight: 700; flex: none; }
-.glyph .ico { width: 13px; height: 13px; }
+.land { max-width: 1240px; margin: 0 auto; padding: 0 24px 120px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 540px; gap: 16px; align-items: stretch; padding: 40px 0 0; }
+.hero-card { display: flex; flex-direction: column; padding: 36px 36px 30px; background: radial-gradient(120% 80% at 0% 0%, rgb(144 149 253 / 0.1) 0%, rgb(144 149 253 / 0) 60%), var(--glass-subtle); }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--buy-light); box-shadow: 0 0 0 3px rgb(0 165 102 / 0.2); }
+.hero-title { margin-top: 18px; font-size: 56px; line-height: 60px; font-weight: 600; letter-spacing: -0.035em; text-wrap: balance; }
+.hero-sub { margin-top: 16px; font-size: 17px; line-height: 26px; color: var(--text-3); max-width: 46ch; }
+.gate { margin-top: 28px; padding: 16px 4px 12px; }
+.gate h2 { padding: 0 16px 4px; }
+.gate .check { grid-template-columns: 28px 1fr auto; padding: 10px 16px; }
+.gate .check-title { font-weight: 500; }
+.check-ico.ring { width: 20px; height: 20px; margin: 4px; background: none; box-shadow: inset 0 0 0 1.5px #5c5c5c; }
+.gate .check-sub { font-size: 13px; }
+.gate-foot { padding: 6px 16px 0; }
+.hero-side { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.side-paid { display: flex; flex-direction: column; padding: 20px; transition: background-color var(--fast) ease; }
+.side-paid:hover { background: var(--glass); }
+.side-paid .t-figure { color: var(--buy-light); }
+.paid-unit { font-size: 20px; letter-spacing: -0.01em; color: var(--text-3); }
+.side-paid .ico { color: var(--buy-light); }
+.side-now { padding: 20px; }
+.ep-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ep-stats .v-lg { font-size: 26px; line-height: 30px; letter-spacing: -0.02em; }
+.ep-stats .k { font-size: 13px; color: var(--muted); }
+.side-top { padding: 20px 20px 10px; flex: 1; }
+.tob { table-layout: auto; }
+.tob th, .tob td { padding: 8px 6px; }
+.tob th:first-child, .tob td:first-child { padding-left: 0; }
+.tob th:last-child, .tob td:last-child { padding-right: 0; }
+.tob th:last-child { white-space: normal; line-height: 14px; width: 74px; }
+.tob .rank { color: var(--muted); }
+.tob .trader { gap: 8px; }
+.tob .trader .avatar { width: 20px; height: 20px; font-size: 10px; }
+.tob .band { height: 20px; }
+.band-25 { background: rgb(160 200 230 / 0.12); color: #a9cde6; }
+@media (max-width: 1360px) {
+  .hero { grid-template-columns: minmax(0, 1fr) 520px; }
+  .hero-title { font-size: 50px; line-height: 54px; }
+}
+.signin { max-width: 400px; }
+.signin .modal-head { padding: 12px 12px 0; }
+.si-top { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 0 28px 4px; }
+.si-mark { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.si-mark img { height: 15px; width: auto; }
+.si-top .t-heading { font-size: 20px; line-height: 26px; }
+.si-email { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.si-email .btn { height: 40px; }
+.signin .opt { padding: 10px 12px; border-radius: var(--r-lg); }
+.glyph { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font-size: 13px; font-weight: 700; flex: none; }
 .g-google { background: #fff; color: #3c4043; }
 .g-x { background: #000; color: #fff; box-shadow: inset 0 0 0 1px #333; }
 .g-mm { background: #f6851b; color: #fff; }
+.g-ph { background: #ab9ff2; color: #1c1c1c; }
+.g-rb { background: #7084ff; color: #fff; }
 .g-wc { background: #3b99fc; color: #fff; }
-.si-foot { margin-top: 18px; text-align: center; }
+.si-hint { margin-top: -2px; padding-left: 2px; }
+.si-foot { padding: 0 24px 20px; text-align: center; }
+
+.g-apple { background: #fff; color: #000; }
+.g-apple svg { width: 15px; height: 15px; }
+.g-wal { background: rgb(255 255 255 / 0.08); color: var(--text-2); }
+.si-or { display: flex; align-items: center; gap: 12px; margin: -4px 0; font-size: 12px; color: var(--muted); }
+.si-or::before, .si-or::after { content: ""; flex: 1; height: 1px; background: var(--glass-sep); }
+.si-ref { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.si-code { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: var(--text); }
+.si-ok { height: 20px; padding: 0 8px; font-size: 11px; gap: 4px; }
+.ico-xs { width: 12px; height: 12px; flex: none; stroke-width: 2; }
+.under .hero { padding-top: 40px; }
 </style>
+<nav class="mockbar" aria-label="Mockup navigation">
+<span class="mb-tag">Mockup</span>
+<a href="#/f01-onboarding/index"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /> </svg>Screens</a>
+<a href="#/f01-onboarding/03-rules" aria-label="Previous screen"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m15 18-6-6 6-6" /> </svg></a>
+<span><b>F01</b><span class="mb-flow">Onboarding</span>6/6 Sign up</span>
+<a href="#" aria-disabled="true" aria-label="Next screen"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg></a>
+</nav>

@@ -2,15 +2,12 @@ name: Build
 
 on:
   push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,8 +16,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node build.mjs
-      - run: node bundle.mjs
-      - run: node --test tests/structure.test.mjs
+      - run: node --test tests/*.test.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: funded-onchain-mockups

@@ -1,16 +1,18 @@
-// Structural contract for the built mockups in dist/.
-// Every screen in the manifest exists, links resolve, copy follows the product rules.
+// Structural contract for the built single-file site.
+// Every stage screen is built, links resolve, mockbars and indexes are in place, copy follows the product rules.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { join, dirname, resolve } from 'node:path';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join, dirname, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { build } from '../build.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const dist = join(root, 'dist');
-const manifest = JSON.parse(readFileSync(join(root, 'src/manifest.json'), 'utf8'));
-const screens = manifest.flows.flatMap(f => f.screens.map(s => ({ flow: f, screen: s, path: join(dist, f.id, `${s.id}.html`) })));
-const flowDir = f => join(dist, f.id);
+const { stages, indexKeys } = JSON.parse(readFileSync(join(root, 'src/stages.json'), 'utf8'));
+const titles = JSON.parse(readFileSync(join(root, 'src/titles.json'), 'utf8'));
+const html = build();
+const pages = JSON.parse(/<script id="pages" type="application\/json">(.*?)<\/script>/s.exec(html)[1]);
+const screenKeys = stages.flatMap(s => s.screens.map(c => c.key));
 
 function htmlFiles(dir) {
   return readdirSync(dir).flatMap(n => {
@@ -20,96 +22,74 @@ function htmlFiles(dir) {
   });
 }
 
-function visibleText(html) {
-  return html
+const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', mdash: '\u2014', ndash: '\u2013', rsaquo: '\u203a', lsaquo: '\u2039', middot: '\u00b7', hellip: '\u2026' };
+function visibleText(body) {
+  return body
     .replace(/<script[\s\S]*?<\/script>/g, ' ')
     .replace(/<style[\s\S]*?<\/style>/g, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
-    .replace(/<[^>]+>/g, ' ');
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d))
+    .replace(/&([a-z]+);/gi, (all, n) => ENTITIES[n.toLowerCase()] ?? all);
 }
 
-test('every manifest screen is built', () => {
-  const missing = screens.filter(s => !existsSync(s.path)).map(s => `${s.flow.id}/${s.screen.id}`);
-  assert.deepEqual(missing, []);
+test('every source page is listed in src/titles.json and every listed page has a source', () => {
+  const dir = join(root, 'src/pages');
+  const files = htmlFiles(dir).map(f => relative(dir, f).replace(/\.html$/, '')).sort();
+  assert.deepEqual(files, Object.keys(titles).sort());
 });
 
-test('the top hub links every flow', () => {
-  const hub = readFileSync(join(dist, 'index.html'), 'utf8');
-  const missing = manifest.flows.filter(f => !hub.includes(`href="${f.id}/index.html"`)).map(f => f.id);
-  assert.deepEqual(missing, []);
+test('every stage screen is built', () => {
+  assert.deepEqual(screenKeys.filter(k => !(k in pages)), []);
+  assert.deepEqual(indexKeys.filter(k => !(k in pages)), []);
+  assert.ok('index' in pages, 'top index');
 });
 
-test('each flow is an independent project: own index, own kit, every screen listed', () => {
-  const problems = [];
-  for (const f of manifest.flows) {
-    const dir = flowDir(f);
-    if (!existsSync(join(dir, 'index.html'))) { problems.push(`${f.id}: no index.html`); continue; }
-    if (!existsSync(join(dir, 'kit/funded.css'))) problems.push(`${f.id}: no kit copy`);
-    const idx = readFileSync(join(dir, 'index.html'), 'utf8');
-    for (const s of f.screens) if (!idx.includes(`href="${s.id}.html"`)) problems.push(`${f.id}: index misses ${s.id}`);
-  }
-  assert.deepEqual(problems, []);
-});
-
-test('no link inside a flow leaves its folder', () => {
-  const leaks = [];
-  for (const f of manifest.flows) {
-    for (const file of htmlFiles(flowDir(f))) {
-      const html = readFileSync(file, 'utf8');
-      for (const m of html.matchAll(/(?:href|src)="([^"#]+)"/g)) {
-        const ref = m[1];
-        if (/^(https?:|mailto:|data:)/.test(ref)) continue;
-        const target = resolve(dirname(file), ref);
-        if (!target.startsWith(flowDir(f) + '/')) leaks.push(`${file.replace(dist, '')} -> ${ref}`);
-      }
-    }
-  }
-  assert.deepEqual(leaks, []);
-});
-
-test('pages are English, titled and use the shared kit', () => {
-  for (const file of htmlFiles(dist)) {
-    const html = readFileSync(file, 'utf8');
-    assert.match(html, /<html lang="en"/, `${file} lang`);
-    assert.match(html, /<title>[^<]+<\/title>/, `${file} title`);
-    assert.match(html, /kit\/funded\.css"/, `${file} kit css`);
-  }
-});
-
-test('every local link and asset resolves', () => {
+test('every #/ link resolves to a page', () => {
   const broken = [];
-  for (const file of htmlFiles(dist)) {
-    const html = readFileSync(file, 'utf8');
-    for (const m of html.matchAll(/(?:href|src)="([^"#]+)(#[^"]*)?"/g)) {
-      const ref = m[1];
-      if (/^(https?:|mailto:|data:)/.test(ref)) continue;
-      if (!existsSync(join(dirname(file), ref))) broken.push(`${file.replace(dist, '')} -> ${ref}`);
+  for (const [key, p] of Object.entries(pages)) {
+    for (const m of p.body.matchAll(/href="#\/([^"]*)"/g)) {
+      if (!(decodeURIComponent(m[1]) in pages)) broken.push(`${key} -> #/${m[1]}`);
     }
   }
   assert.deepEqual(broken, []);
 });
 
-test('every content screen links to another screen of its flow', () => {
-  const deadEnds = screens.filter(s => {
-    const html = readFileSync(s.path, 'utf8');
-    const main = html.split('<main')[1] || '';
-    return !/href="[^"#]+\.html"/.test(main);
-  }).map(s => `${s.flow.id}/${s.screen.id}`);
-  assert.deepEqual(deadEnds, []);
+test('every screen has exactly one mockbar, index pages have none', () => {
+  const wrong = [];
+  for (const [key, p] of Object.entries(pages)) {
+    const n = p.body.match(/<nav class="mockbar"/g)?.length ?? 0;
+    const want = screenKeys.includes(key) ? 1 : 0;
+    if (n !== want) wrong.push(`${key}: ${n} mockbars`);
+  }
+  assert.deepEqual(wrong, []);
 });
 
-test('no em or en dashes in visible copy', () => {
-  const offenders = htmlFiles(dist).filter(f => /[–—]/.test(visibleText(readFileSync(f, 'utf8'))));
-  assert.deepEqual(offenders, []);
+test('the top index links all eight stage indexes', () => {
+  assert.equal(indexKeys.length, 8);
+  const body = pages.index.body;
+  assert.deepEqual(indexKeys.filter(k => !body.includes(`href="#/${k}"`)), []);
 });
 
-test('no third party funding vocabulary survives', () => {
-  const words = /\b(funder|funders|subscribe|redeem|pool share|fund page)\b/i;
-  const offenders = htmlFiles(dist).filter(f => words.test(visibleText(readFileSync(f, 'utf8'))));
-  assert.deepEqual(offenders, []);
+test('every page is titled', () => {
+  assert.deepEqual(Object.entries(pages).filter(([, p]) => !p.title.trim()).map(([k]) => k), []);
 });
 
-test('no KYC step anywhere', () => {
-  const offenders = htmlFiles(dist).filter(f => /\b(KYC|identity verification|verify your identity|passport)\b/i.test(visibleText(readFileSync(f, 'utf8'))));
-  assert.deepEqual(offenders, []);
+test('visible copy follows the product rules', () => {
+  const banned = [
+    [/\u2014/, 'em dash'], [/\u2013/, 'en dash'], [/bitso/i, 'Bitso'], [/hyperliquid/i, 'Hyperliquid'],
+    [/explorer/i, 'explorer'], [/epoch/i, 'epoch'], [/\bseasons?\b/i, 'season'], [/claim/i, 'claim'],
+    [/liquidation/i, 'liquidation'], [/\bthe bar\b/i, 'the bar'], [/pilot/i, 'pilot'],
+    [/can[\u2019']t request/i, "can't request"], [/seat #/i, 'seat number'], [/time weighted/i, 'time weighted'], [/percentile/i, 'percentile'],
+  ];
+  const shell = visibleText(readFileSync(join(root, 'src/template.html'), 'utf8').replace('__PAGES__', ''));
+  const hits = [];
+  for (const [key, text] of [['template', shell], ...Object.entries(pages).map(([k, p]) => [k, `${p.title}\n${visibleText(p.body)}`])]) {
+    for (const [re, name] of banned) {
+      const m = re.exec(text);
+      if (m) hits.push(`${key}: ${name} in "${text.slice(Math.max(0, m.index - 30), m.index + 30).replace(/\s+/g, ' ')}"`);
+    }
+  }
+  assert.deepEqual(hits, []);
 });

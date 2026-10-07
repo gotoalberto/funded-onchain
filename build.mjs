@@ -1,260 +1,213 @@
-// Assembles src/pages/<flow>/<screen>.html into static, self-contained pages in dist/.
-// Each source page starts with <!--page {json} --> and holds everything below the app header.
-// Placeholders: {{root}} {{icon:name[:class]}} {{chart:seed}} {{equity:seed[:w:h]}} {{spark:seed:up|down}}
-import { readFileSync, writeFileSync, mkdirSync, existsSync, cpSync, rmSync } from 'node:fs';
+// Builds the single-file mockup from src/: dist/index.html, copied to funded-onchain-mockups.html.
+// src/pages/<flow>/<screen>.html are final page fragments (header, main, page style, placeholder mockbar).
+// The build rewrites each page's nav, drops mock notes, points breadcrumbs back, keeps in-page links inside
+// the same stage, regenerates every mockbar and index page, sets titles from src/stages.json, inlines the
+// DATAURI_* images and writes everything into src/template.html as one JSON blob.
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const src = join(root, 'src');
-const dist = join(root, 'dist');
-const manifest = JSON.parse(readFileSync(join(src, 'manifest.json'), 'utf8'));
-const iconDir = join(root, 'node_modules/lucide-static/icons');
+const readJson = f => JSON.parse(readFileSync(join(src, f), 'utf8'));
+const titles = readJson('titles.json');
+const uris = readJson('datauris.json');
+const { stages: STAGES, indexKeys: INDEX_KEYS } = readJson('stages.json');
 
-// ---------- helpers ----------
-function icon(name, cls = 'ico') {
-  const file = join(iconDir, `${name}.svg`);
-  if (!existsSync(file)) throw new Error(`unknown icon: ${name}`);
-  return readFileSync(file, 'utf8')
-    .replace(/<!--[\s\S]*?-->/g, '')
-    .replace(/\s(width|height)="24"/g, '')
-    .replace(/class="[^"]*"/, `class="${cls}" aria-hidden="true"`)
-    .replace(/\n\s*/g, ' ')
-    .trim();
-}
-
-function rng(seed) {
-  let s = 0;
-  for (const c of String(seed)) s = (s * 31 + c.charCodeAt(0)) >>> 0;
-  return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
-}
-
-function candles(seed, base = 100) {
-  const f = v => (v * base / 100).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: base > 1000 ? 1 : 2 });
-  const r = rng(seed), W = 800, H = 380, n = 72, pad = 56;
-  let p = 100; const cs = [];
-  for (let i = 0; i < n; i++) {
-    const o = p, c = o + (r() - 0.47) * 3.2, h = Math.max(o, c) + r() * 1.6, l = Math.min(o, c) - r() * 1.6;
-    cs.push({ o, c, h, l }); p = c;
-  }
-  const max = Math.max(...cs.map(x => x.h)), min = Math.min(...cs.map(x => x.l));
-  const y = v => 12 + (max - v) / (max - min) * (H - 40);
-  const cw = (W - pad) / n;
-  let g = '';
-  for (let i = 0; i < 5; i++) {
-    const yy = 12 + i * (H - 40) / 4;
-    g += `<line x1="0" x2="${W - pad}" y1="${yy}" y2="${yy}" stroke="rgba(255,255,255,0.05)"/>`;
-  }
-  let body = '';
-  cs.forEach((k, i) => {
-    const x = i * cw + cw / 2, up = k.c >= k.o, col = up ? '#00A566' : '#D73337';
-    body += `<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${y(k.h).toFixed(1)}" y2="${y(k.l).toFixed(1)}" stroke="${col}" stroke-width="1"/>`;
-    const top = y(Math.max(k.o, k.c)), hgt = Math.max(1, Math.abs(y(k.o) - y(k.c)));
-    body += `<rect x="${(x - cw * 0.32).toFixed(1)}" y="${top.toFixed(1)}" width="${(cw * 0.64).toFixed(1)}" height="${hgt.toFixed(1)}" fill="${col}"/>`;
-  });
-  const last = cs[cs.length - 1].c, ly = y(last);
-  const vol = cs.map((k, i) => `<rect x="${(i * cw + cw * 0.18).toFixed(1)}" y="${(H - 4 - r() * 22).toFixed(1)}" width="${(cw * 0.64).toFixed(1)}" height="${(4 + r() * 18).toFixed(1)}" fill="${k.c >= k.o ? 'rgba(0,165,102,0.35)' : 'rgba(215,51,55,0.35)'}"/>`).join('');
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Price chart">${g}${vol}${body}
-<line x1="0" x2="${W - pad}" y1="${ly.toFixed(1)}" y2="${ly.toFixed(1)}" stroke="#00A566" stroke-dasharray="3 3" stroke-width="1"/>
-<rect x="${W - pad + 2}" y="${(ly - 9).toFixed(1)}" width="${pad - 4}" height="18" rx="3" fill="#00A566"/><text x="${W - pad / 2}" y="${(ly + 4).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="600" fill="#fff" font-family="Google Sans Flex, sans-serif">${f(last)}</text>
-${[0,1,2,3,4].map(i => { const yy = 12 + i * (H - 40) / 4; return `<text x="${W - 6}" y="${(yy + 4).toFixed(1)}" text-anchor="end" font-size="10" fill="#717171" font-family="Google Sans Flex, sans-serif">${f(max - i * (max - min) / 4)}</text>`; }).join('')}</svg>`;
-}
-
-function equity(seed, w = 800, h = 220, trend = 0.56) {
-  const r = rng(seed), n = 90; let v = 0; const pts = [];
-  for (let i = 0; i < n; i++) { v += (r() - (1 - trend)) * 4; pts.push(v); }
-  const max = Math.max(...pts, 1), min = Math.min(...pts, -1);
-  const X = i => (i / (n - 1)) * w, Y = p => 8 + (max - p) / (max - min) * (h - 16);
-  const line = pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(p).toFixed(1)}`).join(' ');
-  const zero = Y(0).toFixed(1);
-  const up = pts[pts.length - 1] >= 0, col = up ? '#00A566' : '#D73337';
-  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="Equity curve">
-<defs><linearGradient id="eq-${seed}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity="0.28"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>
-<line x1="0" x2="${w}" y1="${zero}" y2="${zero}" stroke="rgba(255,255,255,0.12)" stroke-dasharray="2 4"/>
-<path d="${line} L${w} ${h} L0 ${h} Z" fill="url(#eq-${seed})"/>
-<path d="${line}" fill="none" stroke="${col}" stroke-width="1.75" vector-effect="non-scaling-stroke"/></svg>`;
-}
-
-function spark(seed, dir) {
-  const r = rng(seed), n = 24, w = 96, h = 28; let v = 0; const pts = [];
-  for (let i = 0; i < n; i++) { v += (r() - (dir === 'up' ? 0.4 : 0.6)); pts.push(v); }
-  const max = Math.max(...pts), min = Math.min(...pts);
-  const d = pts.map((p, i) => `${i ? 'L' : 'M'}${(i / (n - 1) * w).toFixed(1)} ${(2 + (max - p) / (max - min || 1) * (h - 4)).toFixed(1)}`).join(' ');
-  return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true"><path d="${d}" fill="none" stroke="${dir === 'up' ? '#00A566' : '#D73337'}" stroke-width="1.5"/></svg>`;
-}
-
-// ---------- shell ----------
-const screens = manifest.flows.flatMap((f, fi) => f.screens.map((s, si) => ({ f, s, fi, si })));
-// Each flow ships as an independent project: dist/<flow>/ holds its own index, kit and screens.
-// Links between screens of the same flow work; links to other flows become inert ("#") with a
-// title naming where they would lead, so a flow folder never depends on another one.
-const NAV = {
-  guest: [['Cycle', 'trophy', 'season'], ['Leaderboard', 'list-ordered', 'leaderboard'], ['Payouts', 'badge-dollar-sign', 'payoutsall'], ['Rules', 'scale', 'rules']],
-  member: [['Home', 'house', 'home'], ['Trade', 'candlestick-chart', 'trade'], ['Leaderboard', 'list-ordered', 'leaderboard'], ['Payouts', 'badge-dollar-sign', 'payoutsall'], ['Stats', 'chart-no-axes-combined', 'stats']],
-  funded: [['Home', 'house', 'home'], ['Trade', 'candlestick-chart', 'trade'], ['Leaderboard', 'list-ordered', 'leaderboard'], ['Payouts', 'badge-dollar-sign', 'payoutsall'], ['Stats', 'chart-no-axes-combined', 'stats'], ['Claims', 'banknote-arrow-down', 'payouts']],
+const ICO = '<svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > %s </svg>';
+const ICONS = {
+  'Account': '<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />',
+  'Trade': '<path d="M9 5v4" /> <rect width="4" height="6" x="7" y="9" rx="1" /> <path d="M9 15v2" /> <path d="M17 3v2" /> <rect width="4" height="8" x="15" y="5" rx="1" /> <path d="M17 13v3" /> <path d="M3 3v16a2 2 0 0 0 2 2h16" />',
+  'Leaderboard': '<path d="M11 5h10" /> <path d="M11 12h10" /> <path d="M11 19h10" /> <path d="M4 4h1v5" /> <path d="M4 9h2" /> <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" />',
+  'How it works': '<circle cx="12" cy="12" r="10" /> <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /> <path d="M12 17h.01" />',
+  'Referrals': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" />',
 };
+const ICO_SCREENS = '<svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /> </svg>';
+const ICO_PREV = '<svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m15 18-6-6 6-6" /> </svg>';
+const ICO_NEXT = '<svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg>';
 
-const pages = new Map();
-for (const e of screens) {
-  const file = join(src, 'pages', e.f.id, `${e.s.id}.html`);
-  if (!existsSync(file)) continue;
-  const raw = readFileSync(file, 'utf8');
-  const m = raw.match(/^<!--page\s+(\{[\s\S]*?\})\s*-->/);
-  if (!m) throw new Error(`${file}: missing <!--page {...} --> header`);
-  pages.set(e, { meta: JSON.parse(m[1]), content: raw.slice(m[0].length) });
-}
+// Nav labels in the source pages and the tab each one becomes.
+const MAP = { 'Home': 'Account', 'Season': 'Account', 'Account': 'Account', 'Stats': 'Account', 'Claims': 'Account', 'Payout': 'Account',
+  'Trade': 'Trade', 'Leaderboard': 'Leaderboard', 'Payouts': 'Leaderboard', 'Rules': 'How it works', 'How it works': 'How it works', 'Referrals': 'Referrals' };
+const CURRENT = { 'f03-competing/04-score': 'Account', 'f03-competing/06-stats': 'Account', 'f04-seat-claim/09-request-board': 'Account', 'f03-competing/07-leaderboard-cut': 'Referrals', 'f01-onboarding/03-rules': 'How it works' };
+const HREF_OVERRIDE = { 'f02-not-qualified/07-trade-progress': { 'Account': '#/f02-not-qualified/03-home-progress', 'Trade': '#/f02-not-qualified/07-trade-progress' } };
+const FIXED = { 'How it works': '#/f01-onboarding/03-rules', 'Referrals': '#/f03-competing/07-leaderboard-cut' };
+const TYPE_TAB = { account: 'Account', stats: 'Account', money: 'Account', score: 'Account', trade: 'Trade',
+  lb: 'Leaderboard', funded: 'Leaderboard', payouts: 'Leaderboard', referrals: 'Referrals', rules: 'How it works' };
+const FALLBACK = { lb: ['funded', 'payouts'], funded: ['lb', 'payouts'], payouts: ['lb', 'funded'] };
+const LINK_TYPES = new Set(['account', 'trade', 'lb', 'funded', 'payouts', 'stats', 'money', 'referrals', 'score']);
+const KEY_TYPE = new Map(STAGES.flatMap(s => s.screens.map(c => [c.key, c.type])));
+const WHERE = new Map(STAGES.flatMap((s, si) => s.screens.map((c, i) => [c.key, [si, i]])));
 
-// first screen of this flow carrying each nav key, used as the default nav target
-function navTargets(flow) {
-  const t = {};
-  for (const e of screens.filter(x => x.f === flow)) {
-    const p = pages.get(e);
-    if (p && p.meta.nav && !t[p.meta.nav]) t[p.meta.nav] = `${e.s.id}.html`;
+// Same output as Python's html.escape(s, quote=True).
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+const pad2 = n => String(n).padStart(2, '0');
+const replaceAll = (s, from, to) => s.split(from).join(to);
+
+function fixNav(body, key) {
+  const m = /<nav class="nav-track"[^>]*>(.*?)<\/nav>/sd.exec(body);
+  if (!m) return body;
+  const items = [...m[1].matchAll(/<a class="nav-item" href="([^"]*)"([^>]*)>.*?<\/svg>\s*([^<]+?)\s*<\/a>/gs)].map(x => [x[1], x[2], x[3]]);
+  const href = Object.create(null);
+  let cur = null;
+  for (const [h, attrs, label] of items) {
+    const t = MAP[label.trim()] ?? label.trim();
+    if (!(t in href)) href[t] = h;
+    if (attrs.includes('aria-current')) cur = t;
   }
-  return t;
+  cur = key in CURRENT ? CURRENT[key] : (key || '').startsWith('f09-money/') ? 'Account' : cur;
+  const tab = TYPE_TAB[KEY_TYPE.get(key)];
+  if (tab && !(key in CURRENT)) cur = tab;
+  // signed-out: no active tab except How it works and Leaderboard
+  const signedOut = items.some(([, , l]) => l.trim() === 'Season');
+  if ((href['Leaderboard'] ?? '#') === '#') href['Leaderboard'] = signedOut ? '#/f01-onboarding/02-leaderboard' : '#/f03-competing/02-leaderboard';
+  if ((href['Trade'] ?? '#') === '#' && !signedOut) href['Trade'] = '#/f03-competing/05-trade';
+  if ((href['Account'] ?? '#') === '#' && !signedOut) href['Account'] = '#/f03-competing/01-home-competing';
+  if (!('Trade' in href)) href['Trade'] = '#';
+  if (signedOut && cur === 'Account') cur = null;
+  let out = '';
+  for (const t of ['Account', 'Trade', 'Leaderboard', 'How it works', 'Referrals']) {
+    let h = HREF_OVERRIDE[key]?.[t] || (t in FIXED ? FIXED[t] : t in href ? href[t] : '#');
+    if (signedOut && (t === 'Trade' || t === 'Referrals')) h = '#/f01-onboarding/04-sign-in';
+    out += `<a class="nav-item" href="${h}"${t === cur ? ' aria-current="page"' : ''}>${ICO.replace('%s', ICONS[t])}${t}</a>`;
+  }
+  const [start, end] = m.indices[1];
+  return body.slice(0, start) + out + body.slice(end);
 }
 
-function header(meta, flow) {
-  const kind = meta.header || 'member';
-  const navSet = NAV[kind === 'guest' ? 'guest' : kind === 'funded' ? 'funded' : 'member'];
-  const links = Object.assign({}, navTargets(flow), meta.links || {});
-  const go = key => links[key] || '#';
-  const nav = navSet.map(([label, ic, key]) =>
-    `<a class="nav-item" href="${go(key)}"${meta.nav === key ? ' aria-current="page"' : ''}>${icon(ic, 'ico ico-sm')}${label}</a>`).join('');
-  const brand = `<a class="brand" href="${go(kind === 'guest' ? 'season' : 'home')}" aria-label="onchain.cc Funded home"><img src="kit/assets/onchain-logo.svg" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></a>`;
-  let right;
-  if (kind === 'guest') {
-    right = `<span class="chip season-chip">${icon('timer', 'ico ico-sm')}<span>${meta.season || '<span class="k">Cycle 1 ends in</span> 11d 14h'}</span></span>
-<a class="btn btn-ghost btn-sm" href="https://onchain.cc">onchain.cc</a>
-<a class="btn btn-primary btn-sm" href="${go('signin')}">Sign in</a>`;
+function fixHeader(body) {
+  const m = /<header class="app-header">.*?<\/header>/s.exec(body);
+  if (!m) return body;
+  const hd = m[0]
+    .replace(/(<span class="acct-tag own">)[^<]*(<\/span>)/g, '$1Own$2')
+    .replace(/\b(?:Season|Epoch|Qualification window|Qualification) \d+ requests close in/g, 'Requests close in')
+    .replace(/\b(?:Season|Epoch) \d+\b/g, 'Qualification')
+    .replace(/\b(?:Season|Epoch|Qualification window)\b/g, 'Qualification');
+  return body.slice(0, m.index) + hd + body.slice(m.index + m[0].length);
+}
+
+// Breadcrumb 'Account' links go back to wherever the trader came from (fall back to the fixed href).
+const crumbBack = body => replaceAll(body,
+  '<nav class="crumb t-small" aria-label="Breadcrumb"><a class="link-q" href=',
+  '<nav class="crumb t-small" aria-label="Breadcrumb"><a class="link-q" onclick="if(history.length&gt;1){history.back();return false}" href=');
+
+// Drop the designer's mockup notes and tags (class mock-note / mock-tag), keep the mockbar.
+function stripMock(body) {
+  for (const cls of ['mock-note', 'mock-tag']) {
+    for (;;) {
+      const m = new RegExp(`<(\\w+)\\b[^>]*class="[^"]*\\b${cls}\\b[^"]*"[^>]*>`).exec(body);
+      if (!m) break;
+      const pat = new RegExp(`<(/?)${m[1]}\\b[^>]*>`, 'g');
+      let i = m.index + m[0].length, depth = 1;
+      while (depth) {
+        pat.lastIndex = i;
+        const n = pat.exec(body);
+        if (!n) { i = body.length; break; }
+        depth += n[1] ? -1 : 1;
+        i = n.index + n[0].length;
+      }
+      body = body.slice(0, m.index) + body.slice(i);
+    }
+  }
+  return body;
+}
+
+function mockbar(key) {
+  const [si, i] = WHERE.get(key);
+  const { name, screens: sc } = STAGES[si];
+  const prev = i ? `<a href="#/${sc[i - 1].key}" aria-label="Previous screen">${ICO_PREV}</a>` : `<a href="#" aria-disabled="true" aria-label="Previous screen">${ICO_PREV}</a>`;
+  const nxt = i + 1 < sc.length ? `<a href="#/${sc[i + 1].key}" aria-label="Next screen">${ICO_NEXT}</a>` : `<a href="#" aria-disabled="true" aria-label="Next screen">${ICO_NEXT}</a>`;
+  let flow = '';
+  if (i + 1 === sc.length) {
+    flow = si + 1 < STAGES.length ? `<a class="mb-next" href="#/${STAGES[si + 1].screens[0].key}">Next flow &rsaquo;</a>` : '<a class="mb-next" href="#/index">All flows &rsaquo;</a>';
+  }
+  return `<nav class="mockbar" aria-label="Mockup navigation">\n<span class="mb-tag">Mockup</span>\n<a href="#/${INDEX_KEYS[si]}">${ICO_SCREENS}Screens</a>\n${prev}\n`
+    + `<span><b>${pad2(si + 1)}</b><span class="mb-flow">${esc(name)}</span>${i + 1}/${sc.length} ${esc(sc[i].name)}</span>\n${nxt}${flow}\n</nav>`;
+}
+
+// In-page links to a page type (leaderboard, trade, money...) go to this stage's version of it,
+// then to a related type in this stage, then to the nearest other stage that has one.
+function stageLinks(body, key) {
+  const [si, i] = WHERE.get(key);
+  if (si === 0) return body;
+  const sc = STAGES[si].screens;
+  const closest = t => {
+    const js = sc.flatMap((s, j) => s.type === t ? [j] : []);
+    if (!js.length) return null;
+    const before = js.filter(j => j <= i);
+    return before.length ? sc[Math.max(...before)].key : sc[Math.min(...js)].key;
+  };
+  return body.replace(/href="#\/([^"#]+)"/g, (all, target) => {
+    const t = KEY_TYPE.get(target);
+    if (!t || !LINK_TYPES.has(t) || WHERE.get(target)?.[0] === si) return all;
+    let c = closest(t) || (FALLBACK[t] ?? []).map(closest).find(Boolean) || null;
+    if (!c) {
+      const order = [];
+      for (let sj = si - 1; sj > 0; sj--) order.push(sj);
+      for (let sj = si + 1; sj < STAGES.length; sj++) order.push(sj);
+      for (const sj of order) {
+        const hit = STAGES[sj].screens.find(s => s.type === t);
+        if (hit) { c = hit.key; break; }
+      }
+    }
+    return c ? `href="#/${c}"` : all;
+  });
+}
+
+function indexPage(templateBody, si = null) {
+  const head = /<header class="app-header">.*?<\/header>/s.exec(templateBody)[0];
+  const style = (templateBody.match(/<style>.*?<\/style>/gs) ?? []).join('');
+  let main;
+  if (si === null) {
+    const items = STAGES.map(({ name, date, description, screens }, n) =>
+      `<li><a href="#/${INDEX_KEYS[n]}"><span class="hub-i num">${n + 1}</span><span class="grow"><span class="w6">${esc(name)}</span><span class="muted hub-q">${esc(date)} · ${esc(description)} · ${screens.length} screens</span></span>${ICO_NEXT}</a></li>`).join('');
+    const total = STAGES.reduce((a, s) => a + s.screens.length, 0);
+    main = '<main class="page-narrow"><p class="hub-num">Flows</p><h1 class="t-title mt-2">funded.onchain.cc, one trader&#39;s story</h1>'
+      + `<p class="dim mt-3" style="max-width:68ch">kestrel from sign-up to a funded seat, a payout, a closed seat and back. Eight flows in date order, ${total} screens. Variants are other outcomes.</p>`
+      + `<div class="row gap-3 mt-5"><a class="btn btn-primary" href="#/${STAGES[0].screens[0].key}">Start at flow 1</a></div>`
+      + `<section class="hub-flow mt-7"><ol class="hub-screens">${items}</ol></section></main>`;
   } else {
-    const season = meta.season || '<span class="k">Cycle 1 ends in</span> 11d 14h';
-    const seasonPct = meta.seasonPct ?? 60;
-    const acct = meta.acct || (kind === 'funded'
-      ? { tag: 'funded', label: 'Funded', value: '$5,184.60' }
-      : { tag: 'own', label: 'Own', value: '$1,284.20' });
-    right = `<span class="chip season-chip">${icon('timer', 'ico ico-sm')}<span>${season}</span><span class="bar" aria-hidden="true"><i style="width:${seasonPct}%"></i></span></span>
-<a class="acct" href="${go('acct')}"><span class="acct-tag ${acct.tag}">${acct.label}</span><span class="num w6">${acct.value}</span>${icon('chevron-down', 'ico ico-sm muted')}</a>
-<a class="icon-btn" href="${go('deposit')}" aria-label="Deposit">${icon('plus', 'ico')}</a>
-<button class="icon-btn" aria-label="Notifications">${icon('bell', 'ico')}${meta.unread ? '<span class="badge-dot"></span>' : ''}</button>
-<a class="row gap-3" href="${go('alias')}" aria-label="Profile"><span class="avatar">${meta.avatar || 'K'}</span></a>`;
+    const { name, date, description, screens: sc } = STAGES[si];
+    const items = sc.map((s, n) =>
+      `<li><a href="#/${s.key}"><span class="hub-i num">${n + 1}</span><span class="grow"><span class="w6">${esc(s.name)}</span><span class="muted hub-q">${esc(s.question)}</span></span>${ICO_NEXT}</a></li>`).join('');
+    const nxt = si + 1 < STAGES.length ? `<a class="btn" href="#/${INDEX_KEYS[si + 1]}">Next flow &rsaquo;</a>` : '<a class="btn" href="#/index">All flows</a>';
+    main = `<main class="page-narrow"><p class="hub-num">${pad2(si + 1)} · ${esc(date)}</p><h1 class="t-title mt-2">${esc(name)}</h1><p class="dim mt-3" style="max-width:68ch">${esc(description)}</p>`
+      + `<div class="row gap-3 mt-5"><a class="btn btn-primary" href="#/${sc[0].key}">Open first screen</a>${nxt}<span class="t-small muted">${sc.length} screens</span></div>`
+      + `<section class="hub-flow mt-7"><ol class="hub-screens">${items}</ol></section></main>`;
   }
-  return `<header class="app-header"><div class="row gap-6">${brand}<nav class="nav-track" aria-label="Main">${nav}</nav></div><div class="header-right">${right}</div></header>`;
+  return head + '\n' + main + style;
 }
 
-function mockbar(entry) {
-  const list = screens.filter(x => x.f === entry.f);
-  const idx = list.indexOf(entry);
-  const prev = list[idx - 1], next = list[idx + 1];
-  const fnum = `F${String(entry.fi + 1).padStart(2, '0')}`;
-  return `<nav class="mockbar" aria-label="Mockup navigation">
-<span class="mb-tag">Mockup</span>
-<a href="index.html">${icon('layout-grid', 'ico')}Screens</a>
-<a href="${prev ? `${prev.s.id}.html` : '#'}"${prev ? '' : ' aria-disabled="true"'} aria-label="Previous screen">${icon('chevron-left', 'ico')}</a>
-<span><b>${fnum}</b><span class="mb-flow">${entry.f.name}</span>${entry.si + 1}/${list.length} ${entry.s.title}</span>
-<a href="${next ? `${next.s.id}.html` : '#'}"${next ? '' : ' aria-disabled="true"'} aria-label="Next screen">${icon('chevron-right', 'ico')}</a>
-</nav>`;
-}
+// Serialises like Python's json.dumps(pages, ensure_ascii=False), so both builds can be compared byte for byte.
+const pagesJson = pages => '{' + [...pages].map(([k, p]) => `${JSON.stringify(k)}: {"title": ${JSON.stringify(p.title)}, "body": ${JSON.stringify(p.body)}}`).join(', ') + '}';
 
-function doc({ title, body, description = '' }) {
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${title}</title>
-<meta name="description" content="${description.replace(/"/g, '&quot;')}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="kit/funded.css">
-</head>
-<body>
-${body}
-</body>
-</html>
-`;
-}
-
-const flowName = id => (manifest.flows.find(f => f.id === id) || {}).name || id;
-
-// Rewrites links written as {{root}}<flow>/<screen>.html, ../<flow>/<screen>.html or
-// <flow>/<screen>.html: same flow becomes a sibling link, another flow becomes inert.
-function localize(html, flow) {
-  return html
-    .replace(/href="(?:\{\{root\}\}|\.\.\/)?(f\d\d-[a-z-]+)\/([\w-]+\.html)(#[^"]*)?"/g, (_, f, file, hash) =>
-      f === flow.id ? `href="${file}${hash || ''}"` : `href="#" data-flow="${f}" title="Continues in ${flowName(f)}"`)
-    .replace(/href="(?:\{\{root\}\}|\.\.\/)index\.html"/g, 'href="index.html"')
-    .replace(/\{\{root\}\}/g, '');
-}
-
-function expand(html) {
-  return html
-    .replace(/\{\{icon:([a-z0-9-]+)(?::([a-z0-9 -]+))?\}\}/g, (_, n, c) => icon(n, c ? `ico ${c}` : 'ico'))
-    .replace(/\{\{chart:([\w-]+)(?::([\d.]+))?\}\}/g, (_, s, b) => candles(s, b ? +b : 100))
-    .replace(/\{\{equity:([\w-]+)(?::(\d+):(\d+))?(?::([\d.]+))?\}\}/g, (_, s, w, h, t) => equity(s, w ? +w : 800, h ? +h : 220, t ? +t : 0.56))
-    .replace(/\{\{spark:([\w-]+):(up|down)\}\}/g, (_, s, d) => spark(s, d));
-}
-
-const HUB_CSS = `<style>
-.hub { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.hub-flow { background: var(--glass-subtle); box-shadow: var(--rim); border-radius: var(--r-lg); padding: 20px; }
-.hub-flow-head { display: flex; gap: 14px; }
-.hub-num { font-family: var(--mono); font-size: 12px; color: var(--primary); padding-top: 5px; }
-.hub-sum { font-size: 13px; line-height: 19px; }
-.hub-screens { margin-top: 14px; }
-.hub-screens a { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: var(--r-md); transition: background-color 150ms ease; }
-.hub-screens a:hover { background: rgb(255 255 255 / 0.05); }
-.hub-i { width: 20px; color: var(--muted); font-size: 12px; }
-.hub-q { display: block; font-size: 12px; line-height: 16px; }
-</style>`;
-const hubHeader = home => `<header class="app-header"><a class="brand" href="${home}"><img src="kit/assets/onchain-logo.svg" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></a><span class="muted t-small">Flow mockups for funded.onchain.cc. Demo data only.</span></header>`;
-const screenList = (f, prefix) => `<ol class="hub-screens">${f.screens.map((s, si) => `<li><a href="${prefix}${s.id}.html"><span class="hub-i num">${si + 1}</span><span class="grow"><span class="w6">${s.title}</span><span class="muted hub-q">${s.answers}</span></span>{{icon:arrow-right:ico-sm muted}}</a></li>`).join('')}</ol>`;
-
-// ---------- build ----------
-rmSync(dist, { recursive: true, force: true });
-mkdirSync(dist, { recursive: true });
-
-let built = 0;
-const missing = [];
-for (const [fi, f] of manifest.flows.entries()) {
-  const dir = join(dist, f.id);
-  mkdirSync(dir, { recursive: true });
-  cpSync(join(src, 'kit'), join(dir, 'kit'), { recursive: true });
-  for (const entry of screens.filter(x => x.f === f)) {
-    const page = pages.get(entry);
-    if (!page) { missing.push(`${f.id}/${entry.s.id}`); continue; }
-    const body = `${page.meta.noHeader ? '' : header(page.meta, f)}\n${page.content}\n${mockbar(entry)}`;
-    const out = doc({ title: `${entry.s.title} · onchain.cc Funded`, body: expand(localize(body, f)), description: entry.s.answers });
-    writeFileSync(join(dir, `${entry.s.id}.html`), out);
-    built++;
+export function build() {
+  const pages = new Map();
+  for (const [key, fallbackTitle] of Object.entries(titles)) {
+    let body = readFileSync(join(src, 'pages', `${key}.html`), 'utf8');
+    body = crumbBack(stripMock(fixHeader(fixNav(body, key))));
+    for (const [k, u] of Object.entries(uris)) body = replaceAll(body, k, u);
+    let title = fallbackTitle;
+    if (WHERE.has(key)) {
+      const [si, i] = WHERE.get(key);
+      body = stageLinks(body, key);
+      body = body.replace(/<nav class="mockbar".*?<\/nav>/s, () => mockbar(key));
+      title = `${STAGES[si].screens[i].name} · onchain.cc Funded`;
+    }
+    pages.set(key, { title, body });
   }
-  const idxBody = `${hubHeader('index.html')}
-<main class="page-narrow">
-  <p class="hub-num">F${String(fi + 1).padStart(2, '0')}</p>
-  <h1 class="t-title mt-2">${f.name}</h1>
-  <p class="dim mt-3" style="max-width:68ch">${f.summary}</p>
-  <div class="row gap-3 mt-5"><a class="btn btn-primary" href="${f.screens[0].id}.html">Open first screen</a><span class="t-small muted">${f.screens.length} screens. Links to other flows are inactive in this project.</span></div>
-  <section class="hub-flow mt-7">${screenList(f, '')}</section>
-</main>${HUB_CSS}`;
-  writeFileSync(join(dir, 'index.html'), doc({ title: `${f.name} · onchain.cc Funded flows`, body: expand(idxBody), description: f.summary }));
+  const tmpl = pages.get('f03-competing/index').body;
+  pages.set('index', { title: 'Flows · onchain.cc Funded', body: indexPage(tmpl) });
+  INDEX_KEYS.forEach((k, n) => pages.set(k, { title: `${STAGES[n].name} · onchain.cc Funded flows`, body: indexPage(tmpl, n) }));
+  if (pages.has('f09-money/index')) pages.set('f09-money/index', pages.get(INDEX_KEYS[INDEX_KEYS.length - 1]));
+  const js = replaceAll(pagesJson(pages), '</', '<\\/');
+  return readFileSync(join(src, 'template.html'), 'utf8').replace('__PAGES__', () => js);
 }
 
-// top hub: only an entry point to the independent flow projects
-mkdirSync(join(dist, 'kit'), { recursive: true });
-cpSync(join(src, 'kit'), join(dist, 'kit'), { recursive: true });
-const hubFlows = manifest.flows.map((f, fi) => `
-<section class="hub-flow">
-  <div class="hub-flow-head"><span class="hub-num">F${String(fi + 1).padStart(2, '0')}</span><div class="grow"><h2 class="t-heading"><a href="${f.id}/index.html">${f.name}</a></h2><p class="muted t-caption mt-2">${f.screens.length} screens</p></div><a class="btn btn-glass btn-sm" href="${f.id}/${f.screens[0].id}.html">Open</a></div>
-  ${f.why ? `<dl class="hub-why mt-4"><dt>What it does</dt><dd>${f.why.what}</dd><dt>Why</dt><dd>${f.why.why}</dd></dl>` : `<p class="dim mt-2 hub-sum">${f.summary}</p>`}
-  ${screenList(f, `${f.id}/`)}
-</section>`).join('');
-const hubBody = `${hubHeader('index.html')}
-<main class="page-narrow">
-  <h1 class="t-title">funded.onchain.cc user flows</h1>
-  <p class="dim mt-3" style="max-width:70ch">${manifest.flows.length} independent flows, ${screens.length} navigable screens with demo data. Every trader competes with their own account in a dated cycle; when it closes, those who meet the requirements request a seat within 24 hours and seats are assigned by score. Bitso provides the USDC of every funded account.</p>
-  <div class="hub mt-7">${hubFlows}</div>
-</main>${HUB_CSS}<style>.hub{grid-template-columns:1fr!important}.hub-why{display:grid;grid-template-columns:110px 1fr;gap:6px 14px;font-size:13px;line-height:19px}.hub-why dt{color:var(--muted)}.hub-why dd{margin:0;color:var(--text-2)}</style>`;
-writeFileSync(join(dist, 'index.html'), doc({ title: 'Flows · onchain.cc Funded', body: expand(hubBody), description: 'Funded accounts flow mockups' }));
-
-console.log(`built ${built} screens${missing.length ? `, missing ${missing.length}: ${missing.join(', ')}` : ''}`);
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const html = build();
+  mkdirSync(join(root, 'dist'), { recursive: true });
+  writeFileSync(join(root, 'dist/index.html'), html);
+  copyFileSync(join(root, 'dist/index.html'), join(root, 'funded-onchain-mockups.html'));
+  console.log(`dist/index.html and funded-onchain-mockups.html, ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB`);
+}

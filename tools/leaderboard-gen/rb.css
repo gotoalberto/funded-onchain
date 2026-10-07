@@ -1,4 +1,0 @@
-.rbt .w-b { width: 130px; } .rbt .w-sc { width: 110px; } .rbt .w-rq { width: 170px; } .rbt .w-s2 { width: 220px; } .rbt .w-band { width: 110px; }
-.rq-no { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; color: var(--text-3); }
-.rq-no .ico { color: var(--muted); }
-.rbt .ctip { left: auto; right: calc(100% + 96px); top: 50%; transform: translateY(-50%); width: 230px; }
