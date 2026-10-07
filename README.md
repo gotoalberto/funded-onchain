@@ -2,9 +2,7 @@
 
 Navigable static mockups of **funded.onchain.cc**, a standalone app where traders compete with their own money in dated cycles and the best ones get a funded account with Bitso's USDC, keeping 80% of the profit. Built in onchain.cc's visual language. All figures are demo data.
 
-**Live site:** https://gotoalberto.github.io/funded-onchain/
-
-**Single file version:** https://gotoalberto.github.io/funded-onchain/funded-onchain-mockups.html (every screen in one self-contained HTML).
+**How to view it:** run `node build.mjs && node bundle.mjs` and open `funded-onchain-mockups.html`, or download that file from the latest run in the Actions tab.
 
 ## Flows
 
@@ -14,7 +12,7 @@ A visitor arrives from X, a creator or a referral link, understands the offer, s
 
 *Why:* It is the first contact and has to convince a professional trader in seconds: Bitso's real money, 80% of the profit, no challenge fees and clear rules.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f01-onboarding/index.html), 5 screens.
+Source: `src/pages/f01-onboarding/`, 5 screens.
 
 ### F02 Not qualified yet
 
@@ -22,7 +20,7 @@ The trader has signed in but does not meet the minimums to appear on the leaderb
 
 *Why:* Many arrive with no history. Without a short, concrete path to the leaderboard they leave before trading.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f02-not-qualified/index.html), 6 screens.
+Source: `src/pages/f02-not-qualified/`, 6 screens.
 
 ### F03 Competing
 
@@ -30,7 +28,7 @@ The trader trades their own money during the cycle and follows their standing: b
 
 *Why:* This is where they spend most of their time and where the volume that pays for the business is generated. They must always know whether they are inside or outside the seats and what they are missing.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f03-competing/index.html), 8 screens.
+Source: `src/pages/f03-competing/`, 8 screens.
 
 ### F04 Seat claim
 
@@ -38,7 +36,7 @@ When the cycle closes there are 24 hours to request a seat; the live request boa
 
 *Why:* It is the decisive moment of every cycle. It has to be transparent so nobody doubts how seats are assigned.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f04-seat-claim/index.html), 9 screens.
+Source: `src/pages/f04-seat-claim/`, 9 screens.
 
 ### F05 Operating the funded account
 
@@ -46,7 +44,7 @@ The trader trades Bitso's USDC from the same terminal, with the trailing liquida
 
 *Why:* A professional needs to see on every order how much room is left before losing the account. That is what sets this product apart from any other terminal.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f05-funded-trading/index.html), 6 screens.
+Source: `src/pages/f05-funded-trading/`, 6 screens.
 
 ### F06 Risk events
 
@@ -54,7 +52,7 @@ The two hard moments: the account liquidated when equity reaches its level, and 
 
 *Why:* These are the moments where trust is won or lost. They must explain what happened, what the trader keeps and what they can do next, without ambiguity.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f06-risk-events/index.html), 2 screens.
+Source: `src/pages/f06-risk-events/`, 2 screens.
 
 ### F07 Claims
 
@@ -62,7 +60,7 @@ The trader claims whenever they want, with every position closed: 80% of the pro
 
 *Why:* Getting paid is the promise of the product. If it is not clear how much is claimed and what happens to the account afterwards, nobody trusts the rest.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f07-claims/index.html), 5 screens.
+Source: `src/pages/f07-claims/`, 5 screens.
 
 ### F08 After the account
 
@@ -70,7 +68,7 @@ After losing the account, the trader goes back to competing with their own money
 
 *Why:* Keeping the trader who loses is key to growth: every return to the competition brings more volume and more referrals.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f08-after-account/index.html), 3 screens.
+Source: `src/pages/f08-after-account/`, 3 screens.
 
 ### F09 Deposit and withdraw
 
@@ -78,13 +76,12 @@ The own account: the balance and where it came from, USDC deposits from any EVM 
 
 *Why:* Without their own money there is no competition. Moving funds in and out has to be as simple as on an exchange, and clearly separate from the funded account.
 
-[Open the flow](https://gotoalberto.github.io/funded-onchain/f09-money/index.html), 8 screens.
+Source: `src/pages/f09-money/`, 8 screens.
 
 ## Repository
 
 | Path | What it is |
 |---|---|
-| `docs/` | The published site (GitHub Pages serves this folder). Each flow is an independent folder with its own index and kit. |
 | `src/pages/` | Source of every screen, one folder per flow. |
 | `src/kit/` | Shared design kit: tokens and components taken from onchain.cc. |
 | `src/manifest.json` | Flows, screens and the single question each screen answers. |
@@ -97,8 +94,10 @@ The own account: the balance and where it came from, USDC deposits from any EVM 
 
 ## Build
 
+Every push and pull request builds the site and attaches the single HTML to the Actions run. See CONTRIBUTING.md.
+
 ```
 npm install
-npm run pages   # builds the site into docs/ and the single file
+node build.mjs && node bundle.mjs   # builds dist/ and the single file
 npm test
 ```

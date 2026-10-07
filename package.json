@@ -6,8 +6,7 @@
   "scripts": {
     "build": "node build.mjs",
     "bundle": "node bundle.mjs",
-    "test": "node --test tests/*.test.mjs",
-    "pages": "node build.mjs && node bundle.mjs && rm -rf docs && mkdir docs && cp -r dist/. docs/ && cp funded-onchain-mockups.html docs/ && touch docs/.nojekyll"
+    "test": "node --test tests/*.test.mjs"
   },
   "keywords": [],
   "author": "",
