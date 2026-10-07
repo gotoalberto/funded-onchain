@@ -1,0 +1,75 @@
+<!--page {"nav":"payouts","header":"funded","season":"<span class=\"k\">Nov 28</span> Cycle 2 ends in 19d 06h","seasonPct":34,"unread":true,"acct":{"tag":"funded","label":"Funded","value":"$25,923.00"}} -->
+<main class="pay-modal">
+  <div class="under cl" aria-hidden="true">
+    <section class="panel lead">
+      <div class="lead-top">
+        <div class="stack gap-3">
+          <p class="fig-line"><span class="t-display num">$738.40</span><span class="t-sub w5 dim">yours to claim</span></p>
+          <p class="meta t-small"><span class="acct-tag funded">Funded</span><span class="dim">$25K account</span></p>
+        </div>
+        <span class="btn btn-primary btn-lg">{{icon:banknote-arrow-down:ico-sm}}Claim $738.40</span>
+      </div>
+      <div class="ghost-flow mt-6"><span></span><i></i><span></span></div>
+    </section>
+  </div>
+
+  <div class="scrim">
+    <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="claim-h" aria-describedby="claim-d">
+      <div class="modal-head">
+        <h2 id="claim-h" class="modal-title">Claim all profit</h2>
+        <a class="icon-btn" href="01-payouts.html" aria-label="Close">{{icon:x:ico}}</a>
+      </div>
+      <div class="modal-body">
+        <div class="hero">
+          <span class="t-figure num">$738.40</span>
+          <span class="t-small dim to"><span class="acct-tag own">Own</span>to <span class="mono">0x7a3F…c91E</span> on Hyperliquid</span>
+        </div>
+
+        <div class="split" role="img" aria-label="Profit $923.00 above $25,000: 80% to you, $738.40; 20% to Bitso, $184.60">
+          <div class="split-head t-caption"><span class="dim"><span class="acct-tag funded">Funded</span> profit above $25,000</span><b class="up num">+$923.00</b></div>
+          <div class="split-bar"><span class="s-you" style="width:80%"></span><span class="s-bitso" style="width:20%"></span></div>
+          <div class="split-foot t-caption"><span>You 80%</span><span class="dim">{{icon:landmark:ico-sm}}Bitso 20%, $184.60</span></div>
+        </div>
+
+        <ul class="tiles" id="claim-d">
+          <li>{{icon:rotate-ccw:ico-sm}}<span><b>Resets to $25,000.00</b>Liquidation $22,500.00</span></li>
+          <li>{{icon:globe:ico-sm}}<span><b>Public on Payouts</b>As kestrel</span></li>
+          <li>{{icon:trophy:ico-sm}}<span><b>Cycle: a deposit</b>No PnL, no drawdown effect</span></li>
+          <li>{{icon:lock:ico-sm}}<span><b>Final</b>Can't be undone</span></li>
+        </ul>
+      </div>
+      <div class="modal-foot">
+        <a class="btn btn-glass" href="01-payouts.html">Cancel</a>
+        <a class="btn btn-primary grow" href="03-paid.html">{{icon:banknote-arrow-down:ico-sm}}Claim $738.40</a>
+      </div>
+    </div>
+  </div>
+</main>
+<style>
+.cl { max-width: 920px; margin: 0 auto; padding: 16px 16px 96px; }
+.lead { padding: 24px; }
+.lead-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.fig-line { display: flex; align-items: baseline; gap: 12px; }
+.meta { display: flex; align-items: center; gap: 10px; }
+.ghost-flow { display: grid; grid-template-columns: 1fr 132px 1fr; height: 176px; }
+.ghost-flow span { border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+
+.hero { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px 0 4px; }
+.hero .to { display: inline-flex; align-items: center; gap: 6px; }
+
+.split { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.split-head, .split-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.split-head .dim { display: inline-flex; align-items: center; gap: 6px; }
+.split-head b { font-size: 13px; font-weight: 600; }
+.split-bar { display: flex; gap: 3px; height: 8px; }
+.split-bar span { border-radius: 3px; }
+.s-you { background: #cfcfd4; }
+.s-bitso { background: rgb(255 255 255 / 0.14); }
+.split-foot span { display: inline-flex; align-items: center; gap: 4px; }
+
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.tiles li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: center; padding: 10px; border-radius: var(--r-md); background: rgb(255 255 255 / 0.03); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.tiles li > .ico { width: 28px; height: 28px; padding: 7px; border-radius: 50%; background: rgb(255 255 255 / 0.06); color: var(--text-3); }
+.tiles li > span { display: flex; flex-direction: column; font-size: 12px; line-height: 16px; color: var(--text-3); min-width: 0; }
+.tiles b { font-size: 13px; line-height: 18px; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+</style>

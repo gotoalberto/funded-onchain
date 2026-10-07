@@ -1,0 +1,205 @@
+<!--page {"header": "funded", "season": "<span class=\"k\">Cycle 2 ends in</span> 15d 14h", "seasonPct": 46, "acct": {"tag": "own", "label": "Own", "value": "$2,522.60"}, "links": {"acct": "01-balance.html", "deposit": "02-deposit.html", "home": "{{root}}f05-funded-trading/01-home-funded.html", "trade": "{{root}}f03-competing/05-trade.html", "leaderboard": "{{root}}f03-competing/02-leaderboard.html", "stats": "{{root}}f03-competing/06-stats.html", "payouts": "{{root}}f07-claims/01-payouts.html", "payoutsall": "{{root}}f03-competing/08-payouts.html"}} -->
+<main>
+  <div class="under bal" aria-hidden="true">
+  <div class="bal-grid">
+    <section class="panel hero" aria-labelledby="bal-h">
+      <div class="hero-main">
+        <h1 id="bal-h" class="t-sub row gap-3"><span class="acct-tag own">Own</span>Account balance</h1>
+        <p class="t-caption muted mt-2">Your Hyperliquid account, shared with onchain.cc. Dec 2, 10:00 UTC.</p>
+        <p class="bal-fig num">$2,522.60</p>
+        <div class="split mt-5" role="img" aria-label="Available 1,882.60, in margin 640.00"><i class="a" style="width:74.6%"></i><i class="m"></i></div>
+        <div class="split-legend mt-3">
+          <span><i class="sw a"></i>Available<b class="num">$1,882.60</b></span>
+          <span><i class="sw m"></i>Margin, 2 positions<b class="num">$640.00</b></span>
+        </div>
+        <div class="row gap-3 hero-cta">
+          <a class="btn btn-primary" href="02-deposit.html">{{icon:arrow-down-to-line:ico-sm}}Deposit</a>
+          <a class="btn btn-glass" href="05-withdraw.html">{{icon:arrow-up-from-line:ico-sm}}Withdraw</a>
+        </div>
+      </div>
+      <div class="hero-src">
+        <div class="row-between"><h2 class="section-title">Where it came from</h2><span class="t-caption muted">Since Oct 14, USDC</span></div>
+        <div class="wf" role="img" aria-label="Deposits +1,100.00, withdrawals -300.00, claims from the funded account +738.40, closed trading PnL +952.45, open PnL +31.75, balance 2,522.60 USDC"><div class="wf-col"><div class="wf-plot"><i class="wf-bar n" style="bottom:0.00%;height:max(3px, 43.61%)"></i><span class="wf-v n" style="bottom:calc(43.61% + 6px)">+1,100.00</span></div><span class="wf-k">{{icon:arrow-down-left:ico-sm}}Deposits</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar w" style="bottom:31.71%;height:max(3px, 11.89%)"></i><span class="wf-v w" style="bottom:calc(43.61% + 6px)">-300.00</span></div><span class="wf-k">{{icon:arrow-up-right:ico-sm}}Withdrawals</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar g" style="bottom:31.71%;height:max(3px, 29.27%)"></i><span class="wf-v g" style="bottom:calc(60.98% + 6px)">+738.40</span></div><span class="wf-k">{{icon:hand-coins:ico-sm}}Claims</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar p" style="bottom:60.98%;height:max(3px, 37.76%)"></i><span class="wf-v p" style="bottom:calc(98.74% + 6px)">+952.45</span></div><span class="wf-k">{{icon:candlestick-chart:ico-sm}}Closed PnL</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar po" style="bottom:98.74%;height:max(3px, 1.26%)"></i><span class="wf-v po" style="bottom:calc(100.00% + 6px)">+31.75</span></div><span class="wf-k">{{icon:activity:ico-sm}}Open PnL</span></div><div class="wf-col total"><div class="wf-plot"><i class="wf-bar t" style="bottom:0;height:100.00%"></i><span class="wf-v t" style="bottom:calc(100.00% + 6px)">2,522.60</span></div><span class="wf-k">{{icon:wallet:ico-sm}}Balance</span></div></div>
+        <p class="t-caption muted wf-note">{{icon:info:ico-sm}}For the cycle, a claim counts as a deposit, not PnL.</p>
+      </div>
+    </section>
+
+    <section class="panel panel-flush" aria-labelledby="mv-h">
+      <div class="panel-head">
+        <h2 id="mv-h" class="panel-title">Movements</h2>
+        <nav class="seg" aria-label="Filter movements"><a href="01-balance.html" aria-current="true">All</a><a href="01-balance.html">Deposits</a><a href="01-balance.html">Withdrawals</a><a href="01-balance.html">Claims</a><a href="01-balance.html">Trading PnL</a></nav>
+      </div>
+      <table class="table mv-table">
+        <thead><tr><th>Movement</th><th>Detail</th><th>Time, UTC</th><th class="r">Amount, USDC</th><th class="r">Balance after</th></tr></thead>
+        <tbody>
+          <tr><td><span class="mv"><span class="mv-ico warn">{{icon:arrow-down-left:ico-sm}}</span>Deposit<span class="pill pill-warn">Not credited</span></span></td><td class="detail">250.00 DAI from Base <a class="tx" href="08-deposit-problem.html">See why</a></td><td class="muted nw">Dec 2, 09:41</td><td class="r nw muted">0.00</td><td class="r dim nw">2,490.85</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:candlestick-chart:ico-sm}}</span>Trading PnL</span></td><td class="detail">6 closed trades</td><td class="muted nw">Dec 1</td><td class="r nw up">+63.70</td><td class="r dim nw">2,490.85</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:candlestick-chart:ico-sm}}</span>Trading PnL</span></td><td class="detail">4 closed trades</td><td class="muted nw">Nov 30</td><td class="r nw down">-37.85</td><td class="r dim nw">2,427.15</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico gold">{{icon:hand-coins:ico-sm}}</span>Claim<span class="acct-tag funded src">Funded</span></span></td><td class="detail">Your 80% of $923.00 <a class="tx" href="{{root}}f03-competing/08-payouts.html">Public payout</a></td><td class="muted nw">Nov 28, 18:02</td><td class="r nw up">+738.40</td><td class="r dim nw">2,465.00</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:arrow-up-right:ico-sm}}</span>Withdrawal</span></td><td class="detail"><span class="mono">0x7a3F…c91E</span>, Arbitrum <a class="tx" href="#tx">Tx</a></td><td class="muted nw">Nov 27, 14:02</td><td class="r nw">-300.00</td><td class="r dim nw">1,726.60</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:candlestick-chart:ico-sm}}</span>Trading PnL</span></td><td class="detail">9 closed trades</td><td class="muted nw">Nov 25</td><td class="r nw up">+118.30</td><td class="r dim nw">2,026.60</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:arrow-down-left:ico-sm}}</span>Deposit</span></td><td class="detail">500.00 USDC from Base <a class="tx" href="#tx">Tx</a></td><td class="muted nw">Nov 21, 09:47</td><td class="r nw">+500.00</td><td class="r dim nw">1,908.30</td></tr>
+        </tbody>
+      </table>
+      <div class="mv-foot row-between t-caption"><span class="muted">7 of 31 since Oct 14. Balance after counts closed results only.</span><a class="link" href="01-balance.html">Load older</a></div>
+    </section>
+  </div>
+  </div>
+  <div class="scrim">
+    <div class="modal f09m" role="dialog" aria-modal="true" aria-labelledby="dep-h">
+      <div class="modal-head">
+        <h1 id="dep-h" class="modal-title"><span class="acct-tag own">Own</span>Deposit USDC</h1>
+        <a class="icon-btn" href="01-balance.html" aria-label="Close">{{icon:x:ico}}</a>
+      </div>
+      <div class="modal-body">
+        <div class="route" aria-label="How a deposit travels">
+          <div class="rt"><span class="rt-node">{{icon:wallet:ico}}</span><b>Your wallet</b><span>Any EVM chain or Solana</span></div>
+          <div class="rt"><span class="rt-node">{{icon:qr-code:ico}}</span><b>Deposit address</b><span>Yours, forwards on its own</span></div>
+          <div class="rt"><span class="rt-node"><span class="cn c-hl" style="width:28px;height:28px;font-size:11px">HL</span></span><b>Own account</b><span>On Hyperliquid</span></div>
+        </div>
+        <div class="tabs-row">
+          <span class="seg seg-lg" role="tablist" aria-label="Sending from"><a href="02-deposit.html" role="tab" aria-current="true" aria-selected="true">Any EVM chain</a><a href="02-deposit.html" role="tab" aria-selected="false">Solana</a></span>
+          <span class="nets"><span class="rt-stack"><span class="cn c-eth">E</span><span class="cn c-arb">A</span><span class="cn c-base">B</span><span class="cn c-op">OP</span><span class="cn c-bnb">BN</span></span>Same address on all</span>
+        </div>
+        <div class="addr-box">
+          <svg viewBox="-2 -2 29 29" width="128" height="128" role="img" aria-label="QR code of your EVM deposit address for USDC" shape-rendering="crispEdges"><rect x="-2" y="-2" width="29" height="29" fill="#fff"/><g fill="#0a0a0d"><path d="M0 0h7v7h-7z M1 1v5h5v-5z" fill-rule="evenodd"/><path d="M2 2h3v3h-3z"/><path d="M18 0h7v7h-7z M19 1v5h5v-5z" fill-rule="evenodd"/><path d="M20 2h3v3h-3z"/><path d="M0 18h7v7h-7z M1 19v5h5v-5z" fill-rule="evenodd"/><path d="M2 20h3v3h-3z"/><path d="M12 0h1v1h-1z M13 0h1v1h-1z M15 0h1v1h-1z M9 1h1v1h-1z M14 1h1v1h-1z M8 2h1v1h-1z M11 2h1v1h-1z M12 2h1v1h-1z M16 2h1v1h-1z M10 3h1v1h-1z M11 3h1v1h-1z M12 3h1v1h-1z M13 3h1v1h-1z M16 3h1v1h-1z M10 4h1v1h-1z M13 4h1v1h-1z M14 4h1v1h-1z M15 4h1v1h-1z M16 4h1v1h-1z M10 5h1v1h-1z M11 5h1v1h-1z M14 5h1v1h-1z M8 6h1v1h-1z M11 6h1v1h-1z M13 6h1v1h-1z M15 6h1v1h-1z M13 7h1v1h-1z M16 7h1v1h-1z M1 8h1v1h-1z M5 8h1v1h-1z M6 8h1v1h-1z M10 8h1v1h-1z M13 8h1v1h-1z M14 8h1v1h-1z M15 8h1v1h-1z M16 8h1v1h-1z M18 8h1v1h-1z M22 8h1v1h-1z M24 8h1v1h-1z M0 9h1v1h-1z M1 9h1v1h-1z M3 9h1v1h-1z M6 9h1v1h-1z M9 9h1v1h-1z M10 9h1v1h-1z M12 9h1v1h-1z M13 9h1v1h-1z M14 9h1v1h-1z M15 9h1v1h-1z M17 9h1v1h-1z M18 9h1v1h-1z M19 9h1v1h-1z M2 10h1v1h-1z M3 10h1v1h-1z M6 10h1v1h-1z M8 10h1v1h-1z M9 10h1v1h-1z M12 10h1v1h-1z M20 10h1v1h-1z M21 10h1v1h-1z M0 11h1v1h-1z M1 11h1v1h-1z M2 11h1v1h-1z M3 11h1v1h-1z M4 11h1v1h-1z M7 11h1v1h-1z M8 11h1v1h-1z M9 11h1v1h-1z M11 11h1v1h-1z M13 11h1v1h-1z M15 11h1v1h-1z M16 11h1v1h-1z M17 11h1v1h-1z M19 11h1v1h-1z M20 11h1v1h-1z M24 11h1v1h-1z M3 12h1v1h-1z M4 12h1v1h-1z M5 12h1v1h-1z M7 12h1v1h-1z M10 12h1v1h-1z M11 12h1v1h-1z M16 12h1v1h-1z M22 12h1v1h-1z M23 12h1v1h-1z M2 13h1v1h-1z M3 13h1v1h-1z M4 13h1v1h-1z M6 13h1v1h-1z M7 13h1v1h-1z M11 13h1v1h-1z M12 13h1v1h-1z M14 13h1v1h-1z M15 13h1v1h-1z M16 13h1v1h-1z M17 13h1v1h-1z M19 13h1v1h-1z M20 13h1v1h-1z M21 13h1v1h-1z M24 13h1v1h-1z M2 14h1v1h-1z M3 14h1v1h-1z M4 14h1v1h-1z M7 14h1v1h-1z M8 14h1v1h-1z M9 14h1v1h-1z M10 14h1v1h-1z M15 14h1v1h-1z M19 14h1v1h-1z M20 14h1v1h-1z M22 14h1v1h-1z M23 14h1v1h-1z M0 15h1v1h-1z M2 15h1v1h-1z M3 15h1v1h-1z M5 15h1v1h-1z M7 15h1v1h-1z M8 15h1v1h-1z M9 15h1v1h-1z M13 15h1v1h-1z M16 15h1v1h-1z M17 15h1v1h-1z M18 15h1v1h-1z M19 15h1v1h-1z M22 15h1v1h-1z M23 15h1v1h-1z M0 16h1v1h-1z M1 16h1v1h-1z M2 16h1v1h-1z M3 16h1v1h-1z M5 16h1v1h-1z M6 16h1v1h-1z M8 16h1v1h-1z M9 16h1v1h-1z M10 16h1v1h-1z M13 16h1v1h-1z M15 16h1v1h-1z M16 16h1v1h-1z M18 16h1v1h-1z M20 16h1v1h-1z M21 16h1v1h-1z M22 16h1v1h-1z M24 16h1v1h-1z M8 17h1v1h-1z M9 17h1v1h-1z M11 17h1v1h-1z M16 17h1v1h-1z M17 17h1v1h-1z M18 17h1v1h-1z M19 17h1v1h-1z M23 17h1v1h-1z M13 18h1v1h-1z M14 18h1v1h-1z M15 18h1v1h-1z M16 18h1v1h-1z M17 18h1v1h-1z M21 18h1v1h-1z M8 19h1v1h-1z M10 19h1v1h-1z M13 19h1v1h-1z M14 19h1v1h-1z M15 19h1v1h-1z M17 19h1v1h-1z M18 19h1v1h-1z M9 20h1v1h-1z M12 20h1v1h-1z M14 20h1v1h-1z M15 20h1v1h-1z M18 20h1v1h-1z M20 20h1v1h-1z M21 20h1v1h-1z M22 20h1v1h-1z M23 20h1v1h-1z M24 20h1v1h-1z M9 21h1v1h-1z M10 21h1v1h-1z M12 21h1v1h-1z M13 21h1v1h-1z M15 21h1v1h-1z M16 21h1v1h-1z M17 21h1v1h-1z M19 21h1v1h-1z M20 21h1v1h-1z M22 21h1v1h-1z M23 21h1v1h-1z M24 21h1v1h-1z M8 22h1v1h-1z M9 22h1v1h-1z M10 22h1v1h-1z M14 22h1v1h-1z M18 22h1v1h-1z M19 22h1v1h-1z M22 22h1v1h-1z M23 22h1v1h-1z M24 22h1v1h-1z M8 23h1v1h-1z M11 23h1v1h-1z M13 23h1v1h-1z M14 23h1v1h-1z M15 23h1v1h-1z M16 23h1v1h-1z M19 23h1v1h-1z M10 24h1v1h-1z M14 24h1v1h-1z M17 24h1v1h-1z M21 24h1v1h-1z"/></g></svg>
+          <div class="stack gap-3 grow">
+            <span class="field-label">Your EVM deposit address</span>
+            <p class="mono addr"><span class="hi">0x4E2b</span> <span class="lo">9c1A 0f53 De87 b6C4 a2E9 1f0B 3d58 c6A0</span> <span class="hi">7D19</span></p>
+          </div>
+        </div>
+        <div class="chips">
+          <span class="chip warn">{{icon:circle-dollar-sign:ico-sm}}USDC only</span>
+          <span class="chip">{{icon:badge-check:ico-sm}}No fee, no minimum</span>
+          <span class="chip">{{icon:timer:ico-sm}}About 2 min</span>
+        </div>
+        <p class="tok-warn">{{icon:triangle-alert:ico-sm}}Other tokens are not credited and stay at this address.</p>
+      </div>
+      <div class="modal-foot">
+        <a class="btn btn-primary btn-block" href="03-deposit-arriving.html">{{icon:copy:ico-sm}}Copy address</a>
+      </div>
+    </div>
+    <p class="mock-note ex-note"><span class="mock-tag">Example values</span>Arrival time is illustrative.</p>
+  </div>
+</main>
+<style>
+.bal { max-width: 1200px; margin: 0 auto; padding: 16px 16px 96px; }
+.bal-grid { display: flex; flex-direction: column; gap: 8px; }
+.hero { padding: 24px; display: grid; grid-template-columns: minmax(0, 1fr) 500px; gap: 40px; align-items: stretch; }
+.hero-main { display: flex; flex-direction: column; }
+.bal-fig { margin-top: 20px; font-size: 52px; line-height: 56px; font-weight: 600; letter-spacing: -0.035em; }
+.split { display: flex; gap: 3px; height: 8px; max-width: 420px; }
+.split i { display: block; height: 100%; border-radius: 3px; }
+.split .a { background: #cfcfd4; }
+.split .m { flex: 1; background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.22) 0 3px, rgb(255 255 255 / 0.08) 3px 6px); }
+.split-legend { display: flex; gap: 28px; font-size: 12px; color: var(--muted); }
+.split-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.split-legend b { color: var(--text); font-size: 14px; font-weight: 600; margin-left: 2px; }
+.sw { width: 8px; height: 8px; border-radius: 2px; }
+.sw.a { background: #cfcfd4; } .sw.m { background: rgb(255 255 255 / 0.22); }
+.hero-cta { margin-top: auto; padding-top: 24px; }
+.hero-src { padding-left: 32px; border-left: 1px solid var(--glass-sep); display: flex; flex-direction: column; gap: 14px; }
+.wf { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin-top: 18px; }
+.wf-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.wf-plot { position: relative; height: 150px; border-bottom: 1px solid rgb(255 255 255 / 0.08); }
+.wf-bar { position: absolute; left: 8px; right: 8px; border-radius: 3px; }
+.wf-bar.n { background: rgb(255 255 255 / 0.32); }
+.wf-bar.w { background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.2) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.22); }
+.wf-bar.g { background: rgb(232 177 12 / 0.55); }
+.wf-bar.p { background: color-mix(in srgb, var(--buy-light) 70%, transparent); }
+.wf-bar.po { background: color-mix(in srgb, var(--buy-light) 40%, transparent); }
+.wf-bar.t { background: #e6e6ea; left: 4px; right: 4px; }
+.wf-v { position: absolute; left: 0; right: 0; text-align: center; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--text-2); white-space: nowrap; }
+.wf-v.p, .wf-v.po { color: var(--buy-light); } .wf-v.g { color: #e8c078; } .wf-v.t { color: #fff; font-size: 12px; }
+.wf-k { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; line-height: 13px; color: var(--muted); text-align: center; }
+.wf-k .ico { color: var(--text-3); }
+.wf-col.total .wf-k { color: var(--text); font-weight: 600; }
+.wf-note { display: flex; align-items: center; gap: 6px; margin-top: auto; }
+.mv-table th:first-child, .mv-table td:first-child { padding-left: 16px; }
+.mv-table th:last-child, .mv-table td:last-child { padding-right: 16px; }
+.mv-table .detail { color: var(--text-3); }
+.mv { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.mv .pill, .mv .acct-tag { margin-left: -2px; }
+.mv-ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-3); flex: none; }
+.mv-ico.gold { background: rgb(232 177 12 / 0.12); color: #e8c078; }
+.mv-ico.warn { background: var(--warning-20); color: var(--warning-strong); }
+.tx { color: var(--primary); font-weight: 500; margin-left: 6px; white-space: nowrap; }
+.tx:hover { text-decoration: underline; text-underline-offset: 3px; }
+.mv-foot { padding: 10px 16px; border-top: 1px solid var(--glass-sep); }
+.nw { white-space: nowrap; }
+.acct-tag.src { height: 18px; padding: 0 6px; font-size: 10px; }
+
+.f09m { max-width: 540px; }
+.f09m .modal-title { display: flex; align-items: center; gap: 10px; }
+.scrim { grid-auto-flow: row; align-content: center; }
+.ex-note { width: 100%; max-width: 540px; margin-top: 10px; padding: 8px 12px; flex-direction: row; align-items: center; gap: 8px; font-size: 12px; }
+.ex-note .mock-tag { align-self: center; }
+.lead { display: flex; align-items: center; gap: 14px; }
+.lead-fig { font-size: 34px; line-height: 38px; font-weight: 600; letter-spacing: -0.03em; }
+.lead-fig .u { font-size: 18px; color: var(--muted); font-weight: 500; letter-spacing: 0; margin-left: 4px; }
+.lead-sub { font-size: 13px; color: var(--text-3); margin-top: 2px; }
+.coin-lg { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex: none; font-size: 15px; font-weight: 700; }
+.c-usdc { background: #2775ca; color: #fff; }
+.c-dai { background: #f5ac37; color: #1a1a1a; }
+.c-eth { background: #627eea; color: #fff; } .c-arb { background: #213147; color: #28a0f0; } .c-base { background: #0052ff; color: #fff; }
+.c-op { background: #ff0420; color: #fff; } .c-bnb { background: #f0b90b; color: #1a1a1a; } .c-sol { background: #111; color: #14f195; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14); }
+.c-hl { background: #97fce4; color: #072723; }
+.cn { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-size: 9px; font-weight: 700; flex: none; }
+.hi { color: #fff; } .lo { color: var(--muted); }
+
+/* route: where the money goes, three nodes */
+.route { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 14px 8px 12px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.rt { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; font-size: 12px; line-height: 15px; color: var(--muted); }
+.rt b { color: var(--text); font-weight: 600; font-size: 13px; }
+.rt-node { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1); color: var(--text-2); position: relative; z-index: 1; }
+.rt + .rt::before { content: ""; position: absolute; top: 20px; right: calc(50% + 26px); left: calc(-50% + 26px); height: 0; border-top: 2px dashed rgb(255 255 255 / 0.16); }
+.rt + .rt::after { content: ""; position: absolute; top: 15px; left: calc(50% - 34px); width: 0; height: 0; border-left: 6px solid rgb(255 255 255 / 0.3); border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.rt-stack { display: flex; }
+.rt-stack .cn { margin-left: -6px; box-shadow: 0 0 0 2px #151515; } .rt-stack .cn:first-child { margin-left: 0; }
+.rt.warn .rt-node { background: var(--warning-20); color: var(--warning-strong); box-shadow: inset 0 0 0 1px rgb(223 177 0 / 0.4); }
+.rt.blocked .rt-node { opacity: 0.45; }
+.rt.blocked b { color: var(--muted); }
+.route.blocked-2 .rt:nth-child(3)::before { border-top-color: rgb(255 255 255 / 0.08); }
+.route.blocked-2 .rt:nth-child(3)::after { display: none; }
+.rt-x { position: absolute; top: 9px; left: -12px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: #1b1b1b; color: var(--warning-strong); box-shadow: inset 0 0 0 1px rgb(223 177 0 / 0.45); z-index: 2; }
+
+/* track: live progress of a transfer, three steps */
+.track { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 4px 0; }
+.tk { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; font-size: 12px; line-height: 16px; color: var(--muted); }
+.tk b { color: var(--text); font-weight: 600; font-size: 13px; margin-top: 6px; }
+.tk .when { font-variant-numeric: tabular-nums; color: var(--text-3); }
+.tk-dot { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #1a1a1a; box-shadow: inset 0 0 0 2px #3a3a3a; color: var(--muted); font-size: 12px; font-weight: 700; position: relative; z-index: 1; }
+.tk.done .tk-dot { background: var(--buy-20); box-shadow: none; color: var(--buy-light); }
+.tk.now .tk-dot { background: #1a1a1a; box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.85), 0 0 0 5px rgb(255 255 255 / 0.06); }
+.tk.pending b { color: var(--text-3); }
+.tk + .tk::before { content: ""; position: absolute; top: 15px; right: calc(50% + 20px); left: calc(-50% + 20px); height: 2px; border-radius: 2px; background: rgb(255 255 255 / 0.08); }
+.tk.done + .tk.now::before { background: linear-gradient(90deg, rgb(255 255 255 / 0.55) 0 50%, rgb(255 255 255 / 0.08) 50%); background-size: 200% 100%; animation: tk-flow 1.6s linear infinite; }
+.tk.done + .tk.done::before { background: rgb(255 255 255 / 0.55); }
+@keyframes tk-flow { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgb(255 255 255 / 0.18); border-top-color: #fff; border-right-color: #fff; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin, .tk.done + .tk.now::before { animation: none; } }
+
+/* facts as chips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { height: 30px; padding: 0 12px 0 10px; display: inline-flex; align-items: center; gap: 7px; border-radius: var(--r-full); background: rgb(255 255 255 / 0.05); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08); font-size: 12px; font-weight: 500; color: var(--text-2); white-space: nowrap; }
+.chip .ico { color: var(--muted); }
+.chip.warn { background: var(--warning-20); color: var(--warning-strong); box-shadow: none; }
+.chip.warn .ico { color: var(--warning-strong); }
+.facts { display: flex; flex-direction: column; gap: 0; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); padding: 2px 14px; }
+.facts .kv { line-height: 34px; border-bottom: 1px solid rgb(255 255 255 / 0.05); }
+.facts .kv:last-child { border-bottom: 0; }
+.facts .k { display: inline-flex; align-items: center; gap: 8px; }
+.tx { color: var(--primary); font-weight: 500; margin-left: 6px; white-space: nowrap; }
+.foot-note { font-size: 12px; color: var(--muted); text-align: center; }
+
+.tabs-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.seg-lg { height: 36px; }
+.seg-lg a { height: 32px; padding: 0 16px; font-size: 13px; }
+.addr-box { display: flex; gap: 16px; align-items: center; padding: 14px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.addr-box svg { border-radius: 8px; flex: none; }
+.addr { font-size: 15px; line-height: 24px; word-spacing: 2px; }
+.nets { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+.nets .rt-stack .cn { width: 22px; height: 22px; font-size: 8px; box-shadow: 0 0 0 2px #0e0e0e; }
+.tok-warn { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--warning-strong); }
+</style>

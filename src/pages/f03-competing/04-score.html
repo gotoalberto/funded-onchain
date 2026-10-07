@@ -1,0 +1,162 @@
+<!--page {"nav":"score","header":"member"} -->
+<main class="sc">
+  <a class="back t-small muted" href="01-home-competing.html">{{icon:chevron-left:ico-sm}}Home</a>
+
+  <section class="panel sc-lead" aria-labelledby="sc-h">
+    <div class="sc-top">
+      <div class="sc-ring">
+        <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="ring-bg"/><circle cx="60" cy="60" r="52" class="ring-fg" stroke-dasharray="255.4 326.7" transform="rotate(-90 60 60)"/></svg>
+        <span class="sc-ring-in t-caption muted">of 1,000</span>
+      </div>
+      <div class="stack gap-2">
+        <h1 id="sc-h" class="row gap-4" style="align-items:baseline"><span class="t-display num">781.6</span><span class="t-sub num dim">+3.8 today</span></h1>
+        <p class="dim">Your Cycle 1 score. Percentile on the board times weight.</p>
+        <div class="row gap-3 mt-3">
+          <span class="pill">{{icon:timer:ico-sm}}Every minute</span>
+          <span class="pill">{{icon:flag:ico-sm}}Frozen Nov 18</span>
+          <span class="pill acct-own">Own account</span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="fx-list mt-6" aria-label="Score factors">
+      <li class="fx fx-room">
+        <span class="fx-name">{{icon:coins:ico-sm muted}}Net PnL<span class="info-i" tabindex="0" role="img" title="Own account PnL this cycle, after fees and funding. Profit claimed from a funded account counts as a deposit, not PnL." aria-label="Own account PnL this cycle, after fees and funding. Profit claimed from a funded account counts as a deposit, not PnL.">{{icon:info:ico-sm}}</span></span>
+        <span class="fx-val num up">+$412.80</span>
+        <span class="fx-bar" aria-hidden="true"><i style="width:61.9%"></i></span>
+        <span class="fx-pts num"><b>185.7</b> <span class="muted">/ 300</span></span>
+        <span class="fx-meta t-caption muted">30% weight, percentile 61.9<span class="room-chip">{{icon:arrow-up-right:ico-sm}}Most room, 114.3 pts</span></span>
+      </li>
+      <li class="fx">
+        <span class="fx-name">{{icon:percent:ico-sm muted}}Return on capital<span class="info-i" tabindex="0" role="img" title="Net PnL on your starting capital plus net deposits, time weighted." aria-label="Net PnL on your starting capital plus net deposits, time weighted.">{{icon:info:ico-sm}}</span></span>
+        <span class="fx-val num up">+32.1%</span>
+        <span class="fx-bar" aria-hidden="true"><i style="width:84.0%"></i></span>
+        <span class="fx-pts num"><b>210.1</b> <span class="muted">/ 250</span></span>
+        <span class="fx-meta t-caption muted">25% weight, percentile 84.0</span>
+      </li>
+      <li class="fx">
+        <span class="fx-name">{{icon:target:ico-sm muted}}Win rate<span class="info-i" tabindex="0" role="img" title="Counted trades closed in profit, out of all counted trades." aria-label="Counted trades closed in profit, out of all counted trades.">{{icon:info:ico-sm}}</span></span>
+        <span class="fx-val num ">58.2% <span class="muted">39 of 67</span></span>
+        <span class="fx-bar" aria-hidden="true"><i style="width:71.3%"></i></span>
+        <span class="fx-pts num"><b>106.9</b> <span class="muted">/ 150</span></span>
+        <span class="fx-meta t-caption muted">15% weight, percentile 71.3</span>
+      </li>
+      <li class="fx">
+        <span class="fx-name">{{icon:chart-no-axes-column:ico-sm muted}}Volume<span class="info-i" tabindex="0" role="img" title="Perps volume on allowed markets from onchain.cc or funded.onchain.cc. Every fill counts, whatever its size or hold time." aria-label="Perps volume on allowed markets from onchain.cc or funded.onchain.cc. Every fill counts, whatever its size or hold time.">{{icon:info:ico-sm}}</span></span>
+        <span class="fx-val num ">$48,620</span>
+        <span class="fx-bar" aria-hidden="true"><i style="width:88.2%"></i></span>
+        <span class="fx-pts num"><b>88.2</b> <span class="muted">/ 100</span></span>
+        <span class="fx-meta t-caption muted">10% weight, percentile 88.2</span>
+      </li>
+      <li class="fx">
+        <span class="fx-name">{{icon:list-ordered:ico-sm muted}}Trade count<span class="info-i" tabindex="0" role="img" title="Trades placed from onchain.cc or funded.onchain.cc on allowed markets that moved at least $50 notional and stayed open at least 60 seconds." aria-label="Trades placed from onchain.cc or funded.onchain.cc on allowed markets that moved at least $50 notional and stayed open at least 60 seconds.">{{icon:info:ico-sm}}</span></span>
+        <span class="fx-val num ">67 counted</span>
+        <span class="fx-bar" aria-hidden="true"><i style="width:94.8%"></i></span>
+        <span class="fx-pts num"><b>94.8</b> <span class="muted">/ 100</span></span>
+        <span class="fx-meta t-caption muted">10% weight, percentile 94.8</span>
+      </li>
+      <li class="fx">
+        <span class="fx-name">{{icon:wallet:ico-sm muted}}Balance<span class="info-i" tabindex="0" role="img" title="Own account balance, time weighted over the cycle." aria-label="Own account balance, time weighted over the cycle.">{{icon:info:ico-sm}}</span></span>
+        <span class="fx-val num ">$1,446.95 <span class="muted">time wtd.</span></span>
+        <span class="fx-bar" aria-hidden="true"><i style="width:95.9%"></i></span>
+        <span class="fx-pts num"><b>95.9</b> <span class="muted">/ 100</span></span>
+        <span class="fx-meta t-caption muted">10% weight, percentile 95.9</span>
+      </li>
+    </ul>
+    <p class="t-caption muted mt-4">Ties: higher net PnL, then smaller worst loss.</p>
+  </section>
+
+  <div class="mt-3">
+    <section class="panel sim" aria-labelledby="sim-h">
+      <div class="row-between">
+        <h2 id="sim-h" class="section-title">What would raise it</h2>
+        <a class="btn btn-ghost btn-xs" href="#" title="Back to your current values">{{icon:rotate-ccw:ico-sm}}Reset</a>
+      </div>
+      <p class="t-small muted mt-2">Assumes everyone else stands still.</p>
+
+      <div class="sim-body mt-5">
+        <div class="stack gap-6">
+          <div class="sim-in">
+            <div class="row-between"><span class="w6 t-small">Extra net PnL</span><div class="input input-sm sim-num"><input value="+$200" aria-label="Extra net profit"></div></div>
+            <div class="slider" role="slider" tabindex="0" aria-label="Extra net PnL" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="200"><span class="fill" style="width:20%"></span><span class="knob" style="left:20%"></span></div>
+            <div class="meter-foot"><span>$0</span><span>+9.0 pts net PnL, +11.0 pts return</span><span>$1,000</span></div>
+          </div>
+          <div class="sim-in">
+            <div class="row-between"><span class="w6 t-small">Win rate</span><div class="input input-sm sim-num"><input value="62.0" aria-label="Win rate"><span class="unit">%</span></div></div>
+            <div class="slider" role="slider" tabindex="0" aria-label="Win rate" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62"><span class="fill" style="width:62%"></span><span class="knob" style="left:62%"></span><span class="tick" style="left:58.2%"></span></div>
+            <div class="meter-foot"><span>Now 58.2%</span><span>+8.1 pts win rate</span><span>100%</span></div>
+          </div>
+          <div class="sim-in">
+            <div class="row-between"><span class="w6 t-small">Trading days</span><div class="input input-sm sim-num"><input value="15" aria-label="Trading days"><span class="unit">days</span></div></div>
+            <div class="slider" role="slider" tabindex="0" aria-label="Trading days" aria-valuemin="0" aria-valuemax="22" aria-valuenow="15"><span class="fill" style="width:68.2%"></span><span class="knob" style="left:68.2%"></span><span class="tick" style="left:50%"></span></div>
+            <div class="meter-foot"><span>Now 11</span><span>15 unlocks the seat request, no points</span><span>Max 22</span></div>
+          </div>
+        </div>
+
+        <div class="sim-out">
+          <span class="label">Projected score</span>
+          <div class="row gap-3" style="align-items:baseline"><span class="t-figure num">809.7</span><span class="dim w6">+28.1</span></div>
+          <div class="divider mt-4"></div>
+          <div class="kv mt-3"><span class="k">Projected rank</span><span class="v">#11, seat #10</span></div>
+          <div class="kv"><span class="k">Projected account</span><span class="v"><span class="band band-25">$25K</span></span></div>
+          <div class="kv"><span class="k">To the $50K zone</span><span class="v">28.7 points</span></div>
+          <div class="kv"><span class="k">Requirements</span><span class="v">4 of 4 <span class="muted">(now 3)</span></span></div>
+          <p class="t-caption muted mt-2">A projection, not a seat.</p>
+          <a class="btn btn-primary btn-block mt-5" href="05-trade.html">{{icon:candlestick-chart:ico-sm}}Trade</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+<style>
+.sc { max-width: 1120px; margin: 0 auto; padding: 16px 16px 120px; }
+.back { display: inline-flex; align-items: center; gap: 4px; margin-bottom: 10px; }
+.back:hover { color: #fff; }
+.sc-lead { padding: 20px; }
+.sc-lead-top { display: flex; justify-content: space-between; gap: 24px; }
+.sc-lead-top p { max-width: 72ch; }
+.sc-today { align-items: flex-end; text-align: right; }
+.stackbar { display: flex; gap: 2px; height: 10px; }
+.stackbar i { display: block; border-radius: 2px; }
+.f1 { background: #e8e8e8; } .f2 { background: #c2c2c2; } .f3 { background: #9e9e9e; } .f4 { background: #7c7c7c; } .f5 { background: #5f5f5f; } .f6 { background: #474747; }
+.stackbar .rest { background: rgb(255 255 255 / 0.07); }
+.sw { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.bd td { padding-top: 12px; padding-bottom: 12px; }
+.bd th:first-child, .bd td:first-child { padding-left: 16px; }
+.bd th:last-child, .bd td:last-child { padding-right: 16px; }
+.pbar { display: inline-block; vertical-align: middle; width: 180px; height: 4px; border-radius: 4px; background: rgb(255 255 255 / 0.07); overflow: hidden; }
+.pbar i { display: block; height: 100%; background: #c7c7c7; border-radius: inherit; }
+.pct { display: inline-block; width: 44px; text-align: right; font-weight: 500; }
+.bd tr.total td { border-top: 1px solid var(--glass-sep); font-weight: 600; }
+.sim { padding: 20px; }
+.sim-body { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: start; }
+.sim-in { display: flex; flex-direction: column; gap: 10px; }
+.sim-num { width: 112px; }
+.sim-num input { text-align: right; }
+.sim .slider .tick { background: #9a9a9a; width: 2px; height: 16px; border-radius: 1px; }
+.info-i { display: inline-grid; place-items: center; margin-left: 6px; color: var(--muted); cursor: help; }
+.bd td:first-child .row { gap: 8px; }
+.sim-out { padding: 16px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); display: flex; flex-direction: column; }
+.bd th:first-child, .bd td:first-child { width: 34%; }
+.bd th:nth-child(2), .bd td:nth-child(2) { width: 24%; }
+.info-i:focus-visible:hover, .info-i:hover { color: #fff; }
+.slider:focus-visible { border-radius: 9px; }
+/* visual pass */
+.sc-top { display: flex; align-items: center; gap: 24px; }
+.sc-ring { position: relative; width: 120px; height: 120px; flex: none; }
+.sc-ring-in { position: absolute; inset: 0; display: grid; place-items: center; }
+.ring-bg { fill: none; stroke: rgb(255 255 255 / 0.08); stroke-width: 10; }
+.ring-fg { fill: none; stroke: #cfcfd4; stroke-width: 10; stroke-linecap: round; }
+.fx-list { display: flex; flex-direction: column; border-top: 1px solid var(--glass-sep); }
+.fx { display: grid; grid-template-columns: 220px 170px minmax(0, 1fr) 110px; grid-template-rows: auto auto; column-gap: 20px; row-gap: 4px; align-items: center; padding: 14px 4px; border-bottom: 1px solid rgb(255 255 255 / 0.05); }
+.fx-name { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; }
+.fx-val { text-align: right; font-size: 14px; }
+.fx-bar { height: 8px; border-radius: 8px; background: rgb(255 255 255 / 0.07); overflow: hidden; }
+.fx-bar i { display: block; height: 100%; border-radius: inherit; background: #b9b9bf; transform-origin: left; animation: meter-in 700ms var(--ease-out) both; }
+.fx-pts { text-align: right; font-size: 14px; }
+.fx-meta { grid-column: 3 / 4; display: flex; align-items: center; gap: 10px; }
+.room-chip { display: inline-flex; align-items: center; gap: 4px; color: var(--text-2); font-weight: 600; }
+.fx-room .fx-bar i { background: #e8e8e8; }
+.acct-own { color: var(--text-3); }
+</style>

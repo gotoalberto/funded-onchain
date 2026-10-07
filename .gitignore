@@ -1,0 +1,4 @@
+node_modules/
+dist/
+.shots/
+funded-onchain-mockups.html

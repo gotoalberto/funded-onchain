@@ -1,0 +1,132 @@
+<!--page {"nav":"home","header":"member","season":"<span class=\"k\">Cycle 2 ends in</span> 15d 08h","seasonPct":47,"acct":{"tag":"own","label":"Own","value":"$2,022.60"}} -->
+<main class="home">
+  <div class="home-grid">
+    <div class="stack gap-3">
+
+      <section class="panel lead" aria-labelledby="cls-h">
+        <h1 id="cls-h" class="t-heading row gap-3"><span class="acct-tag closed">Funded, closed</span>Your $25K funded account was liquidated</h1>
+        <p class="t-caption muted mt-2">Wed, Dec 2, 15:20 UTC</p>
+
+        <figure class="liq-chart" aria-label="Funded equity from Nov 28 to Dec 2: highest $26,140.00 on Nov 30, liquidation level trailing to $23,640.00, closed at 15:20 UTC on Dec 2">
+          <div class="plot">
+            <svg viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="liq-area" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#cfcfd4" stop-opacity="0.14"/>
+                  <stop offset="1" stop-color="#cfcfd4" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" x2="1000" y1="71.4" y2="71.4" class="base"/>
+              <path d="M0.0 71.4 L80.0 62.9 L150.0 67.1 L220.0 51.4 L300.0 42.4 L370.0 45.7 L430.0 17.1 L500.0 29.0 L560.0 41.9 L640.0 37.6 L720.0 62.9 L800.0 82.9 L860.0 76.7 L920.0 109.0 L970.0 124.8 L1000.0 138.9 L1000 200 L0 200 Z" fill="url(#liq-area)"/>
+              <path d="M0 190.5 L80.0 190.5 L80.0 181.9 L220.0 181.9 L220.0 170.5 L300.0 170.5 L300.0 161.4 L430.0 161.4 L430.0 136.2 L1000 136.2" class="liq"/>
+              <path d="M0.0 71.4 L80.0 62.9 L150.0 67.1 L220.0 51.4 L300.0 42.4 L370.0 45.7 L430.0 17.1 L500.0 29.0 L560.0 41.9 L640.0 37.6 L720.0 62.9 L800.0 82.9 L860.0 76.7 L920.0 109.0" class="eq"/>
+              <path d="M920.0 109.0 L970.0 124.8 L1000.0 138.9" class="eq eq-down"/>
+            </svg>
+            <span class="lbl lbl-start">$25,000.00 after the Nov 28 claim</span>
+            <span class="dot dot-peak" aria-hidden="true"></span>
+            <span class="lbl lbl-peak">Highest equity <b>$26,140.00</b></span>
+            <span class="lbl lbl-liq">Liquidation level <b>$23,640.00</b></span>
+            <span class="dot dot-hit" aria-hidden="true"></span>
+          </div>
+          <div class="axis" aria-hidden="true"><span>Nov 28</span><span>Nov 30</span><span>Dec 2</span></div>
+          <figcaption class="t-caption muted">The level trails $2,500 (10% of the $25,000 size) below your highest equity.</figcaption>
+        </figure>
+
+        <div class="tiles">
+          <div class="tile">
+            <span class="tile-ico">{{icon:landmark:ico-sm}}</span>
+            <div class="stat">
+              <span class="k row gap-2"><span class="acct-tag funded">Funded</span>Returned to Bitso</span>
+              <span class="v-lg">$23,583.00</span>
+              <span class="t-caption muted">Real fill prices, $57.00 below the level</span>
+            </div>
+            <span class="owe">{{icon:shield-check:ico-sm}}You owe nothing</span>
+          </div>
+          <div class="tile tile-keep">
+            <span class="tile-ico">{{icon:wallet:ico-sm}}</span>
+            <div class="stat">
+              <span class="k row gap-2"><span class="acct-tag own">Own</span>Yours to keep</span>
+              <span class="t-figure-sm">$738.40</span>
+              <span class="t-caption muted">80% of your $923.00 claim, paid Nov 28</span>
+            </div>
+            <a class="link t-small row gap-2" href="{{root}}f03-competing/08-payouts.html">On Payouts{{icon:arrow-right:ico-sm}}</a>
+          </div>
+        </div>
+
+        <div class="next-row">
+          <span class="tile-ico">{{icon:calendar-clock:ico-sm}}</span>
+          <div class="next-req">
+            <h2 class="next-h">Request a new seat at the Cycle 2 close, Dec 18</h2>
+            <div class="meter mt-3">
+              <div class="meter-head"><span class="meter-name">Trading days, own account</span><span class="meter-val"><b>6</b> of 15</span></div>
+              <div class="segs" aria-label="6 of 15 trading days"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <p class="t-caption muted mt-2">Also positive net PnL and the Drawdown requirement kept.</p>
+          </div>
+          <a class="btn btn-primary" href="{{root}}f08-after-account/01-home-after-loss.html">See Cycle 2 progress</a>
+        </div>
+      </section>
+
+      <section class="panel panel-flush" aria-labelledby="fills-h">
+        <div class="panel-head"><h2 id="fills-h" class="panel-title row gap-2">{{icon:circle-x:ico-sm}}Positions closed automatically, 15:20 UTC</h2></div>
+        <table class="table">
+          <thead><tr><th>Market</th><th>Side</th><th class="r">Size</th><th class="r">Entry</th><th class="r">Mark at close</th><th class="r">Real fill</th><th class="r">Slippage</th><th class="r">PnL</th></tr></thead>
+          <tbody>
+            <tr><td>XAU-USD</td><td>Long</td><td class="r">17.00 oz</td><td class="r">2,640.40</td><td class="r">2,598.20</td><td class="r">2,596.10</td><td class="r down">-$35.70</td><td class="r down">-$753.10</td></tr>
+            <tr><td>SOL-USD</td><td>Long</td><td class="r">90.0 SOL</td><td class="r">233.40</td><td class="r">228.40</td><td class="r">228.25</td><td class="r down">-$13.50</td><td class="r down">-$463.50</td></tr>
+            <tr><td>BTC-USD</td><td>Short</td><td class="r">0.150 BTC</td><td class="r">96,756.00</td><td class="r">98,040.00</td><td class="r">98,092.00</td><td class="r down">-$7.80</td><td class="r down">-$200.40</td></tr>
+            <tr class="total"><td colspan="6">Total</td><td class="r down">-$57.00</td><td class="r down">-$1,417.00</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside class="mock-note" aria-label="Mockup note">
+        <span class="mock-tag">Mockup note</span>
+        <span class="t-small muted">A separate example from the <a class="link" href="02-incident.html">platform incident</a>, not the same account.</span>
+      </aside>
+    </div>
+
+  </div>
+</main>
+<style>
+.home { max-width: 1280px; margin: 0 auto; padding: 16px 16px 96px; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; align-items: start; max-width: 960px; margin: 0 auto; }
+.lead { padding: 20px; }
+
+/* leading visual: funded equity with the trailing liquidation level */
+.liq-chart { margin: 20px 0 0; }
+.liq-chart .plot { position: relative; height: 210px; }
+.liq-chart svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.liq-chart .base { stroke: rgb(255 255 255 / 0.12); stroke-width: 1; stroke-dasharray: 2 4; vector-effect: non-scaling-stroke; }
+.liq-chart .eq { fill: none; stroke: #cfcfd4; stroke-width: 2; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.liq-chart .eq-down { stroke: var(--sell); }
+.liq-chart .liq { fill: none; stroke: var(--sell); stroke-width: 1.5; stroke-dasharray: 5 4; vector-effect: non-scaling-stroke; opacity: 0.85; }
+.liq-chart .lbl { position: absolute; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; line-height: 16px; color: var(--text-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.liq-chart .lbl b { color: var(--text); font-weight: 600; }
+.liq-chart .lbl-start { left: 0; top: calc(35.7% + 8px); }
+.liq-chart .lbl-peak { left: 43%; top: calc(8.55% - 26px); transform: translateX(-50%); }
+.liq-chart .lbl-liq { right: 0; top: calc(68.1% + 8px); }
+.liq-chart .lbl-liq b { color: #ff6b6e; }
+.liq-chart .dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); }
+.liq-chart .dot-peak { left: 43%; top: 8.55%; background: #fff; box-shadow: 0 0 0 3px rgb(255 255 255 / 0.12); }
+.liq-chart .dot-hit { left: 100%; top: 69.45%; background: var(--sell); box-shadow: 0 0 0 4px var(--sell-20); }
+.liq-chart .axis { display: flex; justify-content: space-between; margin-top: 8px; font-size: 11px; color: var(--muted); }
+.liq-chart figcaption { margin-top: 10px; }
+
+/* two outcome tiles: what went back, what you keep */
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 20px; }
+.tile { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: end; gap: 12px; padding: 16px; border-radius: var(--r-lg); background: rgb(255 255 255 / 0.025); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.tile .stat { gap: 4px; }
+.tile .stat .k { margin-bottom: 2px; }
+.tile .t-caption { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile-ico { align-self: start; width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-2); }
+.tile-keep { box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1); background: rgb(255 255 255 / 0.04); }
+.tile .link { white-space: nowrap; }
+.owe { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; white-space: nowrap; background: rgb(255 255 255 / 0.06); color: var(--text-2); }
+
+.next-row { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; align-items: center; gap: 12px 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--glass-sep); }
+.next-row .tile-ico { align-self: start; }
+.next-req { max-width: 560px; }
+.next-h { font-size: 15px; line-height: 21px; font-weight: 600; }
+.table tr.total td { font-weight: 600; border-top: 1px solid var(--glass-sep); }
+</style>

@@ -1,0 +1,113 @@
+<!--page {"nav":"home","header":"member","avatar":"0","season":"<span class=\"k\">Nov 6. Cycle 1 ends in</span> 11d 14h","seasonPct":60,"acct":{"tag":"own","label":"Own","value":"$0.00"},"links":{"payoutsall":"{{root}}f03-competing/08-payouts.html","deposit":"02-deposit.html","trade":"{{root}}f03-competing/05-trade.html","leaderboard":"{{root}}f03-competing/02-leaderboard.html","stats":"{{root}}f03-competing/06-stats.html"}} -->
+<main class="home">
+  <div class="home-grid">
+    <section class="panel panel-flush" aria-labelledby="lead-h">
+      <div class="lead">
+        <h1 id="lead-h" class="t-title">Your first seat request: Dec 18</h1>
+        <p class="cap">Seats need 15 trading days in one cycle. Cycle 2 counts from zero.</p>
+      </div>
+      <div class="warm">
+        <h2 class="section-title aside-h">{{icon:flag:ico-sm}}Warm up on the Cycle 1 board</h2>
+        <span class="togo">No seat possible, until Nov 18, 00:00 UTC</span>
+      </div>
+      <div class="mins-grid tight">
+        <div class="min-tile" role="group" aria-label="Balance: $0 of $100">
+          <div class="ring" style="--p:0" aria-hidden="true"><span class="ring-v"><b>$0</b><span>of $100</span></span></div>
+          <span class="min-name">{{icon:wallet:ico-sm}}Balance</span>
+          <span class="togo">$100 to go</span>
+        </div>
+        <div class="min-tile" role="group" aria-label="Closed trades: 0 of 10">
+          <div class="ring" style="--p:0" aria-hidden="true"><span class="ring-v"><b>0</b><span>of 10</span></span></div>
+          <span class="min-name">{{icon:arrow-left-right:ico-sm}}Closed trades</span>
+          <span class="togo">10 to go</span>
+        </div>
+        <div class="min-tile" role="group" aria-label="Perps volume: $0 of $1,000">
+          <div class="ring" style="--p:0" aria-hidden="true"><span class="ring-v"><b>$0</b><span>of $1,000</span></span></div>
+          <span class="min-name">{{icon:chart-column:ico-sm}}Perps volume</span>
+          <span class="togo">$1,000 to go</span>
+        </div>
+      </div>
+      <div class="acts">
+        <a class="btn btn-primary btn-lg" href="02-deposit.html">{{icon:plus:ico-sm}}Deposit</a>
+        <div class="span2"><span class="btn btn-glass btn-lg" role="link" aria-disabled="true" aria-describedby="trade-why">{{icon:candlestick-chart:ico-sm}}Trade</span><span id="trade-why" class="t-caption why-line">{{icon:lock:ico-sm}} Deposit first</span></div>
+      </div>
+      <p class="mins-foot">{{icon:info:ico-sm}}<span>A trade counts at $50 or more, open 60 s or more, on <a class="link" href="{{root}}f01-onboarding/03-rules.html#account">allowed markets</a>.</span></p>
+    </section>
+
+    <aside class="panel" aria-labelledby="path-h">
+      <h2 id="path-h" class="section-title aside-h">{{icon:calendar-days:ico-sm}}Days to reach 15</h2>
+      <div class="cyc mt-4" role="img" aria-label="Cycle 1 has 11 days left, short of 15. Cycle 2 has 29 days.">
+        <div class="cyc-row">
+          <div class="row-between"><span class="cyc-k">Cycle 1</span><span class="cyc-v muted">11 days left, short</span></div>
+          <div class="cyc-track"><i class="short" style="width:37.9%"></i><span class="need" style="left:51.7%"></span></div>
+        </div>
+        <div class="cyc-row">
+          <div class="row-between"><span class="cyc-k">Cycle 2</span><span class="cyc-v">29 days</span></div>
+          <div class="cyc-track"><i style="width:100%"></i><span class="need" style="left:51.7%"></span></div>
+        </div>
+        <div class="cyc-scale"><span style="left:51.7%">15 needed</span></div>
+      </div>
+      <ol class="timeline mt-6">
+        <li><span class="tl-dot"></span><div><b class="w6">Cycle 2 starts</b><span class="muted t-caption">Nov 19, 00:00 UTC</span></div></li>
+        <li><span class="tl-dot"></span><div><b class="w6">Latest first trading day</b><span class="muted t-caption">Dec 3</span></div></li>
+        <li class="key"><span class="tl-dot"></span><div><b class="w6">24 hours to request a seat</b><span class="t-caption key-date">Dec 18, 00:00 UTC</span></div></li>
+        <li><span class="tl-dot"></span><div><b class="w6">Seats assigned, accounts live</b><span class="muted t-caption">Dec 19, 00:00 UTC</span></div></li>
+      </ol>
+    </aside>
+  </div>
+  <aside class="mock-note mt-6" aria-label="Mockup note">
+    <span class="mock-tag">Mockup note</span>
+    <span class="t-small muted">A different trader from the rest of the flow: new to onchain.cc, signed in Nov 6, 10:00 UTC. Compare <a class="link" href="01-home-new.html">a trader with onchain.cc history</a>.</span>
+  </aside>
+</main>
+<style>
+.home { max-width: 1200px; margin: 0 auto; padding: 16px 16px 96px; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 8px; align-items: start; }
+.lead { padding: 28px 28px 0; }
+.lead .cap { margin-top: 6px; color: var(--text-3); }
+.inline-block { display: inline-block; }
+.home > .mock-note { max-width: 792px; }
+
+.mins-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 24px 28px 0; }
+.min-tile { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px 12px 18px; border-radius: var(--r-lg); background: rgb(255 255 255 / 0.025); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.ring { --p: 0; --c: #cfcfd4; position: relative; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; }
+.ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(var(--c) calc(var(--p) * 1%), rgb(255 255 255 / 0.07) 0); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 6px)); mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 6px)); }
+.ring.ok { --c: var(--buy); }
+.ring-v { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.ring-v b { font-size: 24px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: #fff; }
+.ring-v span { font-size: 12px; line-height: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ring.ok .ring-v .ico { width: 30px; height: 30px; color: var(--buy-light); stroke-width: 2.25; }
+.min-name { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.min-name .ico { color: var(--muted); }
+.togo { height: 22px; padding: 0 8px; display: inline-flex; align-items: center; gap: 5px; border-radius: var(--r-full); font-size: 11px; font-weight: 600; background: rgb(255 255 255 / 0.06); color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.togo.ok { background: var(--buy-20); color: var(--buy-light); }
+.acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 8px 28px 0; }
+.acts .btn { width: 100%; }
+.acts .span2 { grid-column: span 2; display: flex; align-items: center; gap: 12px; }
+.acts .span2 .btn { flex: 1; }
+.acts .span3 { grid-column: 1 / -1; }
+.why-line { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); white-space: nowrap; }
+.mins-foot { display: flex; align-items: center; gap: 8px; padding: 16px 28px 22px; font-size: 12px; color: var(--muted); }
+.mins-foot .ico { color: var(--muted); }
+
+.days-fig { display: flex; align-items: baseline; gap: 6px; margin-top: 14px; }
+.days-fig b { font-size: 40px; line-height: 44px; font-weight: 600; letter-spacing: -0.03em; color: #fff; font-variant-numeric: tabular-nums; }
+.days-fig span { color: var(--muted); font-size: 15px; }
+.aside-h { display: flex; align-items: center; gap: 8px; }
+.aside-h .ico { color: var(--muted); }
+
+.warm { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 24px 28px 0; padding-top: 20px; border-top: 1px solid var(--glass-sep); }
+.mins-grid.tight { padding-top: 14px; }
+.cyc { display: flex; flex-direction: column; gap: 14px; }
+.cyc-row { display: flex; flex-direction: column; gap: 8px; }
+.cyc-k { font-size: 13px; font-weight: 600; }
+.cyc-v { font-size: 13px; font-variant-numeric: tabular-nums; color: var(--text-2); }
+.cyc-track { position: relative; height: 10px; border-radius: 4px; background: rgb(255 255 255 / 0.06); }
+.cyc-track i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: inherit; background: #cfcfd4; }
+.cyc-track i.short { background: rgb(255 255 255 / 0.22); }
+.cyc-track .need { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; border-radius: 2px; background: #fff; }
+.cyc-scale { position: relative; height: 14px; margin-top: -6px; }
+.cyc-scale span { position: absolute; transform: translateX(-50%); font-size: 11px; line-height: 14px; color: var(--muted); white-space: nowrap; }
+.timeline .key .tl-dot { background: #fff; box-shadow: none; }
+.key-date { color: var(--text); font-weight: 600; }
+</style>

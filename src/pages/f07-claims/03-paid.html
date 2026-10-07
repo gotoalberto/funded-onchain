@@ -1,0 +1,70 @@
+<!--page {"nav":"payouts","header":"funded","season":"<span class=\"k\">Nov 28</span> Cycle 2 ends in 19d 06h","seasonPct":34,"acct":{"tag":"funded","label":"Funded","value":"$25,000.00"}} -->
+<main class="cl paid grid-bg">
+  <section class="glow-card card" aria-labelledby="lead-h">
+    <span class="seal" aria-hidden="true">{{icon:badge-check:ico-lg}}</span>
+    <h1 id="lead-h" class="stack gap-3 head">
+      <span class="t-display num">$738.40</span>
+      <span class="t-heading"><span class="brand-em">Claimed</span> to your own account</span>
+    </h1>
+    <p class="meta t-small">
+      <span class="ok">{{icon:circle-check:ico-sm}}Confirmed</span>
+      <span class="dim">Nov 28, 2026, 17:32 UTC</span>
+      <a class="link mono" href="#">0x4e1b…a7d2{{icon:external-link:ico-sm}}</a>
+    </p>
+    <p class="t-caption dim">80% of $923.00 profit. Bitso's 20%: $184.60.</p>
+
+    <div class="tiles mt-6">
+      <div class="tile">
+        <span class="tile-k"><span class="acct-tag own">Own</span>Balance</span>
+        <span class="tile-v">$2,022.60</span>
+        <span class="tile-s up">+$738.40 from $1,284.20</span>
+      </div>
+      <div class="tile">
+        <span class="tile-k"><span class="acct-tag funded">Funded</span>Equity</span>
+        <span class="tile-v">$25,000.00</span>
+        <span class="tile-s">{{icon:rotate-ccw:ico-sm}}Reset from $25,923.00</span>
+      </div>
+      <div class="tile">
+        <span class="tile-k"><span class="acct-tag funded">Funded</span>Liquidation</span>
+        <span class="tile-v">$22,500.00</span>
+        <span class="tile-s">{{icon:rotate-ccw:ico-sm}}Reset from $23,423.00</span>
+      </div>
+    </div>
+
+    <div class="actions mt-6">
+      <a class="btn btn-shiny" href="{{root}}f05-funded-trading/02-trade-funded.html">Trade the funded account{{icon:arrow-right:ico-sm}}</a>
+      <a class="btn btn-glass btn-lg" href="#" title="Share card with your referral link">{{icon:send:ico-sm}}Share</a>
+    </div>
+  </section>
+
+  <ul class="notes t-small mt-5">
+    <li>{{icon:trophy:ico-sm}}Counts as a cycle deposit: no PnL, no drawdown effect</li>
+    <li>{{icon:globe:ico-sm}}<a class="link" href="{{root}}f03-competing/08-payouts.html">Listed on Payouts</a></li>
+    <li>{{icon:history:ico-sm}}<a class="link" href="05-nothing-to-claim.html">Claim history</a></li>
+  </ul>
+</main>
+<style>
+.cl { max-width: 920px; margin: 0 auto; padding: 16px 16px 96px; }
+.paid { padding-top: 40px; }
+.card { padding: 36px 40px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
+.seal { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: var(--buy-light); background: var(--buy-20); box-shadow: 0 0 0 6px rgb(0 165 102 / 0.08); }
+.head { align-items: center; }
+.meta { display: flex; align-items: center; gap: 14px; }
+.meta .ok { display: inline-flex; align-items: center; gap: 6px; color: var(--text-2); }
+.meta .ok .ico { color: var(--buy-light); }
+.meta .link { display: inline-flex; align-items: center; gap: 4px; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; }
+.tile { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 16px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.5); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); text-align: left; min-width: 0; }
+.tile-k { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-3); }
+.tile-v { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.tile-s { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tile-s.up { color: var(--buy-light); }
+.tile-s .ico { width: 12px; height: 12px; color: var(--muted); }
+
+.actions { display: flex; align-items: center; gap: 10px; }
+.btn-shiny { gap: 8px; }
+.notes { display: flex; justify-content: center; gap: 24px; color: var(--text-3); }
+.notes li { display: inline-flex; align-items: center; gap: 6px; }
+.notes .ico { color: var(--muted); }
+</style>

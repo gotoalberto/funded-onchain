@@ -1,0 +1,93 @@
+<!--page {"nav":"payouts","header":"funded","season":"<span class=\"k\">Nov 28</span> Cycle 2 ends in 19d 06h","seasonPct":34,"unread":true,"acct":{"tag":"funded","label":"Funded","value":"$25,923.00"}} -->
+<main class="cl">
+  <section class="panel lead" aria-labelledby="lead-h">
+    <div class="lead-top">
+      <div class="stack gap-3">
+        <h1 id="lead-h" class="fig-line">
+          <span class="t-display num">$738.40</span>
+          <span class="t-sub w5 dim">yours to claim</span>
+        </h1>
+        <p class="meta t-small"><span class="acct-tag funded">Funded</span><span class="dim">$25K account</span><span class="state ok">{{icon:circle-check:ico-sm}}All positions closed</span></p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="02-claim.html">{{icon:banknote-arrow-down:ico-sm}}Claim $738.40</a>
+    </div>
+
+    <div class="flow mt-6" role="img" aria-label="Profit of $923.00 above $25,000 splits: $738.40 to your own account, $184.60 to Bitso">
+      <div class="node src">
+        <div class="node-head"><span class="acct-tag funded">Funded</span><span class="dim t-small">Profit above $25,000</span></div>
+        <span class="t-figure-sm up">+$923.00</span>
+        <div class="chg">
+          <span class="k">{{icon:wallet:ico-sm}}Equity</span><span class="v"><s>$25,923.00</s>{{icon:arrow-right:ico-sm}}<b>$25,000.00</b></span>
+          <span class="k">{{icon:shield:ico-sm}}Liquidation</span><span class="v"><s>$23,423.00</s>{{icon:arrow-right:ico-sm}}<b>$22,500.00</b></span>
+        </div>
+      </div>
+
+      <div class="wires" aria-hidden="true">
+        <svg viewBox="0 0 100 200" preserveAspectRatio="none"><path class="w-own" d="M0 100 C 50 100, 50 68, 100 68" vector-effect="non-scaling-stroke"/><path class="w-bitso" d="M0 100 C 50 100, 50 170, 100 170" vector-effect="non-scaling-stroke"/></svg>
+        <span class="pct p-own">80%</span>
+        <span class="pct p-bitso">20%</span>
+      </div>
+
+      <div class="dests">
+        <div class="node dst own">
+          <div class="node-head"><span class="acct-tag own">Own</span><span class="mono dim t-caption">0x7a3F…c91E</span></div>
+          <span class="t-figure-sm">$738.40 <span class="unit">USDC</span></span>
+          <span class="t-caption dim bal">Balance <s>$1,284.20</s>{{icon:arrow-right:ico-sm}}<b>$2,022.60</b></span>
+        </div>
+        <div class="node dst bitso">
+          <div class="node-head"><span class="bitso-ico">{{icon:landmark:ico-sm}}</span><span class="dim t-small">Bitso</span></div>
+          <span class="t-sub num bitso-v">$184.60</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="t-caption muted foot mt-5">{{icon:rotate-ccw:ico-sm}}Then liquidation trails $2,500 (10% of the $25,000 size) below your highest equity, locking at $25,000.</p>
+  </section>
+
+  <p class="below t-small mt-3">
+    <span class="dim">{{icon:history:ico-sm}}No claims on this account yet</span>
+    <a class="link" href="{{root}}f03-competing/08-payouts.html">Everyone's payouts{{icon:arrow-right:ico-sm}}</a>
+  </p>
+</main>
+<style>
+.cl { max-width: 920px; margin: 0 auto; padding: 16px 16px 96px; }
+.lead { padding: 24px; }
+.lead-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.fig-line { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.meta { display: flex; align-items: center; gap: 10px; }
+.state { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); }
+.state.ok .ico { color: var(--buy-light); }
+
+.flow { display: grid; grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr); align-items: stretch; }
+.node { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); min-width: 0; }
+.node-head { display: flex; align-items: center; gap: 8px; }
+.node .unit { font-size: 13px; font-weight: 500; color: var(--text-3); letter-spacing: 0; }
+.src { justify-content: center; }
+.chg { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--glass-sep); font-size: 13px; }
+.chg .k { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); }
+.chg .k .ico { color: var(--muted); }
+.chg .v { display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cl s { text-decoration: none; color: var(--text-3); }
+.chg .v .ico, .bal .ico { color: var(--muted); width: 12px; height: 12px; }
+.chg b, .bal b { font-weight: 600; color: var(--text); }
+
+.wires { position: relative; }
+.wires svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.wires path { fill: none; }
+.w-own { stroke: rgb(255 255 255 / 0.55); stroke-width: 2; }
+.w-bitso { stroke: rgb(255 255 255 / 0.18); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.pct { position: absolute; left: 50%; transform: translate(-50%, -50%); height: 22px; padding: 0 8px; display: inline-flex; align-items: center; border-radius: var(--r-full); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; background: #141414; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12); }
+.p-own { top: 42%; color: var(--text); }
+.p-bitso { top: 68%; color: var(--text-3); }
+
+.dests { display: grid; grid-template-rows: 1fr auto; gap: 8px; }
+.dst.own { box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14); }
+.bal { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.dst.bitso { flex-direction: row; align-items: center; justify-content: space-between; padding: 12px 16px; background: transparent; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.bitso-ico { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--muted); }
+
+.bitso-v { color: var(--text-3); }
+.foot { display: flex; align-items: center; gap: 8px; }
+.below { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 0 8px; }
+.below span, .below a { display: inline-flex; align-items: center; gap: 6px; }
+</style>

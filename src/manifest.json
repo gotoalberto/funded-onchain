@@ -1,0 +1,365 @@
+{
+  "product": "funded.onchain.cc",
+  "note": "Static navigable mockups. All figures are demo data.",
+  "flows": [
+    {
+      "id": "f01-onboarding",
+      "name": "Onboarding",
+      "summary": "A visitor lands from X, a creator or a referral link, understands the offer and signs in. There is no application: trading is the evaluation.",
+      "screens": [
+        {
+          "id": "01-landing",
+          "title": "Landing",
+          "answers": "What is this and why should I care?"
+        },
+        {
+          "id": "02-leaderboard",
+          "title": "Public leaderboard",
+          "answers": "Who is winning seats right now?"
+        },
+        {
+          "id": "05-payouts",
+          "title": "Public payouts",
+          "answers": "Does this actually pay? Who got paid, how much and when?"
+        },
+        {
+          "id": "03-rules",
+          "title": "Rules",
+          "answers": "What exactly do I have to do, and what can I lose?"
+        },
+        {
+          "id": "04-sign-in",
+          "title": "Sign in",
+          "answers": "How do I get in? Same account as onchain.cc."
+        }
+      ],
+      "why": {
+        "what": "A visitor arrives from X, a creator or a referral link, understands the offer, sees the live leaderboard and the rules, and signs in with the same account they use on onchain.cc.",
+        "why": "It is the first contact and has to convince a professional trader in seconds: Bitso's real money, 80% of the profit, no challenge fees and clear rules."
+      }
+    },
+    {
+      "id": "f02-not-qualified",
+      "name": "Not qualified yet",
+      "summary": "Phase one. A signed-in trader meets three minimums (10 closed trades, $1,000 perps volume, $100 balance) and appears on the leaderboard. Past onchain.cc activity counts.",
+      "screens": [
+        {
+          "id": "01-home-new",
+          "title": "Home, nothing met yet",
+          "answers": "What do I need to do to get on the board?"
+        },
+        {
+          "id": "02-deposit",
+          "title": "Deposit",
+          "answers": "How do I fund my own trading account?"
+        },
+        {
+          "id": "03-home-progress",
+          "title": "Home, in progress",
+          "answers": "How close am I?"
+        },
+        {
+          "id": "04-home-on-board",
+          "title": "Home, on the leaderboard",
+          "answers": "I made it. Where do I stand?"
+        },
+        {
+          "id": "05-alias",
+          "title": "Choose an alias",
+          "answers": "How will others see me on the board?"
+        },
+        {
+          "id": "06-home-no-history",
+          "title": "Home, new to onchain",
+          "answers": "I have never traded on onchain.cc. When can I realistically request a seat?"
+        }
+      ],
+      "why": {
+        "what": "The trader has signed in but does not meet the minimums to appear on the leaderboard yet: they see what is missing, deposit into their own account and choose an alias.",
+        "why": "Many arrive with no history. Without a short, concrete path to the leaderboard they leave before trading."
+      }
+    },
+    {
+      "id": "f03-competing",
+      "name": "Competing",
+      "summary": "The trader is on the leaderboard during a dated cycle. Score, board rank and seat number, the seat map with its cut line, and the requirements needed to request a seat.",
+      "screens": [
+        {
+          "id": "01-home-competing",
+          "title": "Home, competing",
+          "answers": "Am I inside the seats, and what moves my score?"
+        },
+        {
+          "id": "02-leaderboard",
+          "title": "Leaderboard",
+          "answers": "Where am I against everyone else?"
+        },
+        {
+          "id": "07-leaderboard-cut",
+          "title": "Leaderboard, around the cut",
+          "answers": "Who is fighting for the last seats, and how far am I from them?"
+        },
+        {
+          "id": "03-trader-profile",
+          "title": "Trader profile",
+          "answers": "How is the trader above me doing it?"
+        },
+        {
+          "id": "04-score",
+          "title": "Score breakdown",
+          "answers": "How is my score built and what would raise it?"
+        },
+        {
+          "id": "05-trade",
+          "title": "Trade, own account",
+          "answers": "Trade with my own money while the cycle runs."
+        },
+        {
+          "id": "06-stats",
+          "title": "Stats",
+          "answers": "How good is my trading, really?"
+        },
+        {
+          "id": "08-payouts",
+          "title": "Payouts",
+          "answers": "Who is getting paid from their funded accounts, and how much?"
+        }
+      ],
+      "why": {
+        "what": "The trader trades their own money during the cycle and follows their standing: board rank and seat, the seat map, score, stats and the terminal for their own account.",
+        "why": "This is where they spend most of their time and where the volume that pays for the business is generated. They must always know whether they are inside or outside the seats and what they are missing."
+      }
+    },
+    {
+      "id": "f04-seat-claim",
+      "name": "Seat claim",
+      "summary": "The cycle closes and a 24 hour request window opens. Everyone on the leaderboard who meets the requirements can request a seat, and withdraw the request until the window closes. When it ends, seats go out in score order and granted accounts are live at once.",
+      "screens": [
+        {
+          "id": "01-home-window-open",
+          "title": "Home, request window open",
+          "answers": "The cycle is over. Can I request a seat, and what would I get?"
+        },
+        {
+          "id": "02-request-seat",
+          "title": "Request a seat",
+          "answers": "Confirm the request for a seat."
+        },
+        {
+          "id": "03-home-requested",
+          "title": "Home, seat requested",
+          "answers": "Where am I in the queue and how many seats are left above me?"
+        },
+        {
+          "id": "09-request-board",
+          "title": "Live request board",
+          "answers": "Who has requested so far, and where does the cut sit right now?"
+        },
+        {
+          "id": "04-home-not-eligible",
+          "title": "Home, cannot request",
+          "answers": "Why can't I request a seat this time?"
+        },
+        {
+          "id": "05-home-already-funded",
+          "title": "Home, already funded",
+          "answers": "I already hold an account. What does the cycle mean for me?"
+        },
+        {
+          "id": "06-seat-granted",
+          "title": "Seat granted, account live",
+          "answers": "I got a seat. What exactly do I get, and can I trade now?"
+        },
+        {
+          "id": "07-no-seat",
+          "title": "No seat",
+          "answers": "Why didn't I get one, and when is the next chance?"
+        },
+        {
+          "id": "08-missed",
+          "title": "Request window missed",
+          "answers": "I forgot to request. What now?"
+        }
+      ],
+      "why": {
+        "what": "When the cycle closes there are 24 hours to request a seat; the live request board shows who has requested, and when it ends, who gets an account and who does not.",
+        "why": "It is the decisive moment of every cycle. It has to be transparent so nobody doubts how seats are assigned."
+      }
+    },
+    {
+      "id": "f05-funded-trading",
+      "name": "Operating the funded account",
+      "summary": "The trader operates Bitso's USDC from the same terminal, with the trailing liquidation level always in view. Orders are only blocked by hard limits (allowed markets, cross margin).",
+      "screens": [
+        {
+          "id": "01-home-funded",
+          "title": "Home, funded account",
+          "answers": "How is my account doing against its rules?"
+        },
+        {
+          "id": "02-trade-funded",
+          "title": "Trade, funded account",
+          "answers": "Trade within the rules, with the risk of each order shown before I send it."
+        },
+        {
+          "id": "03-order-blocked",
+          "title": "Order on a market not allowed",
+          "answers": "Why can't I send this order?"
+        },
+        {
+          "id": "04-account-switch",
+          "title": "Switch account",
+          "answers": "Move between my own account and the funded one."
+        },
+        {
+          "id": "05-order-placed",
+          "title": "Order placed",
+          "answers": "My order went in. What did it change in my limits?"
+        },
+        {
+          "id": "06-floor-locked",
+          "title": "Liquidation locked at the start",
+          "answers": "I'm 10% up. Where is my liquidation level now, and why won't it rise further?"
+        }
+      ],
+      "why": {
+        "what": "The trader trades Bitso's USDC from the same terminal, with the trailing liquidation level always in view, and can switch to their own account without mixing figures.",
+        "why": "A professional needs to see on every order how much room is left before losing the account. That is what sets this product apart from any other terminal."
+      }
+    },
+    {
+      "id": "f06-risk-events",
+      "name": "Risk events",
+      "summary": "Two events the trader must understand at a glance: the funded account liquidated at its trailing level, and a platform incident that closes positions automatically while the account stays active.",
+      "screens": [
+        {
+          "id": "01-liquidated",
+          "title": "Account liquidated",
+          "answers": "My equity reached the liquidation level. What happened and what do I keep?"
+        },
+        {
+          "id": "02-incident",
+          "title": "Platform incident",
+          "answers": "Orders can't reach Hyperliquid. What happened to my positions and my account?"
+        }
+      ],
+      "why": {
+        "what": "The two hard moments: the account liquidated when equity reaches its level, and a platform outage that closes positions while the account stays active.",
+        "why": "These are the moments where trust is won or lost. They must explain what happened, what the trader keeps and what they can do next, without ambiguity."
+      }
+    },
+    {
+      "id": "f07-claims",
+      "name": "Claims",
+      "summary": "The trader claims profit whenever they want, with every position closed. A claim always takes all profit above the starting size: 80% to their own account, 20% to Bitso. Then the funded account resets to its starting size and liquidation level.",
+      "screens": [
+        {
+          "id": "01-payouts",
+          "title": "Profit to claim",
+          "answers": "How much can I claim now, and what does claiming do to my account?"
+        },
+        {
+          "id": "02-claim",
+          "title": "Claim profit",
+          "answers": "Confirm the claim: all profit, 80% to my own account."
+        },
+        {
+          "id": "03-paid",
+          "title": "Profit claimed",
+          "answers": "Did it reach my own account, and where does my funded account stand now?"
+        },
+        {
+          "id": "04-close-to-claim",
+          "title": "Close positions to claim",
+          "answers": "I have open positions. What do I need to do to claim?"
+        },
+        {
+          "id": "05-nothing-to-claim",
+          "title": "Nothing to claim",
+          "answers": "My account is not above its start. What can I do?"
+        }
+      ],
+      "why": {
+        "what": "The trader claims whenever they want, with every position closed: 80% of the profit goes to their own account and the funded account returns to its starting size.",
+        "why": "Getting paid is the promise of the product. If it is not clear how much is claimed and what happens to the account afterwards, nobody trusts the rest."
+      }
+    },
+    {
+      "id": "f08-after-account",
+      "name": "After the account",
+      "summary": "One funded account at a time. A trader who loses theirs keeps competing with their own money and can request a seat again when the next cycle closes.",
+      "screens": [
+        {
+          "id": "01-home-after-loss",
+          "title": "Home after losing the account",
+          "answers": "My account is gone. How do I get another one?"
+        },
+        {
+          "id": "02-competing-again",
+          "title": "Competing again",
+          "answers": "I'm back on the board. Does my last account count against me?"
+        },
+        {
+          "id": "03-request-again",
+          "title": "Request a seat again",
+          "answers": "Cycle 2 closed. Can I request a seat now?"
+        }
+      ],
+      "why": {
+        "what": "After losing the account, the trader goes back to competing with their own money and can request a seat again at the next cycle close, with no penalty.",
+        "why": "Keeping the trader who loses is key to growth: every return to the competition brings more volume and more referrals."
+      }
+    },
+    {
+      "id": "f09-money",
+      "name": "Deposit and withdraw",
+      "summary": "The trader's own account. Deposits arrive from any EVM chain or Solana through a personal deposit address that forwards funds to Hyperliquid. Withdrawals go to any address on a chosen EVM network. Claimed profit from the funded account lands here too.",
+      "screens": [
+        {
+          "id": "01-balance",
+          "title": "Own account balance",
+          "answers": "How much do I have, and where did it come from?"
+        },
+        {
+          "id": "02-deposit",
+          "title": "Deposit",
+          "answers": "Where do I send funds, from which chain, and how long does it take?"
+        },
+        {
+          "id": "03-deposit-arriving",
+          "title": "Deposit arriving",
+          "answers": "I sent it. Where is my money now?"
+        },
+        {
+          "id": "04-deposit-done",
+          "title": "Deposit arrived",
+          "answers": "Is it in my trading balance?"
+        },
+        {
+          "id": "05-withdraw",
+          "title": "Withdraw",
+          "answers": "How do I send money out, to which address and network?"
+        },
+        {
+          "id": "06-withdraw-confirm",
+          "title": "Confirm withdrawal",
+          "answers": "Is everything right before it leaves?"
+        },
+        {
+          "id": "07-withdraw-sent",
+          "title": "Withdrawal sent",
+          "answers": "Did it leave, and when will it arrive?"
+        },
+        {
+          "id": "08-deposit-problem",
+          "title": "Deposit not credited",
+          "answers": "I sent a token that is not USDC. What happened to it?"
+        }
+      ],
+      "why": {
+        "what": "The own account: the balance and where it came from, USDC deposits from any EVM chain or Solana to a personal address, withdrawals to any EVM address, and what happens when a token that is not USDC arrives.",
+        "why": "Without their own money there is no competition. Moving funds in and out has to be as simple as on an exchange, and clearly separate from the funded account."
+      }
+    }
+  ]
+}

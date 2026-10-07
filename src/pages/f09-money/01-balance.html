@@ -1,0 +1,93 @@
+<!--page {"header": "funded", "season": "<span class=\"k\">Cycle 2 ends in</span> 15d 14h", "seasonPct": 46, "acct": {"tag": "own", "label": "Own", "value": "$2,522.60"}, "links": {"acct": "01-balance.html", "deposit": "02-deposit.html", "home": "{{root}}f05-funded-trading/01-home-funded.html", "trade": "{{root}}f03-competing/05-trade.html", "leaderboard": "{{root}}f03-competing/02-leaderboard.html", "stats": "{{root}}f03-competing/06-stats.html", "payouts": "{{root}}f07-claims/01-payouts.html", "payoutsall": "{{root}}f03-competing/08-payouts.html"}, "unread": true} -->
+<main class="bal">
+  <div class="bal-grid">
+    <section class="panel hero" aria-labelledby="bal-h">
+      <div class="hero-main">
+        <h1 id="bal-h" class="t-sub row gap-3"><span class="acct-tag own">Own</span>Account balance</h1>
+        <p class="t-caption muted mt-2">Your Hyperliquid account, shared with onchain.cc. Dec 2, 10:00 UTC.</p>
+        <p class="bal-fig num">$2,522.60</p>
+        <div class="split mt-5" role="img" aria-label="Available 1,882.60, in margin 640.00"><i class="a" style="width:74.6%"></i><i class="m"></i></div>
+        <div class="split-legend mt-3">
+          <span><i class="sw a"></i>Available<b class="num">$1,882.60</b></span>
+          <span><i class="sw m"></i>Margin, 2 positions<b class="num">$640.00</b></span>
+        </div>
+        <div class="row gap-3 hero-cta">
+          <a class="btn btn-primary" href="02-deposit.html">{{icon:arrow-down-to-line:ico-sm}}Deposit</a>
+          <a class="btn btn-glass" href="05-withdraw.html">{{icon:arrow-up-from-line:ico-sm}}Withdraw</a>
+        </div>
+      </div>
+      <div class="hero-src">
+        <div class="row-between"><h2 class="section-title">Where it came from</h2><span class="t-caption muted">Since Oct 14, USDC</span></div>
+        <div class="wf" role="img" aria-label="Deposits +1,100.00, withdrawals -300.00, claims from the funded account +738.40, closed trading PnL +952.45, open PnL +31.75, balance 2,522.60 USDC"><div class="wf-col"><div class="wf-plot"><i class="wf-bar n" style="bottom:0.00%;height:max(3px, 43.61%)"></i><span class="wf-v n" style="bottom:calc(43.61% + 6px)">+1,100.00</span></div><span class="wf-k">{{icon:arrow-down-left:ico-sm}}Deposits</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar w" style="bottom:31.71%;height:max(3px, 11.89%)"></i><span class="wf-v w" style="bottom:calc(43.61% + 6px)">-300.00</span></div><span class="wf-k">{{icon:arrow-up-right:ico-sm}}Withdrawals</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar g" style="bottom:31.71%;height:max(3px, 29.27%)"></i><span class="wf-v g" style="bottom:calc(60.98% + 6px)">+738.40</span></div><span class="wf-k">{{icon:hand-coins:ico-sm}}Claims</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar p" style="bottom:60.98%;height:max(3px, 37.76%)"></i><span class="wf-v p" style="bottom:calc(98.74% + 6px)">+952.45</span></div><span class="wf-k">{{icon:candlestick-chart:ico-sm}}Closed PnL</span></div><div class="wf-col"><div class="wf-plot"><i class="wf-bar po" style="bottom:98.74%;height:max(3px, 1.26%)"></i><span class="wf-v po" style="bottom:calc(100.00% + 6px)">+31.75</span></div><span class="wf-k">{{icon:activity:ico-sm}}Open PnL</span></div><div class="wf-col total"><div class="wf-plot"><i class="wf-bar t" style="bottom:0;height:100.00%"></i><span class="wf-v t" style="bottom:calc(100.00% + 6px)">2,522.60</span></div><span class="wf-k">{{icon:wallet:ico-sm}}Balance</span></div></div>
+        <p class="t-caption muted wf-note">{{icon:info:ico-sm}}For the cycle, a claim counts as a deposit, not PnL.</p>
+      </div>
+    </section>
+
+    <section class="panel panel-flush" aria-labelledby="mv-h">
+      <div class="panel-head">
+        <h2 id="mv-h" class="panel-title">Movements</h2>
+        <nav class="seg" aria-label="Filter movements"><a href="01-balance.html" aria-current="true">All</a><a href="01-balance.html">Deposits</a><a href="01-balance.html">Withdrawals</a><a href="01-balance.html">Claims</a><a href="01-balance.html">Trading PnL</a></nav>
+      </div>
+      <table class="table mv-table">
+        <thead><tr><th>Movement</th><th>Detail</th><th>Time, UTC</th><th class="r">Amount, USDC</th><th class="r">Balance after</th></tr></thead>
+        <tbody>
+          <tr><td><span class="mv"><span class="mv-ico warn">{{icon:arrow-down-left:ico-sm}}</span>Deposit<span class="pill pill-warn">Not credited</span></span></td><td class="detail">250.00 DAI from Base <a class="tx" href="08-deposit-problem.html">See why</a></td><td class="muted nw">Dec 2, 09:41</td><td class="r nw muted">0.00</td><td class="r dim nw">2,490.85</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:candlestick-chart:ico-sm}}</span>Trading PnL</span></td><td class="detail">6 closed trades</td><td class="muted nw">Dec 1</td><td class="r nw up">+63.70</td><td class="r dim nw">2,490.85</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:candlestick-chart:ico-sm}}</span>Trading PnL</span></td><td class="detail">4 closed trades</td><td class="muted nw">Nov 30</td><td class="r nw down">-37.85</td><td class="r dim nw">2,427.15</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico gold">{{icon:hand-coins:ico-sm}}</span>Claim<span class="acct-tag funded src">Funded</span></span></td><td class="detail">Your 80% of $923.00 <a class="tx" href="{{root}}f03-competing/08-payouts.html">Public payout</a></td><td class="muted nw">Nov 28, 18:02</td><td class="r nw up">+738.40</td><td class="r dim nw">2,465.00</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:arrow-up-right:ico-sm}}</span>Withdrawal</span></td><td class="detail"><span class="mono">0x7a3F…c91E</span>, Arbitrum <a class="tx" href="#tx">Tx</a></td><td class="muted nw">Nov 27, 14:02</td><td class="r nw">-300.00</td><td class="r dim nw">1,726.60</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:candlestick-chart:ico-sm}}</span>Trading PnL</span></td><td class="detail">9 closed trades</td><td class="muted nw">Nov 25</td><td class="r nw up">+118.30</td><td class="r dim nw">2,026.60</td></tr>
+          <tr><td><span class="mv"><span class="mv-ico">{{icon:arrow-down-left:ico-sm}}</span>Deposit</span></td><td class="detail">500.00 USDC from Base <a class="tx" href="#tx">Tx</a></td><td class="muted nw">Nov 21, 09:47</td><td class="r nw">+500.00</td><td class="r dim nw">1,908.30</td></tr>
+        </tbody>
+      </table>
+      <div class="mv-foot row-between t-caption"><span class="muted">7 of 31 since Oct 14. Balance after counts closed results only.</span><a class="link" href="01-balance.html">Load older</a></div>
+    </section>
+  </div>
+</main>
+<style>
+.bal { max-width: 1200px; margin: 0 auto; padding: 16px 16px 96px; }
+.bal-grid { display: flex; flex-direction: column; gap: 8px; }
+.hero { padding: 24px; display: grid; grid-template-columns: minmax(0, 1fr) 500px; gap: 40px; align-items: stretch; }
+.hero-main { display: flex; flex-direction: column; }
+.bal-fig { margin-top: 20px; font-size: 52px; line-height: 56px; font-weight: 600; letter-spacing: -0.035em; }
+.split { display: flex; gap: 3px; height: 8px; max-width: 420px; }
+.split i { display: block; height: 100%; border-radius: 3px; }
+.split .a { background: #cfcfd4; }
+.split .m { flex: 1; background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.22) 0 3px, rgb(255 255 255 / 0.08) 3px 6px); }
+.split-legend { display: flex; gap: 28px; font-size: 12px; color: var(--muted); }
+.split-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.split-legend b { color: var(--text); font-size: 14px; font-weight: 600; margin-left: 2px; }
+.sw { width: 8px; height: 8px; border-radius: 2px; }
+.sw.a { background: #cfcfd4; } .sw.m { background: rgb(255 255 255 / 0.22); }
+.hero-cta { margin-top: auto; padding-top: 24px; }
+.hero-src { padding-left: 32px; border-left: 1px solid var(--glass-sep); display: flex; flex-direction: column; gap: 14px; }
+.wf { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin-top: 18px; }
+.wf-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.wf-plot { position: relative; height: 150px; border-bottom: 1px solid rgb(255 255 255 / 0.08); }
+.wf-bar { position: absolute; left: 8px; right: 8px; border-radius: 3px; }
+.wf-bar.n { background: rgb(255 255 255 / 0.32); }
+.wf-bar.w { background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.2) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.22); }
+.wf-bar.g { background: rgb(232 177 12 / 0.55); }
+.wf-bar.p { background: color-mix(in srgb, var(--buy-light) 70%, transparent); }
+.wf-bar.po { background: color-mix(in srgb, var(--buy-light) 40%, transparent); }
+.wf-bar.t { background: #e6e6ea; left: 4px; right: 4px; }
+.wf-v { position: absolute; left: 0; right: 0; text-align: center; font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--text-2); white-space: nowrap; }
+.wf-v.p, .wf-v.po { color: var(--buy-light); } .wf-v.g { color: #e8c078; } .wf-v.t { color: #fff; font-size: 12px; }
+.wf-k { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; line-height: 13px; color: var(--muted); text-align: center; }
+.wf-k .ico { color: var(--text-3); }
+.wf-col.total .wf-k { color: var(--text); font-weight: 600; }
+.wf-note { display: flex; align-items: center; gap: 6px; margin-top: auto; }
+.mv-table th:first-child, .mv-table td:first-child { padding-left: 16px; }
+.mv-table th:last-child, .mv-table td:last-child { padding-right: 16px; }
+.mv-table .detail { color: var(--text-3); }
+.mv { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.mv .pill, .mv .acct-tag { margin-left: -2px; }
+.mv-ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-3); flex: none; }
+.mv-ico.gold { background: rgb(232 177 12 / 0.12); color: #e8c078; }
+.mv-ico.warn { background: var(--warning-20); color: var(--warning-strong); }
+.tx { color: var(--primary); font-weight: 500; margin-left: 6px; white-space: nowrap; }
+.tx:hover { text-decoration: underline; text-underline-offset: 3px; }
+.mv-foot { padding: 10px 16px; border-top: 1px solid var(--glass-sep); }
+.nw { white-space: nowrap; }
+.acct-tag.src { height: 18px; padding: 0 6px; font-size: 10px; }
+</style>

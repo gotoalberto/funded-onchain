@@ -1,0 +1,87 @@
+<!--page {"nav":"payouts","header":"funded","season":"<span class=\"k\">Dec 1</span> Cycle 2 ends in 16d 14h","seasonPct":43,"acct":{"tag":"funded","label":"Funded","value":"$24,612.30"}} -->
+<main class="cl">
+  <section class="panel lead" aria-labelledby="lead-h">
+    <div class="lead-top">
+      <div class="stack gap-3">
+        <h1 id="lead-h" class="fig-line">
+          <span class="t-display num dimfig">$387.70</span>
+          <span class="t-sub w5 dim">to go before you can claim</span>
+        </h1>
+        <p class="meta t-small"><span class="acct-tag funded">Funded</span><span class="dim">$25K account</span><span class="state">{{icon:target:ico-sm}}Claims open above $25,000, all positions closed</span></p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="{{root}}f05-funded-trading/02-trade-funded.html">{{icon:candlestick-chart:ico-sm}}Trade</a>
+    </div>
+
+    <div class="range mt-5" role="img" aria-label="Funded equity $24,612.30 at mark: $972.30 above liquidation at $23,640.00, $387.70 below $25,000. Peak $26,140.00 on Nov 30">
+      <div class="r-you" style="left:38.89%"><span class="r-tag">You <b>$24,612.30</b></span><i></i></div>
+      <div class="r-track">
+        <span class="r-fill" style="width:38.89%"></span>
+        <span class="r-gap" style="left:38.89%;width:15.51%"></span>
+        <span class="r-mark liq" style="left:0"></span>
+        <span class="r-mark start" style="left:54.4%"></span>
+        <span class="r-mark peak" style="left:100%"></span>
+      </div>
+      <div class="r-labels">
+        <span class="lab l0" style="left:0">{{icon:shield-alert:ico-sm}}<span><b>$23,640.00</b>Liquidation</span></span>
+        <span class="lab l1" style="left:54.4%">{{icon:flag:ico-sm}}<span><b>$25,000.00</b>Start, claims above</span></span>
+        <span class="lab l2" style="left:100%"><span><b>$26,140.00</b>Peak, Nov 30</span>{{icon:trending-up:ico-sm}}</span>
+      </div>
+    </div>
+    <p class="t-caption muted mt-6">Liquidation sits $2,500 (10% of the $25,000 size) below your highest equity.</p>
+  </section>
+
+  <section class="panel hist mt-3" aria-labelledby="hist-h">
+    <h2 id="hist-h" class="panel-title">Claims on this account</h2>
+    <a class="claim-row" href="03-paid.html">
+      <span class="c-ico">{{icon:banknote-arrow-down:ico-sm}}</span>
+      <span class="c-date">Nov 28, 17:32 UTC</span>
+      <span class="c-chip">Profit <b class="up">+$923.00</b></span>
+      <span class="c-chip"><span class="acct-tag own">Own</span><b>$738.40</b></span>
+      <span class="grow"></span>
+      <span class="mono dim">0x4e1b…a7d2</span>
+    </a>
+    <a class="link t-small all" href="{{root}}f03-competing/08-payouts.html">Everyone's payouts{{icon:arrow-right:ico-sm}}</a>
+  </section>
+</main>
+<style>
+.cl { max-width: 920px; margin: 0 auto; padding: 16px 16px 96px; }
+.lead { padding: 24px; }
+.lead-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.fig-line { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.dimfig { color: var(--text-3); }
+.meta { display: flex; align-items: center; gap: 10px; }
+.state { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); }
+.state .ico { color: var(--muted); }
+
+.range { position: relative; padding-top: 40px; }
+.r-you { position: absolute; top: 4px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; z-index: 1; }
+.r-tag { height: 24px; padding: 0 10px; display: inline-flex; align-items: center; gap: 6px; border-radius: var(--r-full); background: var(--primary-15); box-shadow: inset 0 0 0 1px rgb(144 149 253 / 0.45); color: var(--primary-subtle); font-size: 12px; white-space: nowrap; }
+.r-tag b { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
+.r-you i { width: 2px; height: 22px; background: var(--primary); border-radius: 2px; }
+.r-track { position: relative; height: 12px; margin-top: 8px; border-radius: 6px; background: rgb(255 255 255 / 0.05); }
+.r-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 6px 0 0 6px; background: #8a8a8a; transform-origin: left; animation: meter-in 700ms var(--ease-out) both; }
+.r-gap { position: absolute; top: 0; bottom: 0; background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.22) 0 4px, transparent 4px 8px); }
+.r-mark { position: absolute; top: -6px; bottom: -6px; width: 2px; border-radius: 2px; transform: translateX(-50%); }
+.r-mark.liq { background: var(--sell); transform: none; }
+.r-mark.start { background: #fff; }
+.r-mark.peak { background: rgb(255 255 255 / 0.3); transform: translateX(-100%); }
+.r-labels { position: relative; height: 40px; margin-top: 12px; }
+.lab { position: absolute; top: 0; display: inline-flex; align-items: flex-start; gap: 6px; font-size: 12px; line-height: 16px; color: var(--text-3); white-space: nowrap; }
+.lab > span { display: flex; flex-direction: column; }
+.lab b { font-size: 13px; line-height: 18px; color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+.lab .ico { margin-top: 2px; color: var(--muted); }
+.lab.l0 .ico { color: #ff6b6e; }
+.lab.l1 { transform: translateX(-50%); text-align: center; }
+.lab.l2 { transform: translateX(-100%); text-align: right; }
+.lab.l2 > span { align-items: flex-end; }
+
+.hist { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+.claim-row { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); font-size: 13px; font-variant-numeric: tabular-nums; transition: background-color var(--fast) ease; }
+.claim-row:hover { background: rgb(255 255 255 / 0.04); }
+.c-ico { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-3); }
+.c-date { font-weight: 600; }
+.c-chip { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); }
+.c-chip b { font-weight: 600; color: var(--text); }
+.c-chip b.up { color: var(--buy); }
+.all { align-self: flex-end; display: inline-flex; align-items: center; gap: 4px; }
+</style>

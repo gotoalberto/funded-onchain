@@ -1,0 +1,113 @@
+<!--page {"nav":"home","header":"member","unread":true,"season":"<span class=\"k\">Cycle 2 ends in</span> 28d 23h","seasonPct":1,"acct":{"tag":"own","label":"Own","value":"$1,369.70"},"links":{"home":"08-missed.html"}} -->
+<main class="home">
+  <div class="home-grid">
+    <div class="stack gap-3">
+      <section class="panel lead" aria-labelledby="lead-h">
+        <h1 id="lead-h" class="t-title">You did not request a seat</h1>
+        <p class="t-small muted mt-2">Nov 19, 00:05 UTC. Requests closed at 00:00 UTC.</p>
+
+        <div class="duo mt-7">
+          <div class="ghost" aria-label="What you would have had">
+            <span class="label row gap-2">{{icon:circle-check:ico-sm up}}All 4 requirements met</span>
+            <span class="t-figure num">Seat #14</span>
+            <span class="row gap-3"><span class="band band-lg">$25K account</span><span class="t-small muted">#17 on the board</span></span>
+            <span class="ghost-tag">Not requested</span>
+          </div>
+          <span class="duo-arrow">{{icon:arrow-right:ico-lg}}</span>
+          <div class="cal" aria-label="Next request window">
+            <span class="cal-m">Dec</span>
+            <span class="cal-d num">18</span>
+            <span class="t-caption muted">00:00 UTC</span>
+          </div>
+          <div class="stack gap-2 nextwin">
+            <b class="t-sub">Next request window</b>
+            <span class="t-small muted">Cycle 2 close. Open 24 hours, until Dec 19, 00:00 UTC</span>
+          </div>
+        </div>
+
+        <div class="act mt-7">
+          <a class="btn btn-primary btn-lg" href="{{root}}f03-competing/01-home-competing.html">Go to Cycle 2{{icon:arrow-right:ico-sm}}</a>
+        </div>
+      </section>
+
+      <aside class="mock-note" aria-label="Mockup note">
+        <span class="mock-tag">Mockup note</span>
+        <span class="t-small muted">kestrel without a request. The request this trader missed is on <a class="link" href="01-home-window-open.html">the request window screen</a>.</span>
+      </aside>
+    </div>
+
+    <aside class="stack gap-3">
+      <section class="panel" aria-labelledby="remind-h">
+        <h2 id="remind-h" class="section-title row gap-3">{{icon:bell:ico-sm muted}}Reminders</h2>
+        <p class="t-caption muted mt-2">Email and bell, on by default.</p>
+        <ul class="toggles mt-3">
+          <li><span class="stack"><span class="t-small w5">Requests open</span><span class="t-caption muted">Dec 18, 00:00 UTC</span></span><span class="switch" role="switch" aria-checked="true" aria-label="Requests open"></span></li>
+          <li><span class="stack"><span class="t-small w5">6 hours left, if not requested</span><span class="t-caption muted">Dec 18, 18:00 UTC</span></span><span class="switch" role="switch" aria-checked="true" aria-label="6 hours left"></span></li>
+          <li><span class="stack"><span class="t-small w5">1 hour left, if not requested</span><span class="t-caption muted">Dec 18, 23:00 UTC</span></span><span class="switch" role="switch" aria-checked="true" aria-label="1 hour left"></span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</main>
+<style>
+.home { max-width: 1280px; margin: 0 auto; padding: 16px 16px 96px; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 8px; align-items: start; }
+.lead { padding: 28px; }
+.band-lg { height: 28px; font-size: 13px; padding: 0 10px; }
+.sep { padding-top: 20px; border-top: 1px solid var(--glass-sep); }
+/* icon tiles: facts as compact visuals */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tile { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); min-width: 0; }
+.tile > .stack { gap: 2px; min-width: 0; }
+.t-ico { width: 32px; height: 32px; flex: none; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-2); }
+.act { display: flex; align-items: center; gap: 16px; }
+/* score ring, neutral */
+.ring-wrap { position: relative; width: 148px; height: 148px; margin: 0 auto; }
+.ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring circle { fill: none; stroke-width: 9; }
+.ring-bg { stroke: rgb(255 255 255 / 0.07); }
+.ring-fg { stroke: #cfcfd4; stroke-linecap: round; }
+.ring-in { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.ck { display: flex; gap: 10px; align-items: center; padding: 10px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); font-size: 13px; min-width: 0; }
+.ck > .ico { color: var(--buy-light); }
+.ck.no > .ico { color: #ff6b6e; }
+/* seat map, same language as the live request board (09) */
+.sm-track { position: relative; display: flex; align-items: stretch; gap: 3px; margin-top: 40px; }
+.sm-zone { position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 84px; }
+.sm-bar { position: relative; height: 14px; border-radius: 4px; }
+.sm-bar.z200 { background: rgb(255 255 255 / 0.42); }
+.sm-bar.z100 { background: rgb(255 255 255 / 0.36); }
+.sm-bar.z50 { background: rgb(255 255 255 / 0.30); }
+.sm-bar.z25 { background: rgb(255 255 255 / 0.24); }
+.sm-bar.z5 { background: rgb(255 255 255 / 0.17); }
+.sm-zone.is-you .sm-bar { box-shadow: inset 0 0 0 1px rgb(144 149 253 / 0.6); }
+.sm-bar.zout { background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.07) 0 4px, transparent 4px 8px); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.sm-meta { display: flex; flex-direction: column; gap: 3px; font-size: 12px; line-height: 16px; padding-right: 6px; white-space: nowrap; }
+.sm-meta .sm-band { align-self: flex-start; margin-bottom: 4px; }
+.sm-seats { font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.sm-l { color: var(--muted); font-variant-numeric: tabular-nums; }
+.sm-l b { color: var(--text-2); font-weight: 600; }
+.sm-you { position: absolute; top: 50%; transform: translateX(-50%); }
+.sm-you-dot { position: absolute; left: 0; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--primary), 0 0 0 7px var(--primary-15); }
+.sm-you-tag { position: absolute; bottom: 14px; left: 0; transform: translateX(-50%); font-size: 11px; line-height: 14px; font-weight: 700; color: var(--primary); white-space: nowrap; }
+.sm-cut { position: relative; flex: none; width: 2px; margin: -26px 2px 0; border-radius: 2px; background: #e8e8e8; }
+.sm-cut-tag { position: absolute; top: -4px; right: 8px; display: inline-flex; gap: 6px; font-size: 11px; line-height: 14px; white-space: nowrap; color: var(--text-2); }
+.sm-cut-tag .num { color: var(--muted); }
+.sm-out { min-width: 104px; }
+.sm-out .sm-meta { padding-left: 4px; }
+.duo { display: flex; align-items: center; gap: 20px; }
+.ghost { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 20px; border-radius: var(--r-xl); border: 1px dashed rgb(255 255 255 / 0.18); flex: 1 1 0; min-width: 0; }
+.ghost .t-figure { color: var(--text-3); }
+.ghost-tag { position: absolute; top: 16px; right: 16px; font-size: 11px; font-weight: 600; color: var(--muted); }
+.duo-arrow { color: var(--muted); flex: none; }
+.cal { width: 112px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0 0 12px; border-radius: var(--r-xl); overflow: hidden; background: rgb(255 255 255 / 0.04); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1); text-align: center; }
+.cal-m { align-self: stretch; padding: 6px 0; background: rgb(255 255 255 / 0.08); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-2); }
+.cal-d { font-size: 44px; line-height: 52px; font-weight: 600; letter-spacing: -0.03em; }
+.nextwin { flex: 0 1 200px; }
+.toggles { display: flex; flex-direction: column; padding-top: 4px; border-top: 1px solid var(--glass-sep); }
+.toggles li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; }
+.toggles li + li { border-top: 1px solid var(--glass-sep); }
+/* reminders are settings, not actions: neutral switches */
+.toggles .switch[aria-checked="true"] { background: rgb(255 255 255 / 0.32); }
+</style>

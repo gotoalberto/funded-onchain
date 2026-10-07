@@ -1,0 +1,83 @@
+<!--page {"nav":"home","header":"member","season":"<span class=\"k\">Oct 27. Cycle 1 ends in</span> 21d 14h","seasonPct":25,"acct":{"tag":"own","label":"Own","value":"$251.95"},"links":{"payoutsall":"{{root}}f03-competing/08-payouts.html","deposit":"02-deposit.html","trade":"{{root}}f03-competing/05-trade.html","leaderboard":"{{root}}f03-competing/02-leaderboard.html","stats":"{{root}}f03-competing/06-stats.html"}} -->
+<main class="home">
+  <div class="home-grid">
+    <section class="panel panel-flush" aria-labelledby="lead-h">
+      <div class="lead">
+        <h1 id="lead-h" class="t-title">3 more trades and $360 of volume</h1>
+        <p class="cap">Three $60 trades, opened and closed, put you on the board.</p>
+      </div>
+      <div class="mins-grid">
+        <div class="min-tile" role="group" aria-label="Balance: $251.95, met">
+          <div class="ring ok" style="--p:100" aria-hidden="true"><span class="ring-v">{{icon:check:ico}}</span></div>
+          <span class="min-name">{{icon:wallet:ico-sm}}Balance</span>
+          <span class="togo ok">{{icon:check:ico-sm}}$251.95, met</span>
+        </div>
+        <div class="min-tile" role="group" aria-label="Closed trades: 7 of 10">
+          <div class="ring" style="--p:70" aria-hidden="true"><span class="ring-v"><b>7</b><span>of 10</span></span></div>
+          <span class="min-name">{{icon:arrow-left-right:ico-sm}}Closed trades</span>
+          <span class="togo">3 to go</span>
+        </div>
+        <div class="min-tile" role="group" aria-label="Perps volume: $640 of $1,000">
+          <div class="ring" style="--p:64" aria-hidden="true"><span class="ring-v"><b>$640</b><span>of $1,000</span></span></div>
+          <span class="min-name">{{icon:chart-column:ico-sm}}Perps volume</span>
+          <span class="togo">$360 to go</span>
+        </div>
+      </div>
+      <div class="acts">
+        <span class="t-caption src">$250.00 from Arbitrum, 09:01 UTC</span>
+        <div class="span2"><a class="btn btn-primary btn-lg" href="{{root}}f03-competing/05-trade.html">{{icon:candlestick-chart:ico-sm}}Trade</a></div>
+      </div>
+      <p class="mins-foot">{{icon:info:ico-sm}}<span>5 trades from onchain.cc, 2 from here. Each counts at $50 or more, open 60 s or more. <a class="link" href="{{root}}f03-competing/06-stats.html">See your trades</a></span></p>
+    </section>
+
+    <aside class="panel days" aria-labelledby="days-h">
+      <h2 id="days-h" class="section-title aside-h">{{icon:calendar-check:ico-sm}}Trading days for a seat</h2>
+      <div class="days-fig"><b>5</b><span>of 15</span></div>
+      <div class="segs mt-3" aria-label="5 of 15 trading days"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="meter-foot mt-2"><span>Today counted</span><span>10 more in 21 days</span></div>
+      <a class="link t-small mt-5 inline-block" href="{{root}}f01-onboarding/03-rules.html#floors">How seats work</a>
+    </aside>
+  </div>
+  <aside class="mock-note mt-6" aria-label="Mockup note">
+    <span class="mock-tag">Mockup note</span>
+    <span class="t-small muted">After the 10th trade, Home becomes <a class="link" href="04-home-on-board.html">the board view</a>.</span>
+  </aside>
+</main>
+<style>
+.home { max-width: 1200px; margin: 0 auto; padding: 16px 16px 96px; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 8px; align-items: start; }
+.lead { padding: 28px 28px 0; }
+.lead .cap { margin-top: 6px; color: var(--text-3); }
+.inline-block { display: inline-block; }
+.home > .mock-note { max-width: 792px; }
+
+.mins-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 24px 28px 0; }
+.min-tile { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 20px 12px 18px; border-radius: var(--r-lg); background: rgb(255 255 255 / 0.025); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.ring { --p: 0; --c: #cfcfd4; position: relative; width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; }
+.ring::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(var(--c) calc(var(--p) * 1%), rgb(255 255 255 / 0.07) 0); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 6px)); mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 6px)); }
+.ring.ok { --c: var(--buy); }
+.ring-v { display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.ring-v b { font-size: 24px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: #fff; }
+.ring-v span { font-size: 12px; line-height: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ring.ok .ring-v .ico { width: 30px; height: 30px; color: var(--buy-light); stroke-width: 2.25; }
+.min-name { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.min-name .ico { color: var(--muted); }
+.togo { height: 22px; padding: 0 8px; display: inline-flex; align-items: center; gap: 5px; border-radius: var(--r-full); font-size: 11px; font-weight: 600; background: rgb(255 255 255 / 0.06); color: var(--text-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.togo.ok { background: var(--buy-20); color: var(--buy-light); }
+.acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 8px 28px 0; }
+.acts .btn { width: 100%; }
+.acts .span2 { grid-column: span 2; display: flex; align-items: center; gap: 12px; }
+.acts .span2 .btn { flex: 1; }
+.acts .span3 { grid-column: 1 / -1; }
+.why-line { display: inline-flex; align-items: center; gap: 6px; color: var(--text-3); white-space: nowrap; }
+.mins-foot { display: flex; align-items: center; gap: 8px; padding: 16px 28px 22px; font-size: 12px; color: var(--muted); }
+.mins-foot .ico { color: var(--muted); }
+
+.days-fig { display: flex; align-items: baseline; gap: 6px; margin-top: 14px; }
+.days-fig b { font-size: 40px; line-height: 44px; font-weight: 600; letter-spacing: -0.03em; color: #fff; font-variant-numeric: tabular-nums; }
+.days-fig span { color: var(--muted); font-size: 15px; }
+.aside-h { display: flex; align-items: center; gap: 8px; }
+.aside-h .ico { color: var(--muted); }
+
+.src { align-self: center; text-align: center; color: var(--muted); }
+</style>

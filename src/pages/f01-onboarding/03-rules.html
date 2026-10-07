@@ -1,0 +1,360 @@
+<!--page {"nav":"rules","header":"guest","links":{"signin":"04-sign-in.html"}} -->
+<main class="rules">
+  <nav class="toc" aria-label="On this page">
+    <p class="label">On this page</p>
+    <ol>
+      <li><a href="#accounts" aria-current="true">Two accounts</a></li>
+      <li><a href="#calendar">Cycle calendar</a></li>
+      <li><a href="#floors">Requirements</a></li>
+      <li><a href="#drawdown">Drawdown requirement</a></li>
+      <li><a href="#score">Score</a></li>
+      <li><a href="#seats">Seats and sizes</a></li>
+      <li><a href="#liquidation">Trailing liquidation</a></li>
+      <li><a href="#account">Trading the account</a></li>
+      <li><a href="#claims">Claims</a></li>
+      <li><a href="#other">Other rules</a></li>
+    </ol>
+    <div class="toc-foot">
+      <p class="t-caption muted">Cycle 1 rules, fixed from Oct 20 to the close.</p>
+      <a class="btn btn-primary btn-sm mt-3 toc-cta" href="04-sign-in.html">Start trading</a>
+    </div>
+  </nav>
+
+  <article class="doc">
+    <header>
+      <h1 class="t-title">Rules</h1>
+      <p class="lede">No fee, no application. Bitso funds 60 accounts in Cycle 1.</p>
+    </header>
+
+    <section id="accounts">
+      <h2>Two accounts</h2>
+      <p>Separate accounts. Their numbers are never added together.</p>
+      <div class="accts">
+        <div class="acct-c">
+          <h3 class="t-sub row gap-3"><span class="acct-tag own">Own</span>Your own account</h3>
+          <p class="sum-def">Your money, in your onchain.cc Hyperliquid account.</p>
+          <ul class="ico-list">
+            <li>{{icon:trophy:ico-sm}}<span>Competes in the cycle</span></li>
+            <li>{{icon:hand-coins:ico-sm}}<span>Receives your 80% of claims</span></li>
+            <li class="risk">{{icon:shield-check:ico-sm}}<span>At risk: only your trading losses. We liquidate nothing.</span></li>
+            <li class="risk">{{icon:circle-slash:ico-sm}}<span>Breaking the <a class="link" href="#drawdown">drawdown requirement</a> rules out a request that cycle</span></li>
+          </ul>
+        </div>
+        <div class="acct-c">
+          <h3 class="t-sub row gap-3"><span class="acct-tag funded">Funded</span>The funded account</h3>
+          <p class="sum-def">Bitso's USDC, in a separate account you trade.</p>
+          <ul class="ico-list">
+            <li>{{icon:arrow-up-from-line:ico-sm}}<span>Money leaves only through a <a class="link" href="#claims">claim</a></span></li>
+            <li>{{icon:infinity:ico-sm}}<span>No end date</span></li>
+            <li class="risk">{{icon:trending-down:ico-sm}}<span>At risk: the account, at the <a class="link" href="#liquidation">trailing liquidation</a> level. Claimed profit stays yours.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="calendar">
+      <h2>Cycle calendar</h2>
+      <p>Same dates for everyone. All times 00:00 UTC.</p>
+      <ol class="cal">
+        <li><span class="cal-dot"></span><b>Oct 20, 2026</b><span>Cycle 1 opens</span></li>
+        <li class="key"><span class="cal-dot"></span><b>Nov 18, 2026</b><span>Cycle 1 closes, 24h requests</span></li>
+        <li class="key"><span class="cal-dot"></span><b>Nov 19, 2026</b><span>Seats assigned, accounts live, Cycle 2 opens</span></li>
+        <li><span class="cal-dot"></span><b>Dec 18, 2026</b><span>Cycle 2 closes, requests to Dec 19</span></li>
+        <li><span class="cal-dot"></span><b>Jan 17, 2027</b><span>Cycle 3 closes, requests to Jan 18</span></li>
+      </ol>
+    </section>
+
+    <section id="floors">
+      <h2>Requirements</h2>
+      <p>Measured on your own account.</p>
+      <div class="req-grid">
+        <div class="req-g">
+          <h3 class="req-h">{{icon:list-ordered:ico-sm}}To be on the board <span class="muted">met once, kept all cycle</span></h3>
+          <ul class="tiles">
+            <li><b>10</b><span>closed perps trades</span></li>
+            <li><b>$1,000</b><span>perps volume</span></li>
+            <li><b>$100</b><span>balance</span></li>
+          </ul>
+        </div>
+        <div class="req-g">
+          <h3 class="req-h">{{icon:armchair:ico-sm}}To request a seat <span class="muted">checked at the close</span></h3>
+          <ul class="tiles">
+            <li><b>&gt; $0</b><span>net PnL in the cycle</span></li>
+            <li><b>15</b><span>trading days</span></li>
+            <li><b>Kept</b><span>drawdown requirement</span></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="fine">
+        <li>{{icon:wallet:ico-sm}}<span>$100 or more in your own account at the close to request</span></li>
+        <li>{{icon:check:ico-sm}}<span>A trade counts from $50 notional, open 60 seconds; volume always counts</span></li>
+        <li>{{icon:calendar-check:ico-sm}}<span>A trading day: a UTC day with one valid open or close. 15 in Cycle 1 means starting by Nov 3</span></li>
+        <li>{{icon:monitor:ico-sm}}<span>Only orders from funded.onchain.cc or onchain.cc in the <a class="link" href="#account">allowed markets</a>. Trades since Oct 20 are in</span></li>
+      </ul>
+    </section>
+
+    <section id="drawdown">
+      <h2>Drawdown requirement</h2>
+      <p>Equity, unrealized included, may never fall 10% of your starting capital below your highest equity. Once 10% up, your line locks at the starting capital. Deposits and withdrawals move the starting capital, not your result.</p>
+      <figure class="liq" aria-labelledby="dd-cap">
+        <svg viewBox="0 0 720 236" role="img" aria-label="Equity of an own account that started the cycle with $1,000, and its drawdown line over time">
+          <g class="liq-grid">
+            <line x1="60" x2="700" y1="40.5" y2="40.5"/><line x1="60" x2="700" y1="200.5" y2="200.5"/>
+          </g>
+          <line class="liq-size" x1="60" x2="700" y1="120" y2="120"/>
+          <g class="liq-y">
+            <text x="52" y="44">$1,100</text><text x="52" y="124">$1,000</text><text x="52" y="204">$900</text>
+          </g>
+          <path class="liq-eq" d="M60 120 L110 132 L200 80 L260 112 L380 40 L460 72 L540 56 L620 96 L690 84"/>
+          <path class="liq-lv" d="M60 200 L130.8 200 L200 160 L313.3 160 L380 120 L690 120"/>
+          <circle class="liq-pk" cx="200" cy="80" r="4"/><circle class="liq-pk lv" cx="200" cy="160" r="4"/>
+          <circle class="liq-pk" cx="380" cy="40" r="4"/><circle class="liq-pk lv" cx="380" cy="120" r="4"/>
+          <text class="liq-note" x="200" y="69" text-anchor="middle">High $1,050</text>
+          <text class="liq-note lv" x="208" y="178">Line $950</text>
+          <text class="liq-note" x="372" y="30" text-anchor="end">10% up, $1,100</text>
+          <text class="liq-note lv" x="388" y="138">Line locks at $1,000</text>
+          <text class="liq-note lv" x="66" y="218">Starts at $900</text>
+        </svg>
+        <figcaption id="dd-cap" class="liq-legend t-caption muted"><span class="row gap-2"><i class="lg eq"></i>Equity</span><span class="row gap-2"><i class="lg lv"></i>Your line</span><span class="row gap-2"><i class="lg sz"></i>Starting capital</span><span>Own account, $1,000 start. The line never moves down.</span></figcaption>
+      </figure>
+      <p class="callout">{{icon:circle-slash:ico-sm}}Touching the line rules out a seat request this cycle. It closes nothing.</p>
+    </section>
+
+    <section id="score">
+      <h2>Score</h2>
+      <p>0 to 1000. Each factor is your percentile on the board.</p>
+      <div class="wbar" role="img" aria-label="Score weights: Net PnL 30%, return on capital 25%, win rate 15%, volume 10%, trade count 10%, balance 10%">
+        <i style="flex:30"><b>30%</b></i><i style="flex:25"><b>25%</b></i><i style="flex:15"><b>15%</b></i><i style="flex:10"><b>10%</b></i><i style="flex:10"><b>10%</b></i><i style="flex:10"><b>10%</b></i>
+      </div>
+      <ul class="wlegend">
+        <li><i class="s1"></i><span><b>Net PnL</b> <span class="muted">after fees and funding</span></span></li>
+        <li><i class="s2"></i><span><b>Return on capital</b> <span class="muted">on starting capital plus net deposits, time weighted</span></span></li>
+        <li><i class="s3"></i><span><b>Win rate</b> <span class="muted">counted trades closed in profit</span></span></li>
+        <li><i class="s4"></i><span><b>Volume</b> <span class="muted">perps notional, opens and closes</span></span></li>
+        <li><i class="s5"></i><span><b>Trade count</b> <span class="muted">counted trades</span></span></li>
+        <li><i class="s6"></i><span><b>Balance</b> <span class="muted">time weighted</span></span></li>
+      </ul>
+      <p class="t-small muted">{{icon:refresh-cw:ico-sm}} Refreshed every minute, frozen at the close. Ties: higher net PnL, then smaller worst loss.</p>
+    </section>
+
+    <section id="seats">
+      <h2>Seats and sizes</h2>
+      <ol class="flow">
+        <li><span class="flow-ico">{{icon:hand:ico-sm}}</span><b>Request</b><span>24h after the close. One button, withdrawable</span></li>
+        <li><span class="flow-ico">{{icon:list-ordered:ico-sm}}</span><b>Rank</b><span>Requesters by score. Seat # sets the size</span></li>
+        <li><span class="flow-ico">{{icon:rocket:ico-sm}}</span><b>Go live</b><span>All 60 on Nov 19, 00:00 UTC</span></li>
+      </ol>
+      <p class="t-small muted">No request, no seat. Seat numbers count requesters only, so #70 on the board can still get one.</p>
+      <table class="table doc-table sizes">
+        <thead><tr><th>Account</th><th class="r">Bitso's USDC</th><th class="r">Liquidation at the start</th><th class="r">Level locks at the size from equity</th><th class="r">Seats</th><th class="r">Seat #</th></tr></thead>
+        <tbody>
+          <tr><td><span class="band band-200">$200K</span></td><td class="r">$200,000</td><td class="r">$180,000</td><td class="r">$220,000</td><td class="r"><span class="seat-pips" style="--n:1">1</span></td><td class="r">#1</td></tr>
+          <tr><td><span class="band band-100">$100K</span></td><td class="r">$100,000</td><td class="r">$90,000</td><td class="r">$110,000</td><td class="r"><span class="seat-pips" style="--n:1">1</span></td><td class="r">#2</td></tr>
+          <tr><td><span class="band band-50">$50K</span></td><td class="r">$50,000</td><td class="r">$45,000</td><td class="r">$55,000</td><td class="r"><span class="seat-pips" style="--n:4">4</span></td><td class="r">#3 to #6</td></tr>
+          <tr><td><span class="band band-25">$25K</span></td><td class="r">$25,000</td><td class="r">$22,500</td><td class="r">$27,500</td><td class="r"><span class="seat-pips" style="--n:15">15</span></td><td class="r">#7 to #21</td></tr>
+          <tr><td><span class="band band-5">$5K</span></td><td class="r">$5,000</td><td class="r">$4,500</td><td class="r">$5,500</td><td class="r"><span class="seat-pips" style="--n:39">39</span></td><td class="r">#22 to #60</td></tr>
+        </tbody>
+      </table>
+      <p class="t-small muted">Fixed for the whole cycle.</p>
+    </section>
+
+    <section id="liquidation">
+      <h2>Trailing liquidation</h2>
+      <p>The funded account's only loss rule. On a $25K account the level starts at $22,500, stays $2,500 (10% of the $25,000 size) below your highest equity and stops rising at $25,000, once equity reaches $27,500.</p>
+      <figure class="liq" aria-labelledby="liq-cap">
+        <svg viewBox="0 0 720 236" role="img" aria-label="Equity of a $25K account and its liquidation level over time">
+          <g class="liq-grid">
+            <line x1="60" x2="700" y1="57.5" y2="57.5"/><line x1="60" x2="700" y1="182.5" y2="182.5"/>
+          </g>
+          <line class="liq-size" x1="60" x2="700" y1="120" y2="120"/>
+          <g class="liq-y">
+            <text x="52" y="61">$27,500</text><text x="52" y="124">$25,000</text><text x="52" y="186">$22,500</text>
+          </g>
+          <path class="liq-eq" d="M60 120 L120 108 L170 96.9 L225 116 L275 125 L330 110 L400 80 L460 57.5 L520 40 L600 62 L690 80"/>
+          <path class="liq-lv" d="M60 182.5 L120 170.5 L170 159.4 L360.6 159.4 L400 142.5 L460 120 L690 120"/>
+          <circle class="liq-pk" cx="170" cy="96.9" r="4"/><circle class="liq-pk lv" cx="170" cy="159.4" r="4"/>
+          <circle class="liq-pk" cx="460" cy="57.5" r="4"/><circle class="liq-pk lv" cx="460" cy="120" r="4"/>
+          <circle class="liq-pk" cx="520" cy="40" r="4"/>
+          <text class="liq-note" x="170" y="86" text-anchor="middle">Peak $25,923</text>
+          <text class="liq-note lv" x="178" y="177">Liquidation $23,423</text>
+          <text class="liq-note" x="450" y="52" text-anchor="end">Equity $27,500</text>
+          <text class="liq-note" x="528" y="32">Peak $28,200</text>
+          <text class="liq-note lv" x="468" y="138">Level locks at $25,000</text>
+          <text class="liq-note lv" x="66" y="200">Starts at $22,500</text>
+        </svg>
+        <figcaption id="liq-cap" class="liq-legend t-caption muted"><span class="row gap-2"><i class="lg eq"></i>Equity</span><span class="row gap-2"><i class="lg lv"></i>Liquidation level</span><span class="row gap-2"><i class="lg sz"></i>Starting size</span><span>$25K account. The level never moves down.</span></figcaption>
+      </figure>
+      <ul class="fine">
+        <li>{{icon:activity:ico-sm}}<span>Equity at Hyperliquid's mark price, unrealized included. No daily limit</span></li>
+        <li>{{icon:x-circle:ico-sm}}<span>Reaching it closes the account for good, at real closing prices. The rest returns to Bitso</span></li>
+        <li>{{icon:rotate-ccw:ico-sm}}<span>A <a class="link" href="#claims">claim</a> resets the level</span></li>
+      </ul>
+    </section>
+
+    <section id="account">
+      <h2>Trading the account</h2>
+      <ul class="facts">
+        <li><span class="f-ico">{{icon:layers:ico}}</span><b>Cross margin only</b><span>Leverage is what Hyperliquid allows per market</span></li>
+        <li><span class="f-ico">{{icon:chart-candlestick:ico}}</span><b>Allowed markets</b><span>BTC, ETH, SOL, HYPE, gold, oil, US500, NVDA, TSLA. RWA trades also when its market is closed</span></li>
+        <li><span class="f-ico">{{icon:octagon-x:ico}}</span><b>What blocks an order</b><span>Only a market off the list or isolated margin. Stop loss optional</span></li>
+        <li><span class="f-ico">{{icon:key-round:ico}}</span><b>Where you trade</b><span>The trading key works only on funded.onchain.cc and onchain.cc</span></li>
+        <li><span class="f-ico">{{icon:infinity:ico}}</span><b>How long</b><span>No end date. Open until liquidated</span></li>
+        <li><span class="f-ico">{{icon:info:ico}}</span><b>Pre-trade check</b><span>Informs, never blocks</span></li>
+      </ul>
+    </section>
+
+    <section id="claims">
+      <h2>Claims</h2>
+      <ul class="nums">
+        <li>{{icon:percent:ico muted}}<b>80%</b><span>to your own account, 20% to Bitso</span></li>
+        <li>{{icon:package-check:ico muted}}<b>All of it</b><span>above the size, no partial claims</span></li>
+        <li>{{icon:circle-off:ico muted}}<b>0 open</b><span>positions when you claim</span></li>
+      </ul>
+      <div class="claim-ex">
+        <span class="t-caption muted">Example, $25K account at equity $26,240.50</span>
+        <div class="split" role="img" aria-label="Claim of $1,240.50: $992.40 to your own account, $248.10 to Bitso">
+          <i class="sp-you" style="flex:80"><b>$992.40</b><span>to your own account</span></i>
+          <i class="sp-bitso" style="flex:20"><b>$248.10</b><span>Bitso</span></i>
+        </div>
+        <span class="t-small dim">Claim $1,240.50. The account resets to $25,000, liquidation $22,500.</span>
+      </div>
+      <p class="t-small muted">In your own account a claim counts as a deposit: no PnL, no return, no effect on your drawdown line.</p>
+      <p><a class="link row gap-2 inl" href="05-payouts.html">See every payout made so far{{icon:arrow-right:ico-sm}}</a></p>
+    </section>
+
+    <section id="other">
+      <h2>Other rules</h2>
+      <ul class="facts">
+        <li><span class="f-ico">{{icon:server-crash:ico}}</span><b>Platform incidents</b><span>If onchain.cc or Hyperliquid goes down, funded positions close. The account stays active and can claim once flat</span></li>
+        <li><span class="f-ico">{{icon:user-round-check:ico}}</span><b>One at a time</b><span>Holding an account, you stay on the board but can't request another. If it closes, request at the next close, or in the current 24h window if you meet the requirements</span></li>
+        <li><span class="f-ico">{{icon:chart-no-axes-column:ico}}</span><b>Funded trading</b><span>Doesn't count for the board</span></li>
+        <li><span class="f-ico">{{icon:gift:ico}}</span><b>Referrals</b><span>As in the onchain.cc referral program</span></li>
+        <li><span class="f-ico">{{icon:globe:ico}}</span><b>Regions</b><span>Where onchain.cc is available. No documents</span></li>
+      </ul>
+    </section>
+  </article>
+</main>
+<style>
+.rules { max-width: 1200px; margin: 0 auto; padding: 32px 24px 160px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 72px; align-items: start; }
+.toc { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 10px; }
+.toc ol { display: flex; flex-direction: column; border-left: 1px solid var(--glass-sep); }
+.toc ol a { display: block; padding: 5px 0 5px 14px; margin-left: -1px; font-size: 13px; color: var(--muted); border-left: 2px solid transparent; }
+.toc ol a:hover { color: var(--text-2); }
+.toc ol a[aria-current="true"] { color: #fff; font-weight: 600; border-left-color: #fff; }
+.toc-foot { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--glass-sep); }
+.doc { max-width: 860px; }
+.lede { margin-top: 10px; font-size: 17px; line-height: 27px; color: var(--text-3); }
+.doc section { padding-top: 48px; scroll-margin-top: 72px; }
+.doc h2 { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 6px; }
+.doc p { font-size: 15px; line-height: 24px; color: var(--text-2); max-width: 720px; }
+.doc p.t-small { font-size: 13px; line-height: 20px; }
+.doc p.muted { color: var(--muted); }
+.doc section > * + * { margin-top: 14px; }
+.doc section > h2 + p { margin-top: 0; color: var(--text-3); }
+.doc p b { color: #fff; font-weight: 600; }
+.doc .band { background: rgb(255 255 255 / 0.07); color: var(--text-2); }
+.doc .inl { display: inline-flex; }
+
+/* two accounts */
+.accts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.acct-c { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; border-radius: var(--r-xl); background: var(--glass-subtle); box-shadow: var(--rim); }
+.sum-def { font-size: 14px !important; line-height: 21px !important; color: var(--text-3) !important; }
+.ico-list { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; padding-top: 12px; border-top: 1px solid var(--glass-sep); }
+.ico-list li { display: grid; grid-template-columns: 16px 1fr; gap: 10px; font-size: 13px; line-height: 19px; color: var(--text-2); }
+.ico-list .ico { margin-top: 2px; color: var(--muted); }
+.ico-list li.risk { color: var(--text-3); }
+
+/* calendar */
+.cal { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; padding-top: 6px; }
+.cal::before { content: ""; position: absolute; left: 7px; right: calc(20% - 7px); top: 12px; height: 2px; background: rgb(255 255 255 / 0.12); }
+.cal li { position: relative; display: flex; flex-direction: column; gap: 4px; padding-right: 14px; }
+.cal-dot { width: 14px; height: 14px; border-radius: 50%; background: #0b0b0b; box-shadow: inset 0 0 0 2px #5a5a5a; margin-bottom: 10px; position: relative; }
+.cal li.key .cal-dot { background: #e8e8e8; box-shadow: 0 0 0 4px rgb(255 255 255 / 0.08); }
+.cal b { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cal span:last-child { font-size: 13px; line-height: 18px; color: var(--text-3); }
+
+/* requirements */
+.req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.req-g { padding: 18px 20px 20px; border-radius: var(--r-xl); background: var(--glass-subtle); box-shadow: var(--rim); }
+.req-h { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+.req-h .ico { color: var(--muted); }
+.req-h .muted { font-weight: 400; font-size: 12px; margin-left: auto; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 14px; }
+.tiles li { display: flex; flex-direction: column; gap: 4px; padding: 12px 12px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.tiles b { font-size: 24px; line-height: 28px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.tiles span { font-size: 12px; line-height: 16px; color: var(--text-3); }
+.fine { display: flex; flex-direction: column; gap: 8px; max-width: 760px; }
+.fine li { display: grid; grid-template-columns: 16px 1fr; gap: 10px; font-size: 13px; line-height: 19px; color: var(--text-3); }
+.fine .ico { margin-top: 2px; color: var(--muted); }
+.callout { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: var(--r-md); background: rgb(255 255 255 / 0.04); font-size: 14px !important; }
+.callout .ico { color: var(--muted); }
+
+/* score weights */
+.wbar { display: flex; gap: 3px; height: 40px; }
+.wbar i { display: flex; align-items: center; padding: 0 10px; border-radius: 6px; font-style: normal; }
+.wbar i b { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.wbar i:nth-child(1), .wlegend .s1 { background: #e8e8e8; color: #0a0a0d; }
+.wbar i:nth-child(2), .wlegend .s2 { background: #b5b5bb; color: #0a0a0d; }
+.wbar i:nth-child(3), .wlegend .s3 { background: #85858c; color: #0a0a0d; }
+.wbar i:nth-child(4), .wlegend .s4 { background: #5d5d64; }
+.wbar i:nth-child(5), .wlegend .s5 { background: #45454b; }
+.wbar i:nth-child(6), .wlegend .s6 { background: #333338; }
+.wlegend { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; }
+.wlegend li { display: grid; grid-template-columns: 10px 1fr; gap: 10px; font-size: 13px; line-height: 19px; }
+.wlegend i { width: 10px; height: 10px; border-radius: 3px; margin-top: 4px; }
+.wlegend b { font-weight: 600; white-space: nowrap; }
+.wlegend b { margin-right: 4px; }
+#score p .ico { display: inline-block; vertical-align: -2px; }
+
+/* seats */
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; counter-reset: f; }
+.flow li { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: var(--r-lg); background: var(--glass-subtle); box-shadow: var(--rim); }
+.flow-ico { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-2); margin-bottom: 6px; }
+.flow b { font-size: 15px; font-weight: 600; }
+.flow li > span:last-child { font-size: 13px; line-height: 18px; color: var(--text-3); }
+.doc-table { font-size: 14px; }
+.doc-table th:first-child, .doc-table td:first-child { padding-left: 0; }
+.doc-table th:last-child, .doc-table td:last-child { padding-right: 0; }
+.doc-table td { padding-top: 10px; padding-bottom: 10px; }
+.seat-pips { display: inline-flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+.seat-pips::before { content: ""; width: calc(var(--n) * 2px + 2px); height: 8px; border-radius: 2px; background: rgb(255 255 255 / 0.3); }
+
+/* liquidation charts */
+.liq { margin: 0; padding: 16px 16px 12px; border-radius: var(--r-lg); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.doc section > .liq { margin-top: 18px; }
+.liq svg { display: block; width: 100%; height: auto; }
+.liq-grid line { stroke: rgb(255 255 255 / 0.06); stroke-width: 1; }
+.liq-size { stroke: rgb(255 255 255 / 0.28); stroke-width: 1; stroke-dasharray: 2 4; }
+.liq-y text { fill: var(--muted); font-size: 11px; text-anchor: end; font-variant-numeric: tabular-nums; }
+.liq-eq { fill: none; stroke: #e8e8e8; stroke-width: 2; stroke-linejoin: round; }
+.liq-lv { fill: none; stroke: #ff6b6e; stroke-width: 2; stroke-dasharray: 6 4; stroke-linejoin: round; }
+.liq-pk { fill: #0e0e0e; stroke: #e8e8e8; stroke-width: 2; }
+.liq-pk.lv { stroke: #ff6b6e; }
+.liq-note { fill: var(--text-2); font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.liq-note.lv { fill: #ff8a8c; }
+.liq-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; }
+.lg { display: inline-block; width: 16px; height: 0; border-top: 2px solid #e8e8e8; }
+.lg.lv { border-top: 2px dashed #ff6b6e; }
+.lg.sz { border-top: 1px dotted rgb(255 255 255 / 0.5); }
+
+/* facts grid */
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.facts li { align-content: center; display: grid; grid-template-columns: 36px 1fr; grid-template-rows: auto auto; column-gap: 12px; row-gap: 2px; padding: 14px 16px; border-radius: var(--r-lg); background: var(--glass-subtle); box-shadow: var(--rim); }
+.f-ico { grid-row: span 2; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-2); }
+.facts b { font-size: 14px; font-weight: 600; }
+.facts li > span:last-child { font-size: 13px; line-height: 19px; color: var(--text-3); }
+
+/* claims */
+.nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.nums li { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.nums li .ico { margin-bottom: 6px; }
+.nums b { font-size: 26px; line-height: 30px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.nums span { font-size: 13px; color: var(--text-3); }
+.claim-ex { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; border-radius: var(--r-lg); background: var(--glass-subtle); box-shadow: var(--rim); }
+.split { display: flex; gap: 3px; height: 52px; }
+.split i { display: flex; flex-direction: column; justify-content: center; padding: 0 14px; border-radius: 8px; font-style: normal; min-width: 0; }
+.split b { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.split span { font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sp-you { background: var(--buy-20); color: var(--buy-light); box-shadow: inset 0 0 0 1px rgb(0 165 102 / 0.4); }
+.sp-bitso { background: rgb(255 255 255 / 0.08); color: var(--text-2); }
+</style>
