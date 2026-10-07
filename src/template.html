@@ -1,4 +1,13 @@
-/* funded.onchain.cc mockup kit.
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>onchain.cc Funded flows</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>/* funded.onchain.cc mockup kit.
    Tokens copied from onchain-trenches packages/ui/src/styles/theme.css (oklch converted to hex)
    and apps/web/app/globals.css glass utilities. Dark only, like onchain.cc. */
 
@@ -446,6 +455,8 @@ a.chip:hover, button.chip:hover { background: var(--glass-hover); }
 .mockbar .mb-flow { color: #555; }
 .mockbar .ico { width: 14px; height: 14px; }
 .mockbar [aria-disabled="true"] { opacity: 0.3; pointer-events: none; }
+.mockbar .mb-next { background: #111; color: #f2f2f2; font-weight: 700; margin-left: 4px; }
+.mockbar .mb-next:hover { background: #333; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; transition-duration: 1ms !important; }
@@ -528,33 +539,30 @@ a.chip:hover, button.chip:hover { background: var(--glass-hover); }
 /* mockup note: explains a state jump for the reviewer, never product UI */
 .mock-note { padding: 12px 16px; border: 1px dashed rgb(255 255 255 / 0.22); border-radius: var(--r-lg); display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--text-3); }
 .mock-tag { align-self: flex-start; font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em; padding: 1px 6px; border-radius: 4px; background: #f2f2f2; color: #111; }
-
-/* ===================== onchain.cc brand signatures (from onchain.cc landing, 2026-10-07) ===================== */
-/* subtle grid behind marketing and hero areas */
-.grid-bg { position: relative; isolation: isolate; }
-.grid-bg::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
-  background-size: 64px 64px; mask-image: radial-gradient(ellipse at 50% 20%, #000 30%, transparent 75%); }
-/* brand emphasis word in a headline (onchain.cc "One terminal."), use once per page at most */
-.brand-em { background: linear-gradient(90deg, #9095fd 0%, #acb3ff 55%, #7d7ff3 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-/* shiny CTA, onchain.cc "Launch terminal" / Colosseum button: dark pill with a rotating violet rim */
-@property --shine { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
-.btn-shiny { position: relative; height: 46px; padding: 0 24px; border-radius: 9999px; color: #fff; font-weight: 600; font-size: 15px; letter-spacing: -0.01em;
-  background: linear-gradient(#070707, #070707) padding-box, conic-gradient(from var(--shine), transparent 0deg, #7c49e3 60deg, #fff 90deg, #7c49e3 120deg, transparent 200deg) border-box;
-  border: 1.5px solid transparent; animation: shine-spin 3s linear infinite; box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06), 0 8px 30px rgb(124 73 227 / 0.25); }
-.btn-shiny:hover { background: linear-gradient(#111, #111) padding-box, conic-gradient(from var(--shine), transparent 0deg, #7c49e3 60deg, #fff 90deg, #7c49e3 120deg, transparent 200deg) border-box; }
-@keyframes shine-spin { to { --shine: 360deg; } }
-/* glass pill tabs (onchain.cc landing product switcher) */
-.pill-tabs { display: inline-flex; gap: 8px; flex-wrap: wrap; }
-.pill-tabs a, .pill-tabs span { height: 34px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 9999px; font-size: 13px; font-weight: 500; color: var(--text-2); background: rgb(255 255 255 / 0.04); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1); }
-.pill-tabs [aria-current="true"] { color: var(--primary-subtle); background: var(--primary-15); box-shadow: inset 0 0 0 1px rgb(144 149 253 / 0.45); }
-/* terminal frame: a product view framed like onchain.cc's landing terminal (window chrome dots) */
-.term-frame { border-radius: 20px; background: rgb(12 12 14 / 0.85); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.08), 0 30px 80px rgb(0 0 0 / 0.6), 0 0 120px rgb(133 82 251 / 0.12); overflow: hidden; }
-.term-frame-bar { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid rgb(255 255 255 / 0.06); font-family: var(--mono); font-size: 12px; color: var(--muted); }
-.term-frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; } .term-frame-bar i:nth-child(2) { background: #febc2e; } .term-frame-bar i:nth-child(3) { background: #28c840; }
-/* violet glow card for celebratory moments (seat granted, claim paid) */
-.glow-card { position: relative; border-radius: 20px; background: radial-gradient(120% 120% at 0% 0%, rgb(144 149 253 / 0.18) 0%, rgb(20 20 24 / 0.9) 45%); box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12), 0 0 0 1px rgb(144 149 253 / 0.25), 0 20px 60px rgb(124 73 227 / 0.18); }
-@media (prefers-reduced-motion: reduce) { .btn-shiny { animation: none; } }
-
-/* header fit with the six item funded nav */
-@media (max-width: 1360px) { .season-chip > span:nth-child(2) { max-width: 170px; } .nav-item { padding: 0 8px; gap: 5px; } }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<a id="home" href="#/index">All flows</a>
+<style>#home{position:fixed;z-index:80;left:16px;bottom:16px;height:32px;padding:0 14px;display:inline-flex;align-items:center;border-radius:9999px;background:#f2f2f2;color:#111;font-size:12px;font-weight:600;box-shadow:0 6px 24px rgb(0 0 0 / .5)}</style>
+<script id="pages" type="application/json">__PAGES__</script>
+<script>
+(function () {
+  var pages = JSON.parse(document.getElementById('pages').textContent);
+  var app = document.getElementById('app');
+  function show() {
+    var h = location.hash;
+    if (h && h.indexOf('#/') !== 0) return; // in-page anchors
+    var route = h ? decodeURIComponent(h.slice(2)) : 'index';
+    var p = pages[route] || pages['index'];
+    app.innerHTML = p.body;
+    document.getElementById('home').style.display = route === 'index' ? 'none' : '';
+    document.title = p.title;
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', show);
+  show();
+})();
+</script>
+</body>
+</html>

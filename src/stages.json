@@ -1,0 +1,512 @@
+{
+ "stages": [
+  {
+   "name": "Discover",
+   "date": "Nov 6",
+   "description": "A visitor lands, sees real seats and real payouts, reads how it works and signs up.",
+   "screens": [
+    {
+     "key": "f01-onboarding/01-landing",
+     "name": "Landing",
+     "type": "landing",
+     "question": "What is this, and why should I care?"
+    },
+    {
+     "key": "f01-onboarding/02-leaderboard",
+     "name": "Leaderboard, qualification",
+     "type": "lb",
+     "question": "Who would get a seat right now?"
+    },
+    {
+     "key": "f01-onboarding/06-funded-traders",
+     "name": "Leaderboard, funded traders",
+     "type": "funded",
+     "question": "Who is trading a seat, and how is it going?"
+    },
+    {
+     "key": "f01-onboarding/05-payouts",
+     "name": "Leaderboard, payouts",
+     "type": "payouts",
+     "question": "Does this actually pay?"
+    },
+    {
+     "key": "f01-onboarding/03-rules",
+     "name": "How it works",
+     "type": "rules",
+     "question": "What do I have to do, and what can I lose?"
+    },
+    {
+     "key": "f01-onboarding/04-sign-in",
+     "name": "Get started",
+     "type": "modal",
+     "question": "How do I get in?"
+    }
+   ]
+  },
+  {
+   "name": "Get on the board",
+   "date": "Oct 20",
+   "description": "kestrel signs up on day one, adds $250, makes two trades and lands on the leaderboard.",
+   "screens": [
+    {
+     "key": "f02-not-qualified/01-home-new",
+     "name": "Account, first look",
+     "type": "account",
+     "question": "What do I need to do first?"
+    },
+    {
+     "key": "f02-not-qualified/02-deposit",
+     "name": "Add funds",
+     "type": "modal",
+     "question": "How do I put in $100?"
+    },
+    {
+     "key": "f02-not-qualified/03-home-progress",
+     "name": "Account, funds added",
+     "type": "account",
+     "question": "My money is in. What now?"
+    },
+    {
+     "key": "f02-not-qualified/10-money",
+     "name": "My money, first deposit",
+     "type": "money",
+     "question": "Where did my deposit land?"
+    },
+    {
+     "key": "f02-not-qualified/08-trade-first",
+     "name": "Trade, first trade",
+     "type": "trade",
+     "question": "How far does one trade get me?"
+    },
+    {
+     "key": "f02-not-qualified/09-home-first-trade",
+     "name": "Account, first trade done",
+     "type": "account",
+     "question": "How close am I now?"
+    },
+    {
+     "key": "f02-not-qualified/07-trade-progress",
+     "name": "Trade, second trade",
+     "type": "trade",
+     "question": "Will this trade get me on the board?"
+    },
+    {
+     "key": "f02-not-qualified/04-home-on-board",
+     "name": "You're on the leaderboard",
+     "type": "account",
+     "question": "I'm in. Where do I stand?"
+    },
+    {
+     "key": "f02-not-qualified/05-alias",
+     "name": "Edit profile",
+     "type": "modal",
+     "question": "How will others see me?"
+    },
+    {
+     "key": "f02-not-qualified/11-leaderboard",
+     "name": "Leaderboard, your first rank",
+     "type": "lb",
+     "question": "Who is around me on day one?"
+    },
+    {
+     "key": "f02-not-qualified/12-stats",
+     "name": "Stats, day one",
+     "type": "stats",
+     "question": "How did my first trades go?"
+    },
+    {
+     "key": "f02-not-qualified/13-referrals",
+     "name": "Referrals, day one",
+     "type": "referrals",
+     "question": "Who can I bring with me?"
+    },
+    {
+     "key": "f02-not-qualified/06-home-no-history",
+     "name": "Variant: past onchain.cc trades count",
+     "type": "account",
+     "question": "A different trader with past trades: do they count?"
+    }
+   ]
+  },
+  {
+   "name": "Compete",
+   "date": "Nov 6",
+   "description": "Day 18 of 30. kestrel holds a $25K seat today and is working on the last requirements.",
+   "screens": [
+    {
+     "key": "f03-competing/01-home-competing",
+     "name": "Account, competing",
+     "type": "account",
+     "question": "Would I get a seat today, and what moves my score?"
+    },
+    {
+     "key": "f03-competing/04-score",
+     "name": "Score breakdown",
+     "type": "score",
+     "question": "How is my score built, and what would raise it?"
+    },
+    {
+     "key": "f03-competing/06-stats",
+     "name": "Stats",
+     "type": "stats",
+     "question": "How good is my trading, really?"
+    },
+    {
+     "key": "f03-competing/10-money",
+     "name": "My money",
+     "type": "money",
+     "question": "What do I have, and where did it come from?"
+    },
+    {
+     "key": "f03-competing/05-trade",
+     "name": "Trade, own account",
+     "type": "trade",
+     "question": "What does this trade do for my score?"
+    },
+    {
+     "key": "f03-competing/02-leaderboard",
+     "name": "Leaderboard, qualification",
+     "type": "lb",
+     "question": "Where am I against everyone else?"
+    },
+    {
+     "key": "f03-competing/03-trader-profile",
+     "name": "Trader profile",
+     "type": "lb",
+     "question": "How is the trader above me doing it?"
+    },
+    {
+     "key": "f03-competing/09-funded-traders",
+     "name": "Leaderboard, funded traders",
+     "type": "funded",
+     "question": "Who is trading a seat right now?"
+    },
+    {
+     "key": "f03-competing/08-payouts",
+     "name": "Leaderboard, payouts",
+     "type": "payouts",
+     "question": "Who is getting paid, and how much?"
+    },
+    {
+     "key": "f03-competing/07-leaderboard-cut",
+     "name": "Referrals",
+     "type": "referrals",
+     "question": "What do I earn from friends?"
+    }
+   ]
+  },
+  {
+   "name": "Request a seat",
+   "date": "Nov 18 to 19",
+   "description": "Scores freeze. kestrel requests a seat and gets funded. The other outcomes follow as variants.",
+   "screens": [
+    {
+     "key": "f04-seat-claim/01-home-window-open",
+     "name": "Request window open",
+     "type": "account",
+     "question": "I qualified. What do I get?"
+    },
+    {
+     "key": "f04-seat-claim/03-home-requested",
+     "name": "Seat requested",
+     "type": "account",
+     "question": "My request is in. What happens next?"
+    },
+    {
+     "key": "f04-seat-claim/06-seat-granted",
+     "name": "You're funded",
+     "type": "modal",
+     "question": "I got a seat. Can I trade now?"
+    },
+    {
+     "key": "f04-seat-claim/09-request-board",
+     "name": "Variant: waitlist",
+     "type": "account",
+     "question": "Seats ran out before my rank. Now what?"
+    },
+    {
+     "key": "f04-seat-claim/02-request-seat",
+     "name": "Variant: seat offered",
+     "type": "modal",
+     "question": "A seat freed up. Do I take it?"
+    },
+    {
+     "key": "f04-seat-claim/07-no-seat",
+     "name": "Variant: short of a seat",
+     "type": "account",
+     "question": "I qualified but scored under 70. What did I keep?"
+    },
+    {
+     "key": "f04-seat-claim/04-home-not-eligible",
+     "name": "Variant: missed a requirement",
+     "type": "account",
+     "question": "Which requirement fell short?"
+    },
+    {
+     "key": "f04-seat-claim/08-missed",
+     "name": "Variant: request window missed",
+     "type": "account",
+     "question": "I forgot to request. What now?"
+    },
+    {
+     "key": "f04-seat-claim/05-home-already-funded",
+     "name": "Variant: already funded",
+     "type": "account",
+     "question": "I hold a seat. What does this window mean for me?"
+    }
+   ]
+  },
+  {
+   "name": "Trade the seat",
+   "date": "Nov 19 to 28",
+   "description": "kestrel trades 5,000 USDC with a $25,000 cap. The seat is up $923.",
+   "screens": [
+    {
+     "key": "f05-funded-trading/01-home-funded",
+     "name": "Account, funded",
+     "type": "account",
+     "question": "How is my seat doing?"
+    },
+    {
+     "key": "f05-funded-trading/02-trade-funded",
+     "name": "Trade on the seat",
+     "type": "trade",
+     "question": "How much of today's limit does this order use?"
+    },
+    {
+     "key": "f05-funded-trading/03-order-blocked",
+     "name": "Market not allowed",
+     "type": "trade",
+     "question": "Why can't I send this order?"
+    },
+    {
+     "key": "f05-funded-trading/04-account-switch",
+     "name": "Switch account",
+     "type": "trade",
+     "question": "Seat or my own account?"
+    },
+    {
+     "key": "f05-funded-trading/07-stats",
+     "name": "Seat stats",
+     "type": "stats",
+     "question": "How is the seat trading, market by market?"
+    },
+    {
+     "key": "f05-funded-trading/08-funded-traders",
+     "name": "Leaderboard, your seat live",
+     "type": "funded",
+     "question": "How does my seat compare?"
+    },
+    {
+     "key": "f05-funded-trading/09-money",
+     "name": "My money",
+     "type": "money",
+     "question": "What is in my own account while I trade the seat?"
+    },
+    {
+     "key": "f05-funded-trading/10-referrals",
+     "name": "Referrals",
+     "type": "referrals",
+     "question": "How are my friends doing?"
+    }
+   ]
+  },
+  {
+   "name": "Get paid",
+   "date": "Nov 28 to 30",
+   "description": "kestrel closes their positions, takes a $738 payout and keeps trading.",
+   "screens": [
+    {
+     "key": "f07-claims/04-close-to-claim",
+     "name": "Close positions first",
+     "type": "account",
+     "question": "What do I need to do to get paid?"
+    },
+    {
+     "key": "f07-claims/01-payouts",
+     "name": "Payout ready",
+     "type": "account",
+     "question": "How much can I take?"
+    },
+    {
+     "key": "f07-claims/02-claim",
+     "name": "Request a payout",
+     "type": "modal",
+     "question": "Keep trading or close the seat?"
+    },
+    {
+     "key": "f07-claims/03-paid",
+     "name": "Payout sent",
+     "type": "modal",
+     "question": "Is it on its way?"
+    },
+    {
+     "key": "f07-claims/06-payouts-board",
+     "name": "Leaderboard, your first payout",
+     "type": "payouts",
+     "question": "Where does my payout show?"
+    },
+    {
+     "key": "f07-claims/05-nothing-to-claim",
+     "name": "No payout yet",
+     "type": "account",
+     "question": "My seat is below its start. What now?"
+    }
+   ]
+  },
+  {
+   "name": "Pause and close",
+   "date": "Dec 1 to 2",
+   "description": "A bad run: the daily pause, then the seat closes at its loss limit. The payout stays theirs.",
+   "screens": [
+    {
+     "key": "f05-funded-trading/05-order-placed",
+     "name": "Near the daily pause",
+     "type": "trade",
+     "question": "How close am I to today's pause?"
+    },
+    {
+     "key": "f05-funded-trading/06-floor-locked",
+     "name": "Paused for the day",
+     "type": "trade",
+     "question": "What can I still do?"
+    },
+    {
+     "key": "f06-risk-events/01-liquidated",
+     "name": "Seat closed",
+     "type": "modal",
+     "question": "What do I keep, and what's next?"
+    },
+    {
+     "key": "f06-risk-events/02-incident",
+     "name": "Variant: platform incident",
+     "type": "trade",
+     "question": "Trading went down. Is my seat safe?"
+    }
+   ]
+  },
+  {
+   "name": "Back to competing",
+   "date": "Dec 2 to 18",
+   "description": "kestrel keeps their payout, competes again with their own money and requests a new seat.",
+   "screens": [
+    {
+     "key": "f08-after-account/01-home-after-loss",
+     "name": "Account after the seat closed",
+     "type": "account",
+     "question": "My seat closed. How do I get another?"
+    },
+    {
+     "key": "f09-money/01-balance",
+     "name": "My money",
+     "type": "money",
+     "question": "What do I have now, and where did it come from?"
+    },
+    {
+     "key": "f09-money/08-deposit-problem",
+     "name": "Deposit not credited",
+     "type": "modal",
+     "question": "I sent a token that isn't USDC."
+    },
+    {
+     "key": "f09-money/02-deposit",
+     "name": "Add funds, crypto",
+     "type": "modal",
+     "question": "Where do I send USDC?"
+    },
+    {
+     "key": "f09-money/03-deposit-arriving",
+     "name": "Deposit arriving",
+     "type": "modal",
+     "question": "Where is my money now?"
+    },
+    {
+     "key": "f09-money/04-deposit-done",
+     "name": "Deposit arrived",
+     "type": "modal",
+     "question": "Is it in my balance?"
+    },
+    {
+     "key": "f09-money/05-withdraw",
+     "name": "Withdraw",
+     "type": "modal",
+     "question": "How do I send money out?"
+    },
+    {
+     "key": "f09-money/06-withdraw-confirm",
+     "name": "Confirm withdrawal",
+     "type": "modal",
+     "question": "Is everything right?"
+    },
+    {
+     "key": "f09-money/07-withdraw-sent",
+     "name": "Withdrawal sent",
+     "type": "modal",
+     "question": "When will it arrive?"
+    },
+    {
+     "key": "f08-after-account/02-competing-again",
+     "name": "Competing again",
+     "type": "account",
+     "question": "Am I on track for a new seat?"
+    },
+    {
+     "key": "f08-after-account/04-leaderboard",
+     "name": "Leaderboard, back on the board",
+     "type": "lb",
+     "question": "Where am I this time?"
+    },
+    {
+     "key": "f08-after-account/07-payouts-board",
+     "name": "Leaderboard, your payout stays",
+     "type": "payouts",
+     "question": "Is my payout still on the board?"
+    },
+    {
+     "key": "f08-after-account/05-stats",
+     "name": "Stats",
+     "type": "stats",
+     "question": "How am I trading this time?"
+    },
+    {
+     "key": "f08-after-account/06-referrals",
+     "name": "Referrals",
+     "type": "referrals",
+     "question": "What have friends earned me?"
+    },
+    {
+     "key": "f08-after-account/03-request-again",
+     "name": "Request a seat again",
+     "type": "account",
+     "question": "I qualified again. Can I request?"
+    }
+   ]
+  }
+ ],
+ "indexKeys": [
+  "f01-onboarding/index",
+  "f02-not-qualified/index",
+  "f03-competing/index",
+  "f04-seat-claim/index",
+  "f05-funded-trading/index",
+  "f06-risk-events/index",
+  "f07-claims/index",
+  "f08-after-account/index"
+ ],
+ "newFrom": {
+  "f02-not-qualified/10-money": "f09-money/01-balance",
+  "f02-not-qualified/11-leaderboard": "f03-competing/02-leaderboard",
+  "f02-not-qualified/12-stats": "f03-competing/06-stats",
+  "f02-not-qualified/13-referrals": "f03-competing/07-leaderboard-cut",
+  "f03-competing/10-money": "f09-money/01-balance",
+  "f05-funded-trading/07-stats": "f03-competing/06-stats",
+  "f05-funded-trading/08-funded-traders": "f03-competing/09-funded-traders",
+  "f05-funded-trading/09-money": "f09-money/01-balance",
+  "f05-funded-trading/10-referrals": "f03-competing/07-leaderboard-cut",
+  "f07-claims/06-payouts-board": "f03-competing/08-payouts",
+  "f08-after-account/04-leaderboard": "f03-competing/02-leaderboard",
+  "f08-after-account/05-stats": "f03-competing/06-stats",
+  "f08-after-account/06-referrals": "f03-competing/07-leaderboard-cut",
+  "f08-after-account/07-payouts-board": "f03-competing/08-payouts"
+ }
+}

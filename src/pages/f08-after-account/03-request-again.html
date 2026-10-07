@@ -1,151 +1,379 @@
-<!--page {"nav":"home","header":"member","season":"<span class=\"k\">Requests close in</span> 14h 20m","seasonPct":40,"unread":true,"acct":{"tag":"own","label":"Own","value":"$2,267.40"},"links":{"trade":"{{root}}f03-competing/05-trade.html","leaderboard":"{{root}}f03-competing/02-leaderboard.html","payoutsall":"{{root}}f03-competing/08-payouts.html","stats":"{{root}}f03-competing/06-stats.html","acct":"{{root}}f09-money/01-balance.html","deposit":"{{root}}f09-money/02-deposit.html","alias":"{{root}}f02-not-qualified/05-alias.html"}} -->
+
+<header class="app-header"><div class="row gap-6"><a class="brand" href="#/f08-after-account/01-home-after-loss" aria-label="onchain.cc Funded home"><img src="DATAURI_ba808351f1" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></a><nav class="nav-track" aria-label="Main"><a class="nav-item" href="#/f08-after-account/01-home-after-loss" aria-current="page"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /> </svg>Home</a><a class="nav-item" href="#" data-flow="f03-competing" title="Continues in Competing"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9 5v4" /> <rect width="4" height="6" x="7" y="9" rx="1" /> <path d="M9 15v2" /> <path d="M17 3v2" /> <rect width="4" height="8" x="15" y="5" rx="1" /> <path d="M17 13v3" /> <path d="M3 3v16a2 2 0 0 0 2 2h16" /> </svg>Trade</a><a class="nav-item" href="#" data-flow="f03-competing" title="Continues in Competing"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11 5h10" /> <path d="M11 12h10" /> <path d="M11 19h10" /> <path d="M4 4h1v5" /> <path d="M4 9h2" /> <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" /> </svg>Leaderboard</a><a class="nav-item" href="#" data-flow="f03-competing" title="Continues in Competing"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 18V6" /> </svg>Payouts</a><a class="nav-item" href="#" data-flow="f03-competing" title="Continues in Competing"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 16v5" /> <path d="M16 14.639V21" /> <path d="M20 10.656V21" /> <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15" /> <path d="M4 18.463V21" /> <path d="M8 14.656V21" /> </svg>Stats</a></nav></div><div class="header-right"><span class="chip season-chip"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /> </svg><span><span class="k">Requests close in</span> 14h 20m</span><span class="bar" aria-hidden="true"><i style="width:40%"></i></span></span>
+<a class="acct" href="#" data-flow="f09-money" title="Continues in Deposit and withdraw"><span class="acct-tag own">Own</span><span class="num w6">$2,267.40</span><svg class="ico ico-sm muted" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m6 9 6 6 6-6" /> </svg></a>
+<a class="icon-btn" href="#" data-flow="f09-money" title="Continues in Deposit and withdraw" aria-label="Add funds"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 12h14" /> <path d="M12 5v14" /> </svg></a>
+<button class="icon-btn" aria-label="Notifications"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10.268 21a2 2 0 0 0 3.464 0" /> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /> </svg><span class="badge-dot"></span></button>
+<a class="row gap-3" href="#" data-flow="f02-not-qualified" title="Continues in Not qualified yet" aria-label="Profile"><span class="avatar">K</span></a></div></header>
+
 <main class="home">
-  <div class="home-grid">
-    <div class="stack gap-3">
-
-      <section class="panel standing" aria-labelledby="standing-h">
-        <div class="standing-body">
-          <h1 id="standing-h" class="t-heading">Cycle 2 closed. You can request a seat</h1>
-          <p class="t-caption muted mt-2">Dec 18, 09:40 UTC</p>
-          <p class="clean mt-4">{{icon:shield-check:ico-sm}}Your last funded account does not count against you</p>
-
-          <div class="rank-row mt-6">
-            <span class="t-display num">Seat #19 to #29</span>
-            <span class="dim t-sub w5">#29 on the final board, score <b class="w6 hi num">768.0</b></span>
-          </div>
-
-          <div class="sm-track" aria-label="Cycle 2 seat zones, by seat number, with your possible range">
-            <div class="sm-zone" style="flex:1 1 0"><div class="sm-bar z200"></div><div class="sm-meta"><div class="row gap-3"><span class="band band-200">$200K</span><span class="sm-seats">#1</span></div></div></div>
-            <div class="sm-zone" style="flex:1 1 0"><div class="sm-bar z100"></div><div class="sm-meta"><div class="row gap-3"><span class="band band-100">$100K</span><span class="sm-seats">#2</span></div></div></div>
-            <div class="sm-zone" style="flex:4 1 0"><div class="sm-bar z50"></div><div class="sm-meta"><div class="row gap-3"><span class="band band-50">$50K</span><span class="sm-seats">#3 to #6</span></div></div></div>
-            <div class="sm-zone" style="flex:15 1 0"><div class="sm-bar z25"><span class="sm-range" style="left:80%;right:0"></span><span class="sm-you" style="left:83.3%"><span class="sm-you-tag">You, seat #19</span><span class="sm-you-dot"></span></span></div><div class="sm-meta"><div class="row gap-3"><span class="band band-25">$25K</span><span class="sm-seats">#7 to #21</span></div></div></div>
-            <div class="sm-zone" style="flex:39 1 0"><div class="sm-bar z5"><span class="sm-range" style="left:0;width:20.5%"></span></div><div class="sm-meta"><div class="row gap-3"><span class="band band-5">$5K</span><span class="sm-seats">#22 to #60</span></div><span class="sm-p">Down to <b class="num">#29</b></span></div></div>
-            <div class="sm-cut" aria-hidden="true"><span class="sm-cut-tag">Last seat</span></div>
-            <div class="sm-zone sm-out" style="flex:8 1 0"><div class="sm-bar zout"></div><div class="sm-meta"><span class="sm-p">No seat</span></div></div>
-          </div>
-
-          <div class="scen-head mt-7">
-            <span class="row gap-3 t-small">{{icon:users:ico-sm muted}}<span><b class="w6 hi">10 traders</b> above you can still request</span></span>
-            <a class="link t-small" href="{{root}}f03-competing/02-leaderboard.html">Requesters around the cut</a>
-          </div>
-          <div class="scen mt-3">
-            <div class="sc is-best">
-              <span class="row gap-3"><span class="band band-25">$25K</span><span class="sc-acct">$25,000 account</span></span>
-              <span class="rq-v">Seat #19 to #21</span>
-              <span class="rq-s">If 0 to 2 of them request</span>
-            </div>
-            <div class="sc">
-              <span class="row gap-3"><span class="band band-5">$5K</span><span class="sc-acct">$5,000 account</span></span>
-              <span class="rq-v">Seat #22 to #29</span>
-              <span class="rq-s">If 3 to 10 of them request</span>
-            </div>
-          </div>
-          <p class="t-caption muted mt-3">Your seat depends on who above you requests, not on when you do.</p>
-
-          <section class="req" aria-labelledby="req-h">
-            <div class="req-head">
-              <h2 id="req-h" class="section-title row gap-3"><span class="acct-tag own">Own</span>Requirements</h2>
-              <span class="req-count"><b>4</b> of 4 met</span>
-            </div>
-            <div class="req-grid">
-              <div class="rq">
-                <span class="rq-top"><span class="rq-ico">{{icon:check:ico-sm}}</span><span class="rq-k">Trading days</span></span>
-                <span class="rq-v">16 <small>of 15</small></span><span class="rq-s">Met</span>
-              </div>
-              <div class="rq">
-                <span class="rq-top"><span class="rq-ico">{{icon:check:ico-sm}}</span><span class="rq-k">Net PnL positive</span></span>
-                <span class="rq-v up">+$341.20</span><span class="rq-s">Met</span>
-              </div>
-              <div class="rq">
-                <span class="rq-top"><span class="rq-ico">{{icon:check:ico-sm}}</span><span class="rq-k">Drawdown</span></span>
-                <span class="rq-v up">Kept</span><span class="rq-s">$341.20 above the line</span>
-              </div>
-              <div class="rq">
-                <span class="rq-top"><span class="rq-ico">{{icon:check:ico-sm}}</span><span class="rq-k">$100 at the close</span></span>
-                <span class="rq-v">$2,267.40</span><span class="rq-s">Balance at the close</span>
-              </div>
-            </div>
-          </section>
+  <section class="panel state st-brand" aria-labelledby="st-h">
+    <div class="state-top"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /> </svg><h1 id="st-h" class="st-title">You qualified. Request your seat before Dec 19, 00:00 UTC.</h1><span class="st-body">Seats go live as the request window closes.</span></div>
+    <div class="state-main">
+      <div class="stack gap-3">
+        <div class="row gap-4 seat-fig"><span class="t-display num">1,000 USDC</span><span class="band band-5 band-lg">$5K seat</span></div>
+        <dl class="seat-terms">
+          <div><dt>Position cap</dt><dd>$5,000</dd></div>
+          <div><dt>Daily pause</dt><dd>$250 lost in a day</dd></div>
+          <div><dt>Seat closes</dt><dd>$500 lost, or 7 days in a row below start</dd></div>
+          <div><dt>Profit split</dt><dd>80% you, 20% us. Payouts any time you're flat.</dd></div>
+        </dl>
+      </div>
+      <div class="stack gap-4 req-col">
+        <label class="accept"><span class="checkbox" role="checkbox" aria-checked="false"></span><span>I accept the seat terms.</span></label>
+        <div class="state-act">
+          <a class="btn btn-primary btn-lg" href="#" data-flow="f04-seat-claim" title="Continues in Seat request" aria-disabled="true"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" /> <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" /> <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" /> <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /> </svg>Request seat</a>
+          <a class="btn btn-glass btn-lg" href="#/f08-after-account/02-competing-again">Skip this time</a>
         </div>
-
-        <div class="row-between standing-foot">
-          <span class="t-small muted row gap-3">{{icon:undo-2:ico-sm}}You can withdraw it until seats are assigned.</span>
-          <a class="btn btn-primary btn-lg" href="{{root}}f04-seat-claim/02-request-seat.html">{{icon:hand:ico-sm}}Request seat</a>
-        </div>
-      </section>
+        <span class="t-small muted">Tick the box to request. You can cancel before the window closes.</span>
+      </div>
     </div>
+  </section>
 
+  <div class="tiles">
+    <section class="panel tile">
+      <span class="label">Score</span>
+      <div class="tile-fig"><span class="t-title num">76</span></div>
+      <span class="t-caption muted">Final</span>
+    </section>
+    <section class="panel tile">
+      <span class="label">Rank</span>
+      <div class="tile-fig"><span class="t-title num">#29</span><span class="dim">of 2,402</span></div>
+      <span class="t-caption muted">Final</span>
+    </section>
+    <section class="panel tile">
+      <span class="label">Score to beat</span>
+      <div class="tile-fig"><span class="t-title num">70</span></div>
+      <span class="t-caption"><b class="up">6 points clear</b></span>
+    </section>
+    <section class="panel tile tile-seat">
+      <span class="label">Your seat</span>
+      <div class="tile-fig"><span class="t-title num">$5K</span></div>
+      <span class="t-caption muted">If you request</span>
+    </section>
+  </div>
+
+  <div class="home-grid acct-grid mt-3">
+    <div class="stack gap-3">
+    <section class="panel panel-flush" aria-labelledby="q-h">
+      <div class="panel-head"><h2 id="q-h" class="panel-title">Qualification</h2><span class="t-caption muted">All 4 met · Final</span></div>
+      <div class="check done"><span class="check-ico"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span><div class="stack gap-2"><span class="check-title">20 closed trades</span><div class="segs ck-segs" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="check-sub">Final count</span></div><span class="ck-v"><b>26</b> / 20</span></div>
+      <div class="check done"><span class="check-ico"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span><div class="stack gap-2"><span class="check-title">15 trading days</span><div class="segs ck-segs" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><span class="check-sub">Final count</span></div><span class="ck-v"><b>16</b> / 15</span></div>
+      <div class="check done"><span class="check-ico"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span><div class="stack gap-2"><span class="check-title">In profit</span><span class="check-sub">Final</span></div><span class="ck-v"><b class="up">+$341</b></span></div>
+      <div class="check done"><span class="check-ico"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span><div class="stack gap-2"><span class="check-title">Max drawdown 25% or less</span><span class="check-sub">Your biggest drop from a high</span></div><span class="ck-v"><b>3.1%</b></span></div>
+    </section>
+    <section class="panel moves" aria-labelledby="mv-h">
+      <div class="row-between"><h2 id="mv-h" class="section-title">How your final score was built</h2><a class="link t-caption" href="#" data-flow="f03-competing" title="Continues in Competing">Score breakdown</a></div>
+      
+      <div class="parts"><div class="part"><span class="part-k">Return for the risk</span><span class="pt-bar"><i style="width:77.3%"></i></span><span class="part-v"><b>58</b> of 75</span></div><div class="part"><span class="part-k">Worst trade</span><span class="pt-bar"><i style="width:66.7%"></i></span><span class="part-v"><b>10</b> of 15</span></div><div class="part"><span class="part-k">Steadiness</span><span class="pt-bar"><i style="width:80.0%"></i></span><span class="part-v"><b>8</b> of 10</span></div></div>
+    </section>
+    </div>
     <aside class="stack gap-3">
-      <section class="panel" aria-labelledby="next-h">
-        <h2 id="next-h" class="section-title">Next 24 hours</h2>
-        <ol class="timeline mt-5">
-          <li class="done"><span class="tl-dot"></span><div><b class="w6">Cycle 2 closed</b><span class="muted t-caption">Dec 18, 00:00 UTC. Board frozen.</span></div></li>
-          <li class="now"><span class="tl-dot"></span><div><b class="w6">Requests open</b><span class="muted t-caption"><span class="num">604</span> requests so far</span></div></li>
-          <li><span class="tl-dot"></span><div><b class="w6">Seats assigned, accounts live</b><span class="muted t-caption">Dec 19, 00:00 UTC, in score order</span></div></li>
-        </ol>
+      <section class="panel macct" aria-labelledby="ma-h">
+        <h2 id="ma-h" class="panel-title">My account</h2>
+        <span class="ma-fig">$2,267</span>
+        <span class="ma-sub">All available, no open positions</span>
+        <div class="ma-acts"><a class="btn btn-secondary btn-sm" href="#/f09-money/02-deposit">Add funds</a><a class="btn btn-ghost btn-sm" href="#/f09-money/05-withdraw">Withdraw</a></div>
+        <span class="ma-h">Recent activity</span>
+        <div class="ma-list"><div class="ma-row"><span class="d">Dec 16</span><span>Trading PnL</span><span class="a up">+$37</span></div><div class="ma-row"><span class="d">Dec 14</span><span>Trading PnL</span><span class="a up">+$63</span></div><div class="ma-row"><span class="d">Dec 12</span><span>Trading PnL</span><span class="a down">-$18</span></div></div>
+        <a class="link t-caption ma-all" href="#/f09-money/01-balance">All activity</a>
       </section>
-
-      <div class="mock-note"><span class="mock-tag">MOCKUP</span><span>Earlier dates: <a class="link" href="01-home-after-loss.html">Dec 2</a>, <a class="link" href="02-competing-again.html">Dec 10</a>. After requesting, home shows the <a class="link" href="{{root}}f04-seat-claim/03-home-requested.html">requested state</a> (F04).</span></div>
+      <section class="panel rec" aria-labelledby="rec-h">
+        <div class="row-between"><h2 id="rec-h" class="panel-title">Your seat record</h2><span class="pill rec-pill">Closed</span></div>
+        <div class="rec-kv"><span class="k">$25K seat, Nov 19 to Dec 2</span><span class="v">1 payout</span></div>
+        <div class="rec-kv"><span class="k">Paid to you</span><span class="v up">$738.40</span></div>
+        <a class="link t-caption" href="#/f08-after-account/07-payouts-board">On the Payouts board</a>
+      </section>
     </aside>
   </div>
+
+  <section class="panel seats mt-3" aria-labelledby="sm-h">
+    <div class="stack gap-2">
+      <h2 id="sm-h" class="section-title">Seats at the freeze</h2>
+      <span class="t-caption muted">46 seats open, 15 still funded</span>
+    </div>
+    <div class="sm-track">
+        <div class="sm-zone" style="flex:11 1 0">
+          <div class="sm-bar z25"></div>
+          <div class="sm-meta"><div class="row gap-3"><span class="band band-25">$25K</span><span class="sm-seats">#1 to #11</span></div><span class="sm-l">Score <b class="num">77</b> and above</span></div>
+        </div>
+        <div class="sm-zone is-you" style="flex:35 1 0">
+          <div class="sm-bar z5"><span class="sm-you" style="left:50.0%"><span class="sm-you-tag">You, #29</span><span class="sm-you-dot"></span></span></div>
+          <div class="sm-meta"><div class="row gap-3"><span class="band band-5">$5K</span><span class="sm-seats">#12 to #46</span></div><span class="sm-l">Score <b class="num">70</b> and above</span></div>
+        </div>
+        <div class="sm-cut" aria-label="Score to beat, 70"><span class="sm-cut-tag"><b>Score to beat, 70</b></span></div>
+        <div class="sm-zone sm-out" style="flex:10 1 0">
+          <div class="sm-bar zout"></div>
+          <div class="sm-meta"><span class="sm-seats">No seat</span><span class="sm-l">Below 70</span></div>
+        </div>
+      </div>
+  </section>
+
+  <section class="panel ms mt-3" aria-labelledby="ms-h">
+    <div class="ms-head"><h2 id="ms-h" class="section-title">My stats<span class="ms-sub">My account, Nov 19 to Dec 17</span></h2><a class="link t-small" href="#" data-flow="f03-competing" title="Continues in Competing">See all stats</a></div>
+    <div class="ms-kpis"><div class="ms-kpi"><span class="k">Win rate</span><span class="v">62%<small>16 of 26</small></span></div><div class="ms-kpi"><span class="k">Profit factor</span><span class="v">2.61</span></div><div class="ms-kpi"><span class="k">Avg win / loss</span><span class="v"><span class="up">+$35</span> <span class="muted">/</span> <span class="down">-$21</span></span></div><div class="ms-kpi"><span class="k">Avg hold</span><span class="v">1h 52m</span></div><div class="ms-kpi"><span class="k">Avg leverage</span><span class="v">2.3x</span></div><div class="ms-kpi"><span class="k">Long / short</span><span class="v">16 <span class="muted">/</span> 10<small>trades</small></span></div></div>
+    <div class="ms-grid">
+      <div>
+        <div class="ms-h">By market<span>Top 4</span></div>
+        <table class="table ms-mk">
+          <thead><tr><th>Market</th><th class="r">Trades</th><th class="r">Win rate</th><th class="r">Net PnL</th><th class="r">Share of profit</th></tr></thead>
+          <tbody><tr><td>BTC-USD</td><td class="r">12</td><td class="r">67%</td><td class="r up">+$201.10</td><td class="r"><span class="ms-sh">59%<span class="ms-bar"><i style="width:59%"></i></span></span></td></tr><tr><td>ETH-USD</td><td class="r">7</td><td class="r">57%</td><td class="r up">+$109.90</td><td class="r"><span class="ms-sh">32%<span class="ms-bar"><i style="width:32%"></i></span></span></td></tr><tr><td>XAU-USD</td><td class="r">2</td><td class="r">100%</td><td class="r up">+$24.00</td><td class="r"><span class="ms-sh">7%<span class="ms-bar"><i style="width:7%"></i></span></span></td></tr><tr><td>SOL-USD</td><td class="r">4</td><td class="r">50%</td><td class="r up">+$17.80</td><td class="r"><span class="ms-sh">5%<span class="ms-bar"><i style="width:5%"></i></span></span></td></tr></tbody>
+        </table>
+      </div>
+      <div class="dp">
+        <div class="dp-head"><span class="dp-t">Daily PnL</span><div class="dp-tot up">+$341<small>final</small><span class="dp-sub">11 green · 5 red</span></div></div>
+        <svg class="dp-svg" viewBox="0 0 600 110" role="img" aria-label="Daily PnL, +$341, 11 green and 5 red days"><line x1="0" x2="600.0" y1="74.0" y2="74.0" style="stroke:rgb(255 255 255 / 0.14);stroke-width:1;stroke-dasharray:2 4"/><path d="M10.3 74.0 L10.3 74.0 L31.0 70.0 L51.7 70.0 L72.4 73.0 L93.1 73.0 L113.8 66.3 L134.5 66.3 L155.2 64.3 L175.9 56.7 L196.6 58.2 L217.2 58.2 L237.9 58.2 L258.6 58.2 L279.3 58.2 L300.0 51.9 L320.7 51.9 L341.4 55.5 L362.1 48.2 L382.8 43.4 L403.4 45.4 L424.1 38.2 L444.8 38.2 L465.5 31.4 L486.2 34.4 L506.9 34.4 L527.6 24.1 L548.3 24.1 L569.0 18.0 L589.7 18.0 L589.7 74.0 Z" style="fill:var(--buy);fill-opacity:0.14"/><path d="M10.3 74.0 L31.0 70.0 L51.7 70.0 L72.4 73.0 L93.1 73.0 L113.8 66.3 L134.5 66.3 L155.2 64.3 L175.9 56.7 L196.6 58.2 L217.2 58.2 L237.9 58.2 L258.6 58.2 L279.3 58.2 L300.0 51.9 L320.7 51.9 L341.4 55.5 L362.1 48.2 L382.8 43.4 L403.4 45.4 L424.1 38.2 L444.8 38.2 L465.5 31.4 L486.2 34.4 L506.9 34.4 L527.6 24.1 L548.3 24.1 L569.0 18.0 L589.7 18.0" style="fill:none;stroke:var(--buy);stroke-width:1.75;stroke-linejoin:round"/><line x1="589.7" x2="589.7" y1="18.0" y2="84" style="stroke:var(--text-3);stroke-width:1;stroke-dasharray:3 3"/><circle cx="589.7" cy="18.0" r="3.5" style="fill:var(--buy-light);stroke:var(--background);stroke-width:1.5"/><text x="582.7" y="12.0" text-anchor="end" style="fill:var(--buy-light);font-size:11px;font-weight:600">+$341</text><rect x="1.5" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="22.2" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.58"><title>Nov 20, +$24</title></rect><rect x="42.9" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="63.6" y="84" width="17.7" height="24" rx="3" style="fill:var(--sell);fill-opacity:0.52"><title>Nov 22, -$18</title></rect><rect x="84.3" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="104.9" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.74"><title>Nov 24, +$41</title></rect><rect x="125.6" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="146.3" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.47"><title>Nov 26, +$12</title></rect><rect x="167.0" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.79"><title>Nov 27, +$46</title></rect><rect x="187.7" y="84" width="17.7" height="24" rx="3" style="fill:var(--sell);fill-opacity:0.44"><title>Nov 28, -$9</title></rect><rect x="208.4" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="229.1" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="249.8" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="270.5" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="291.2" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.71"><title>Dec 3, +$38</title></rect><rect x="311.8" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="332.5" y="84" width="17.7" height="24" rx="3" style="fill:var(--sell);fill-opacity:0.55"><title>Dec 5, -$22</title></rect><rect x="353.2" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.77"><title>Dec 6, +$44</title></rect><rect x="373.9" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.63"><title>Dec 7, +$29</title></rect><rect x="394.6" y="84" width="17.7" height="24" rx="3" style="fill:var(--sell);fill-opacity:0.46"><title>Dec 8, -$12</title></rect><rect x="415.3" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.77"><title>Dec 9, +$44</title></rect><rect x="436.0" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="456.7" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.74"><title>Dec 11, +$41</title></rect><rect x="477.4" y="84" width="17.7" height="24" rx="3" style="fill:var(--sell);fill-opacity:0.53"><title>Dec 12, -$18</title></rect><rect x="498.1" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="518.7" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.95"><title>Dec 14, +$63</title></rect><rect x="539.4" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05)"/><rect x="560.1" y="84" width="17.7" height="24" rx="3" style="fill:var(--buy);fill-opacity:0.70"><title>Dec 16, +$37</title></rect><rect x="580.8" y="84" width="17.7" height="24" rx="3" style="fill:rgb(255 255 255 / 0.05);stroke:var(--primary);stroke-width:1.5"/></svg>
+        <div class="dp-x"><span class="first" style="left:0">Nov 19</span><span class="last now" style="left:100%">Dec 17</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel panel-flush near-wrap mt-3" aria-labelledby="near-h">
+    <div class="panel-head">
+      <h2 id="near-h" class="panel-title">Around you</h2>
+      <a class="link t-small" href="#/f08-after-account/04-leaderboard">Full leaderboard</a>
+    </div>
+    <table class="table near">
+      <thead><tr><th>Rank</th><th>Trader</th><th class="r">Score</th><th class="r" title="Score points between this trader and you">Vs you</th><th class="r">Return</th><th class="r">Max drawdown</th><th class="r">Trading days</th><th>Seat today</th></tr></thead>
+      <tbody>
+        <tr><td class="rank">#27</td><td><a class="trader" href="#/f03-competing/03-trader-profile"><span class="avatar" style="filter:hue-rotate(200deg) saturate(0.55)">T</span>tern.fx</a></td><td class="r">77</td><td class="r gapv">+1</td><td class="r up">+21.6%</td><td class="r">2.8%</td><td class="r"><span class="dn ok">15<svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span></td><td class="seatc"><span class="band band-5">$5K</span></td></tr>
+        <tr><td class="rank">#28</td><td><a class="trader" href="#/f03-competing/03-trader-profile"><span class="avatar" style="filter:hue-rotate(10deg) saturate(0.55)">F</span>fenwick</a></td><td class="r">77</td><td class="r gapv">+1</td><td class="r up">+23.3%</td><td class="r">3.4%</td><td class="r"><span class="dn ok">16<svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span></td><td class="seatc"><span class="band band-5">$5K</span></td></tr>
+        <tr class="me"><td class="rank">#29</td><td><span class="trader"><span class="avatar">K</span>kestrel <span class="you">YOU</span></span></td><td class="r w6">76</td><td class="r gapv muted">You</td><td class="r up">+26.6%</td><td class="r">3.1%</td><td class="r"><span class="dn ok">16<svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span></td><td class="seatc"><span class="band band-5">$5K</span></td></tr>
+        <tr><td class="rank">#30</td><td><a class="trader" href="#/f03-competing/03-trader-profile"><span class="avatar" style="filter:hue-rotate(330deg) saturate(0.55)">R</span>rookery</a></td><td class="r">75</td><td class="r gapv">-1</td><td class="r up">+19.1%</td><td class="r">2.4%</td><td class="r"><span class="dn ok">17<svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span></td><td class="seatc"><span class="band band-5">$5K</span></td></tr>
+        <tr><td class="rank">#31</td><td><a class="trader" href="#/f03-competing/03-trader-profile"><span class="avatar wallet-av"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="mono">0x2be4…7713</span></a></td><td class="r">75</td><td class="r gapv">-1</td><td class="r up">+24.0%</td><td class="r">3.9%</td><td class="r"><span class="dn ok">15<svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /> </svg></span></td><td class="seatc"><span class="band band-5">$5K</span></td></tr>
+      </tbody>
+    </table>
+  </section>
 </main>
 <style>
 .home { max-width: 1280px; margin: 0 auto; padding: 16px 16px 96px; }
-.home-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 8px; align-items: stretch; }
-.home-grid > .stack > .standing { flex: 1; display: flex; flex-direction: column; }
 .hi { color: #fff; }
-.standing { padding: 20px; }
-.clean { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; height: 32px; padding: 0 14px 0 10px; border-radius: var(--r-full); background: rgb(255 255 255 / 0.04); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1); font-size: 13px; font-weight: 500; color: var(--text-2); }
-.clean .ico { color: var(--buy-light); }
-.clean.lg { height: 40px; padding: 0 18px 0 12px; font-size: 15px; font-weight: 600; color: #fff; }
-.rank-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.standing-foot { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--glass-sep); gap: 24px; }
-.standing-body { margin-bottom: 24px; }
-/* seat zones, same drawing as the F03 home */
-.sm-track { position: relative; display: flex; align-items: stretch; gap: 3px; margin-top: 44px; }
-.sm-zone { position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 112px; }
+.ico-xs { width: 12px; height: 12px; flex: none; stroke-width: 2; }
+.home-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.tile { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; }
+.tile-fig { display: flex; align-items: baseline; gap: 10px; }
+.tile-seat { background: linear-gradient(0deg, rgb(160 200 230 / 0.06), rgb(160 200 230 / 0.06)), var(--glass-subtle); }
+.tile-seat .band { align-self: center; }
+.home-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 8px; align-items: stretch; }
+.home-grid2 { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 8px; align-items: stretch; }
+.check { grid-template-columns: 28px 1fr auto; }
+.ck-segs { gap: 2px; width: 260px; margin: 4px 0 2px; }
+.ck-segs i { height: 4px; }
+.ck-v { font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.ck-v b { color: #fff; font-weight: 600; }
+.check-ico .ico { width: 16px; height: 16px; }
+.check:not(.done) .check-ico { color: var(--warning); background: var(--warning-20); }
+.q-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-top: 1px solid var(--glass-sep); font-size: 13px; background: rgb(255 255 255 / 0.02); }
+.moves { padding: 18px 20px; }
+.mv-list { display: flex; flex-direction: column; gap: 14px; }
+.mv-list li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 14px; line-height: 20px; color: var(--text-2); }
+.mv-n { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; background: var(--primary-15); color: var(--primary); }
+.seats { padding: 18px 20px 16px; }
+.moves { display: flex; flex-direction: column; }
+.parts { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--glass-sep); display: flex; flex-direction: column; gap: 10px; }
+.part { display: grid; grid-template-columns: 150px minmax(0, 1fr) 64px; align-items: center; gap: 12px; font-size: 13px; }
+.part-k { color: var(--text-3); }
+.part-v { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.part-v b { color: #fff; font-weight: 600; }
+.pt-bar { display: block; height: 6px; border-radius: 3px; background: rgb(255 255 255 / 0.06); overflow: hidden; }
+.pt-bar i { display: block; height: 100%; border-radius: inherit; background: var(--primary); }
+
+
+.eqc { height: 150px; }
+.eqc svg { width: 100%; height: 100%; }
+.yt .kv { font-size: 14px; line-height: 34px; border-bottom: 1px solid rgb(255 255 255 / 0.05); }
+.yt .kv:last-child { border-bottom: 0; }
+.near th:first-child, .near td:first-child { padding-left: 16px; }
+.near th:last-child, .near td:last-child { padding-right: 16px; }
+.near th:last-child { padding-left: 36px; } .near .seatc { padding-left: 36px; }
+.near .rank { color: #fff; font-weight: 700; }
+.near .gapv { color: var(--text-3); }
+.near a.trader:hover { color: var(--primary-subtle); }
+.near .band { height: 20px; }
+.wallet-av { background: #2c2c2c !important; color: var(--text-3); }
+.eqc { height: 152px; }
+
+/* My stats, compact */
+.ms { padding: 18px 20px 20px; }
+.ms-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.ms-head .ms-sub { margin-left: 10px; font-size: 12px; color: var(--muted); }
+.ms-kpis { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 14px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.ms-kpi { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; min-width: 0; }
+.ms-kpi + .ms-kpi { box-shadow: inset 1px 0 0 rgb(255 255 255 / 0.06); }
+.ms-kpi .k { font-size: 12px; line-height: 16px; color: var(--label); white-space: nowrap; }
+.ms-kpi .v { font-size: 18px; line-height: 22px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ms-kpi .v small { font-size: 12px; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.ms-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 18px; }
+.ms-h { font-size: 13px; font-weight: 600; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.ms-h span { font-size: 12px; font-weight: 500; color: var(--muted); }
+.ms-mk { width: 100%; font-size: 13px; }
+.ms-mk th, .ms-mk td { padding-left: 0; padding-right: 10px; }
+.ms-mk th:last-child, .ms-mk td:last-child { padding-right: 0; }
+.ms-mk td { padding-top: 8px; padding-bottom: 8px; }
+.ms-sh { display: inline-flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.ms-bar { width: 56px; height: 4px; border-radius: 4px; background: rgb(255 255 255 / 0.06); overflow: hidden; }
+.ms-bar i { display: block; height: 100%; border-radius: inherit; background: var(--buy); }
+.ms-curve { height: 64px; margin-bottom: 6px; }
+.ms-curve svg { display: block; height: 100%; }
+.ms-days { display: grid; grid-template-columns: repeat(30, minmax(0, 1fr)); gap: 2px; }
+.ms-days i { height: 26px; border-radius: 3px; background: rgb(255 255 255 / 0.05); }
+.ms-days i.pos { background: rgb(0 165 102 / var(--a)); }
+.ms-days i.neg { background: rgb(215 51 55 / var(--a)); }
+.ms-days i.today { box-shadow: inset 0 0 0 1.5px var(--primary); background: transparent; }
+.ms-days i.future { background: transparent; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08); }
+.ms-x { display: flex; justify-content: space-between; margin-top: 6px; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* My account card */
+.macct { display: flex; flex-direction: column; gap: 10px; padding: 16px 18px; }
+.macct .ma-fig { font-size: 26px; line-height: 30px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.macct .ma-sub { margin-top: -6px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.macct .ma-acts { display: flex; gap: 6px; }
+.macct .ma-acts .btn { flex: 1; }
+.macct .ma-h { margin-top: 4px; font-size: 12px; color: var(--label); }
+.macct .ma-list { display: flex; flex-direction: column; }
+.macct .ma-row { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; padding: 7px 0; font-size: 13px; border-top: 1px solid rgb(255 255 255 / 0.05); font-variant-numeric: tabular-nums; }
+.macct .ma-row .d { color: var(--muted); }
+.macct .ma-row .a { font-weight: 600; text-align: right; }
+.macct .ma-row .a.up { color: var(--buy-light); } .macct .ma-row .a.down { color: var(--sell); }
+.macct .ma-all { align-self: flex-start; }
+.rcol { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.rcol > .moves { flex: 1; }
+.lcol { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.lcol > .panel-flush { flex: 1; }
+.rcol .mv-list { margin-bottom: 16px; }
+
+/* Daily PnL, diverging bars */
+.dp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+.dp-head .dp-t { font-size: 13px; font-weight: 600; }
+.dp-head .dp-sub { display: block; margin-top: 2px; font-size: 12px; font-weight: 500; color: var(--muted); }
+.dp-tot { text-align: right; font-size: 22px; line-height: 26px; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.dp-tot small { margin-left: 6px; font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+.dp-svg { display: block; width: 100%; height: auto; }
+.dp-x { position: relative; height: 14px; margin-top: 4px; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dp-x span { position: absolute; top: 0; white-space: nowrap; transform: translateX(-50%); }
+.dp-x span.first { transform: none; } .dp-x span.last { transform: translateX(-100%); }
+.dp-x span.now { color: var(--text-2); font-weight: 600; }
+
+/* seat map at the freeze: two seat sizes, waitlist, score to beat, no seat */
+.sm-track { position: relative; display: flex; align-items: stretch; gap: 3px; margin-top: 40px; }
+.sm-zone { position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 120px; }
 .sm-bar { position: relative; height: 12px; border-radius: 3px; }
-.sm-bar.z200 { background: rgb(232 177 12 / 0.5); }
-.sm-bar.z100 { background: rgb(192 192 200 / 0.45); }
-.sm-bar.z50 { background: rgb(205 127 50 / 0.5); }
 .sm-bar.z25 { background: rgb(160 200 230 / 0.38); }
 .sm-bar.z5 { background: rgb(255 255 255 / 0.2); }
+.sm-bar.zwait { background: repeating-linear-gradient(135deg, rgb(144 149 253 / 0.30) 0 4px, rgb(144 149 253 / 0.10) 4px 8px); }
 .sm-bar.zout { background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.07) 0 4px, transparent 4px 8px); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
 .sm-meta { display: flex; flex-direction: column; gap: 3px; font-size: 12px; line-height: 16px; padding-right: 6px; white-space: nowrap; }
 .sm-meta .row { margin-bottom: 3px; }
 .sm-seats { font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
-.sm-p { color: var(--muted); font-variant-numeric: tabular-nums; }
-.sm-p b { color: #fff; font-weight: 600; }
+.sm-l { color: var(--muted); font-variant-numeric: tabular-nums; }
+.sm-l b { color: var(--text-2); font-weight: 600; }
 .sm-you { position: absolute; top: 50%; transform: translateX(-50%); }
 .sm-you-dot { position: absolute; left: 0; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--primary), 0 0 0 7px var(--primary-15); }
 .sm-you-tag { position: absolute; bottom: 14px; left: 0; transform: translateX(-50%); font-size: 11px; line-height: 14px; font-weight: 700; color: var(--primary); white-space: nowrap; }
-.sm-cut { position: relative; flex: none; width: 2px; margin: -22px 2px 0; border-radius: 2px; background: #e8e8e8; }
-.sm-cut-tag { position: absolute; top: -4px; right: 8px; font-size: 11px; line-height: 14px; white-space: nowrap; color: var(--text-2); }
-.sm-out { min-width: 64px; }
-.sm-out .sm-meta { padding-left: 4px; }
-/* requirement tiles */
-.req-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.req-count { font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; }
-.req-count b { color: #fff; font-weight: 600; }
-.req { margin-top: 28px; }
-.req-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
-.rq { display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: var(--r-lg); background: rgb(255 255 255 / 0.03); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); min-width: 0; }
-.rq-top { display: flex; align-items: center; gap: 8px; }
-.rq-ico { width: 22px; height: 22px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--buy-20); color: var(--buy-light); }
-.rq-ico.pending { background: rgb(255 255 255 / 0.06); color: var(--text-3); }
-.rq-ring { width: 22px; height: 22px; flex: none; }
-.rq-ico .ico { width: 14px; height: 14px; }
-.rq-k { font-size: 12px; line-height: 16px; color: var(--text-3); }
-.rq-v { margin-top: 4px; font-size: 20px; line-height: 26px; font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.rq-v small { font-size: 13px; font-weight: 400; color: var(--text-3); }
-.rq-s { font-size: 12px; line-height: 16px; color: var(--text-3); font-variant-numeric: tabular-nums; }
-.req-note { margin-top: 10px; font-size: 12px; line-height: 16px; color: var(--muted); }
-.req-note b { color: var(--text-2); font-weight: 600; }
-.sm-range { position: absolute; top: -3px; bottom: -3px; border-radius: 4px; background: var(--primary-35); box-shadow: inset 0 0 0 1px var(--primary); }
-.scen-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.scen { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.sc { display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: var(--r-lg); background: rgb(255 255 255 / 0.03); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
-.sc.is-best { background: rgb(255 255 255 / 0.05); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14); }
-.sc-acct { font-size: 13px; color: var(--text-2); }
-.sc .rq-v { margin-top: 2px; }
+.sm-cut { position: relative; flex: none; width: 2px; margin: -26px 4px 0; border-radius: 2px; background: #e8e8e8; }
+.sm-cut-tag { position: absolute; top: -30px; left: 2px; display: inline-flex; gap: 6px; font-size: 11px; line-height: 14px; white-space: nowrap; color: var(--text-2); }
+.sm-cut-tag .num { color: var(--muted); }
+.sm-out .sm-meta { padding-left: 6px; }
+
+/* My account card, same markup on every Account base */
+.macct { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; }
+.macct .ma-fig { font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-top: 8px; }
+.macct .ma-btns { display: flex; gap: 8px; margin-top: 12px; }
+.macct .ma-h { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--glass-sep); font-size: 12px; color: var(--label); }
+.macct .ma-list { display: flex; flex-direction: column; margin-top: 4px; }
+.macct .ma-list li { display: grid; grid-template-columns: 52px 1fr auto; gap: 10px; align-items: baseline; padding: 7px 0; font-size: 13px; font-variant-numeric: tabular-nums; }
+.macct .ma-list li + li { border-top: 1px solid rgb(255 255 255 / 0.05); }
+.macct .ma-list .d { color: var(--muted); font-size: 12px; }
+.macct .ma-list .w { color: var(--text-2); }
+.macct .ma-list .a { font-weight: 600; text-align: right; }
+.macct .ma-list .a.up { color: var(--buy-light); } .macct .ma-list .a.down { color: var(--sell); }
+.macct .ma-all { margin-top: 10px; align-self: flex-start; }
+
+.hi { color: #fff; }
+.state { padding: 0; overflow: hidden; margin-bottom: 8px; }
+.state-top { display: flex; align-items: center; gap: 12px; padding: 16px 20px; }
+.state-top .st-title { font-size: 17px; line-height: 24px; font-weight: 600; }
+.state-top .st-body { margin-left: auto; color: var(--text-3); font-size: 13px; text-align: right; }
+.state.st-brand .state-top { background: var(--primary-15); }
+.state.st-brand .state-top > .ico { color: var(--primary); }
+.state.st-good .state-top > .ico { color: var(--buy-light); }
+.state-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 20px; border-top: 1px solid var(--glass-sep); }
+.state-act { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.st-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 20px 20px; }
+.st-tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
+.st-tile .k { font-size: 12px; color: var(--label); }
+.st-tile .v { font-size: 34px; line-height: 40px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.st-tile .s { font-size: 12px; color: var(--muted); }
+.st-tile.hi { background: var(--primary-15); box-shadow: inset 0 0 0 1px rgb(144 149 253 / 0.45); }
+.accept { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-2); }
+.accept .checkbox .ico { width: 12px; height: 12px; stroke-width: 3; }
+.acct-grid { grid-template-columns: minmax(0, 1fr) 360px; align-items: start; }
+
+.seat-fig { align-items: center; }
+.band-lg { height: 28px; font-size: 13px; padding: 0 10px; }
+.seat-terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; margin: 0; font-size: 13px; line-height: 18px; }
+.seat-terms dt { color: var(--muted); font-size: 12px; }
+.seat-terms dd { margin: 4px 0 0; color: var(--text-2); }
+.req-col { align-items: flex-start; padding-left: 24px; border-left: 1px solid var(--glass-sep); }
+
+/* Daily PnL, line over day cells */
+.dp-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+.dp-head .dp-t { font-size: 13px; font-weight: 600; }
+.dp-tot { text-align: right; font-size: 18px; line-height: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.dp-tot small { margin-left: 4px; font-size: 12px; font-weight: 500; color: var(--muted); }
+.dp-tot .dp-sub { display: block; font-size: 12px; line-height: 16px; font-weight: 500; color: var(--muted); }
+.dp-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.dp-x { position: relative; height: 14px; margin-top: 4px; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dp-x span { position: absolute; top: 0; white-space: nowrap; transform: translateX(-50%); }
+.dp-x span.first { transform: none; } .dp-x span.last { transform: translateX(-100%); }
+.dp-x span.now { color: var(--text-2); font-weight: 600; }
+
+
+.rec { display: flex; flex-direction: column; gap: 8px; padding: 14px 18px; }
+.rec-pill { height: 20px; font-size: 11px; }
+.rec-kv { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; line-height: 20px; }
+.rec-kv .k { color: var(--muted); } .rec-kv .v { font-weight: 500; font-variant-numeric: tabular-nums; }
+.rec .link { align-self: flex-start; margin-top: 2px; }
+.closed { align-items: center; margin-bottom: 12px; }
+.closed > .ico { color: var(--text-3); margin-top: 0; }
+.closed .banner-title { font-size: 15px; line-height: 22px; }
+.rcol > .macct, .rcol > .rec { flex: none; }
+.lcol > .panel-flush { flex: none; }
+.lcol > .seats { flex: 1; display: flex; flex-direction: column; }
+.lcol > .seats .sm-track { margin-top: auto; margin-bottom: auto; padding-top: 36px; }
+
+.rec { display: flex; flex-direction: column; gap: 8px; padding: 14px 18px; }
+.rec-pill { height: 20px; font-size: 11px; }
+.rec-kv { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; line-height: 20px; }
+.rec-kv .k { color: var(--muted); } .rec-kv .v { font-weight: 500; font-variant-numeric: tabular-nums; }
+.rec .link { align-self: flex-start; margin-top: 2px; }
+.closed { align-items: center; margin-bottom: 12px; }
+.closed > .ico { color: var(--text-3); margin-top: 0; }
+.closed .banner-title { font-size: 15px; line-height: 22px; }
+.lcol, .rcol { justify-content: flex-start; }
+.lcol > .panel-flush { flex: none; }
+.lcol > .moves { flex: 1; }
+.rcol > .macct, .rcol > .rec, .rcol > .seats { flex: none; }
+.rcol > .seats { flex: 1; }
+.seats-n .sm-zone { min-width: 0; }
+.seats-n .sm-zone.z25w { min-width: 84px; }
+.seats-n .sm-meta { gap: 4px; align-items: flex-start; }
+.rcol .sm-meta, .home-grid aside .sm-meta { white-space: normal; padding-right: 4px; font-size: 11px; line-height: 15px; }
+.rcol .sm-meta .row, .home-grid aside .sm-meta .row { flex-wrap: wrap; gap: 4px; }
+.rcol .sm-out, .home-grid aside .sm-out { min-width: 0; }
+.rcol .sm-track, .home-grid aside .sm-track { margin-top: 44px; }
+.rcol .sm-cut-tag, .home-grid aside .sm-cut-tag { display: none; }
+.rcol .sm-track, .home-grid aside .sm-track { margin-top: 36px; }
+.dn { display: inline-flex; align-items: center; gap: 3px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.dn.ok .ico { color: var(--buy-light); }
+.dn .muted { font-weight: 500; }
+.home-grid aside { display: flex; flex-direction: column; gap: 8px; }
 </style>
+
+<nav class="mockbar" aria-label="Mockup navigation">
+<span class="mb-tag">Mockup</span>
+<a href="#/f08-after-account/index"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /> </svg>Screens</a>
+<a href="#/f08-after-account/02-competing-again" aria-label="Previous screen"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m15 18-6-6 6-6" /> </svg></a>
+<span><b>F08</b><span class="mb-flow">After the account</span>3/3 Request a seat again</span>
+<a href="#" aria-disabled="true" aria-label="Next screen"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /> </svg></a>
+</nav>
