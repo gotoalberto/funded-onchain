@@ -2,8 +2,8 @@
  "stages": [
   {
    "name": "Discover",
-   "date": "Nov 6",
-   "description": "A visitor lands, sees real seats and real payouts, reads how it works and signs up.",
+   "date": "Nov 7",
+   "description": "A visitor lands, sees the six seat tiers and real payouts, reads how it works and signs up.",
    "screens": [
     {
      "key": "f01-onboarding/01-landing",
@@ -45,8 +45,8 @@
   },
   {
    "name": "Get on the board",
-   "date": "Oct 20",
-   "description": "kestrel signs up on day one, adds $250, makes two trades and lands on the leaderboard.",
+   "date": "Oct 20 to 21",
+   "description": "kestrel signs up on Oct 20, adds $250 and clears the entry gate on the tenth closed trade. Their own 30-day window starts.",
    "screens": [
     {
      "key": "f02-not-qualified/01-home-new",
@@ -94,7 +94,7 @@
      "key": "f02-not-qualified/04-home-on-board",
      "name": "You're on the leaderboard",
      "type": "account",
-     "question": "I'm in. Where do I stand?"
+     "question": "My window started. What now?"
     },
     {
      "key": "f02-not-qualified/05-alias",
@@ -124,14 +124,14 @@
      "key": "f02-not-qualified/06-home-no-history",
      "name": "Variant: past onchain.cc trades count",
      "type": "account",
-     "question": "A different trader with past trades: do they count?"
+     "question": "Why did my window start on launch day?"
     }
    ]
   },
   {
    "name": "Compete",
-   "date": "Nov 6",
-   "description": "Day 18 of 30. kestrel holds a $25K seat today and is working on the last requirements.",
+   "date": "Nov 7",
+   "description": "Day 18 of 30. kestrel's provisional score of 64 sits in the $2.5K tier, 4 points from $5K.",
    "screens": [
     {
      "key": "f03-competing/01-home-competing",
@@ -196,70 +196,70 @@
    ]
   },
   {
-   "name": "Request a seat",
-   "date": "Nov 18 to 19",
-   "description": "Scores freeze. kestrel requests a seat and gets funded. The other outcomes follow as variants.",
+   "name": "Get a seat offer",
+   "date": "Nov 19 to 21",
+   "description": "Day 30: the score freezes at 66 and kestrel qualifies for the $2.5K tier. A lower seat is offered first, then a $2,500 seat frees up and kestrel is funded on the daily run.",
    "screens": [
     {
      "key": "f04-seat-claim/01-home-window-open",
-     "name": "Request window open",
+     "name": "Score frozen, qualified",
      "type": "account",
-     "question": "I qualified. What do I get?"
+     "question": "Did I make it, and what happens now?"
+    },
+    {
+     "key": "f04-seat-claim/09-request-board",
+     "name": "A lower seat offered first",
+     "type": "account",
+     "question": "Should I take a smaller seat now?"
     },
     {
      "key": "f04-seat-claim/03-home-requested",
-     "name": "Seat requested",
+     "name": "In contention",
      "type": "account",
-     "question": "My request is in. What happens next?"
+     "question": "When will I get a seat?"
+    },
+    {
+     "key": "f04-seat-claim/02-request-seat",
+     "name": "Seat offered",
+     "type": "modal",
+     "question": "A seat is mine. How do I take it?"
     },
     {
      "key": "f04-seat-claim/06-seat-granted",
      "name": "You're funded",
      "type": "modal",
-     "question": "I got a seat. Can I trade now?"
-    },
-    {
-     "key": "f04-seat-claim/09-request-board",
-     "name": "Variant: waitlist",
-     "type": "account",
-     "question": "Seats ran out before my rank. Now what?"
-    },
-    {
-     "key": "f04-seat-claim/02-request-seat",
-     "name": "Variant: seat offered",
-     "type": "modal",
-     "question": "A seat freed up. Do I take it?"
-    },
-    {
-     "key": "f04-seat-claim/07-no-seat",
-     "name": "Variant: short of a seat",
-     "type": "account",
-     "question": "I qualified but scored under 70. What did I keep?"
+     "question": "When can I trade it?"
     },
     {
      "key": "f04-seat-claim/04-home-not-eligible",
-     "name": "Variant: missed a requirement",
+     "name": "Variant: not qualified",
      "type": "account",
-     "question": "Which requirement fell short?"
+     "question": "What do I do after a score under 50?"
+    },
+    {
+     "key": "f04-seat-claim/07-no-seat",
+     "name": "Variant: offer expired",
+     "type": "account",
+     "question": "I missed the 48 hours. Am I still in?"
     },
     {
      "key": "f04-seat-claim/08-missed",
-     "name": "Variant: request window missed",
+     "name": "Variant: qualification lapsed",
      "type": "account",
-     "question": "I forgot to request. What now?"
+     "question": "Why am I out of contention?"
     },
     {
      "key": "f04-seat-claim/05-home-already-funded",
      "name": "Variant: already funded",
      "type": "account",
-     "question": "I hold a seat. What does this window mean for me?"
+     "question": "Why do I get no offers?"
     }
    ]
   },
   {
    "name": "Trade the seat",
-   "date": "Nov 19 to 28",
-   "description": "kestrel trades 5,000 USDC with a $25,000 cap. The seat is up $923.",
+   "date": "Nov 21 to 30",
+   "description": "kestrel trades 2,500 USDC at up to 10x. The seat is up $462.",
    "screens": [
     {
      "key": "f05-funded-trading/01-home-funded",
@@ -313,8 +313,8 @@
   },
   {
    "name": "Get paid",
-   "date": "Nov 28 to 30",
-   "description": "kestrel closes their positions, takes a $738 payout and keeps trading.",
+   "date": "Nov 30",
+   "description": "kestrel closes their positions, takes a $370 payout and keeps trading.",
    "screens": [
     {
      "key": "f07-claims/04-close-to-claim",
@@ -387,8 +387,8 @@
   },
   {
    "name": "Back to competing",
-   "date": "Dec 2 to 18",
-   "description": "kestrel keeps their payout, competes again with their own money and requests a new seat.",
+   "date": "Dec 2 to 19",
+   "description": "kestrel keeps their payout, keeps competing in window 2 with their own money and qualifies again for the $1K tier.",
    "screens": [
     {
      "key": "f08-after-account/01-home-after-loss",
@@ -476,9 +476,9 @@
     },
     {
      "key": "f08-after-account/03-request-again",
-     "name": "Request a seat again",
+     "name": "Qualified again",
      "type": "account",
-     "question": "I qualified again. Can I request?"
+     "question": "Am I back in contention?"
     }
    ]
   }

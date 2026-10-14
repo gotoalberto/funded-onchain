@@ -1,5 +1,7 @@
 # Account base: every Account screen is the Account dashboard
 
+> Superseded where it clashes with `MODEL.md` and `STORY_FACTS.md` (rolling entry windows, 2026-10-14): no shared calendar, no request window, no requirements checklist, six tiers instead of $25K/$5K seats. Layout and copy style rules still apply.
+
 Kevin's decisions:
 1. Keep every screen, but every Account screen is built on the Account dashboard base. A state (waitlist, request window open, missed the floors, short of a seat, seat requested, request window missed, already funded, funded, payout ready, after the seat closed) is shown INSIDE the dashboard, as a banner or a state panel at the top, with the rest of the dashboard below it. No standalone, floating layouts.
 2. One-off moments (You're on the leaderboard, You're funded, Seat closed, Payout sent) are a banner on Account or a modal over Account. A dedicated full page only if truly needed.
