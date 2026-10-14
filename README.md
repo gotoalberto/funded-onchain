@@ -13,7 +13,7 @@ Eight flows in date order, 71 screens. Screens named "Variant" show other outcom
 | # | Flow | Dates | What happens | Screens |
 |---|---|---|---|---|
 | 1 | Discover | Nov 7 | A visitor lands, sees the six seat tiers and real payouts, reads how it works and signs up. | 6 |
-| 2 | Get on the board | Oct 20 to 21 | kestrel signs up on launch day, adds $250 and clears the entry gate on the tenth closed trade. Their own 30-day window starts. | 13 |
+| 2 | Get on the board | Oct 20 to 21 | kestrel signs up on Oct 20, adds $250 and clears the entry gate on the tenth closed trade. Their own 30-day window starts. | 13 |
 | 3 | Compete | Nov 7 | Day 18 of 30. kestrel's provisional score of 64 sits in the $2.5K tier, 4 points from $5K. | 10 |
 | 4 | Get a seat offer | Nov 19 to 21 | Day 30: the score freezes at 66 and kestrel qualifies for the $2.5K tier. A lower seat is offered first, then a $2,500 seat frees up and kestrel is funded on the daily run. | 9 |
 | 5 | Trade the seat | Nov 21 to 30 | kestrel trades 2,500 USDC at up to 10x. The seat is up $462. | 8 |

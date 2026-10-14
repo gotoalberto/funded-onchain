@@ -46,7 +46,7 @@
   {
    "name": "Get on the board",
    "date": "Oct 20 to 21",
-   "description": "kestrel signs up on launch day, adds $250 and clears the entry gate on the tenth closed trade. Their own 30-day window starts.",
+   "description": "kestrel signs up on Oct 20, adds $250 and clears the entry gate on the tenth closed trade. Their own 30-day window starts.",
    "screens": [
     {
      "key": "f02-not-qualified/01-home-new",
