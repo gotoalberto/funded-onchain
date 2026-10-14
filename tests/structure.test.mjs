@@ -82,6 +82,8 @@ test('visible copy follows the product rules', () => {
     [/explorer/i, 'explorer'], [/epoch/i, 'epoch'], [/\bseasons?\b/i, 'season'], [/claim/i, 'claim'],
     [/liquidation/i, 'liquidation'], [/\bthe bar\b/i, 'the bar'], [/pilot/i, 'pilot'],
     [/can[\u2019']t request/i, "can't request"], [/seat #/i, 'seat number'], [/time weighted/i, 'time weighted'], [/percentile/i, 'percentile'],
+    [/request window/i, 'request window'], [/waitlist/i, 'waitlist'], [/score to beat/i, 'score to beat'], [/days below start/i, 'days below start'],
+    [/position cap/i, 'position cap'], [/request(?:ed)? (?:a |your |another )?seat/i, 'request seat'], [/\bcycles?\b/i, 'cycle'],
   ];
   const shell = visibleText(readFileSync(join(root, 'src/template.html'), 'utf8').replace('__PAGES__', ''));
   const hits = [];
