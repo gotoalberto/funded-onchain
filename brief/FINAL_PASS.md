@@ -1,5 +1,7 @@
 # Final copy and UI pass
 
+> Superseded where it clashes with `MODEL.md` and `STORY_FACTS.md` (rolling entry windows, 2026-10-14): no shared calendar, no request window, no requirements checklist, six tiers instead of $25K/$5K seats. Layout and copy style rules still apply.
+
 One last pass on every screen. Think as the trader looking at this screen for the first time: what do they need to know, and what do they do next? Everything else is noise. Edit the live files in src/pages/ in place. Do not regenerate pages from scratch scripts, do not touch nav-track blocks or DATAURI tokens.
 
 ## For every screen, in this order

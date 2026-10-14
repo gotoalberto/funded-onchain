@@ -1,5 +1,7 @@
 # Brief: bring the funded.onchain.cc mockups in line with Kevin's flows
 
+> Superseded where it clashes with `MODEL.md` and `STORY_FACTS.md` (rolling entry windows, 2026-10-14): no shared calendar, no request window, no requirements checklist, six tiers instead of $25K/$5K seats. Layout and copy style rules still apply.
+
 You are editing a 52-screen mockup of funded.onchain.cc (dark onchain.cc design system, high visual quality). The rules, UI and copy have drifted from the agreed product. Bring them in line with Kevin's flows document, keeping every screen and the mockup's own design system (classes, tokens, components, icons). This is about UI as well as copy: restructure panels, tiles, tables and modals where a screen needs to show different things.
 
 ## Files and tools

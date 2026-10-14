@@ -1,333 +1,162 @@
-<header class="app-header"><div class="row gap-6"><a class="brand" href="#/f01-onboarding/01-landing" aria-label="onchain.cc Funded home"><img src="DATAURI_ba808351f1" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></a><nav class="nav-track" aria-label="Main"><a class="nav-item" href="#/f01-onboarding/01-landing"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" /> <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" /> <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" /> <path d="M4 22h16" /> <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" /> <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" /> </svg>Season</a><a class="nav-item" href="#/f01-onboarding/02-leaderboard" aria-current="page"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11 5h10" /> <path d="M11 12h10" /> <path d="M11 19h10" /> <path d="M4 4h1v5" /> <path d="M4 9h2" /> <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" /> </svg>Leaderboard</a><a class="nav-item" href="#/f01-onboarding/05-payouts"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 18V6" /> </svg>Payouts</a><a class="nav-item" href="#/f01-onboarding/03-rules"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 3v18" /> <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /> <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M7 21h10" /> </svg>Rules</a></nav></div><div class="header-right"><span class="chip season-chip"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /> </svg><span><span class="k">Qualification ends in</span> 11d 14h</span></span>
+<header class="app-header"><div class="row gap-6"><a class="brand" href="#/f01-onboarding/01-landing" aria-label="onchain.cc Funded home"><img src="DATAURI_ba808351f1" alt="onchain.cc" width="111" height="15"><span class="brand-tag">Funded</span></a><nav class="nav-track" aria-label="Main"><a class="nav-item" href="#/f01-onboarding/01-landing"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" /> <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" /> <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" /> <path d="M4 22h16" /> <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" /> <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" /> </svg>Season</a><a class="nav-item" href="#/f01-onboarding/02-leaderboard" aria-current="page"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11 5h10" /> <path d="M11 12h10" /> <path d="M11 19h10" /> <path d="M4 4h1v5" /> <path d="M4 9h2" /> <path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02" /> </svg>Leaderboard</a><a class="nav-item" href="#/f01-onboarding/05-payouts"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 18V6" /> </svg>Payouts</a><a class="nav-item" href="#/f01-onboarding/03-rules"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 3v18" /> <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" /> <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" /> <path d="M7 21h10" /> </svg>Rules</a></nav></div><div class="header-right"><span class="chip season-chip"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /> </svg><span><span class="k">Qualification</span> Your own 30 days</span>
 <a class="btn btn-ghost btn-sm" href="https://onchain.cc">onchain.cc</a>
 <a class="btn btn-glass btn-sm" href="#/f01-onboarding/04-sign-in">Sign in</a></div></header>
 
 <main class="lb guest" style="--th-top:56px">
   <div class="board-top">
     <nav class="seg board-switch" aria-label="Board"><a href="#/f01-onboarding/02-leaderboard" aria-current="true">Qualification</a><a href="#/f01-onboarding/06-funded-traders">Funded traders</a><a href="#/f01-onboarding/05-payouts">Payouts</a></nav>
-    <p class="t-small muted lb-upd"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /> </svg>Updated every minute. Scores freeze Nov 18, 00:00 UTC.</p>
+    <p class="t-small muted lb-upd"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /> </svg>Updated every minute. Nov 7, 14:00 UTC.</p>
   </div>
   <div class="lb-head">
     <div class="stack gap-2">
       <h1 class="t-heading">Leaderboard</h1>
-      <p class="t-small muted">2,314 traders, ranked by score from 0 to 100.</p>
+      <p class="t-small muted">2,314 traders with an active window, ranked by score.</p>
     </div>
   </div>
 
   <section class="panel sm" aria-labelledby="sm-h">
-      <div class="sm-head">
-        <div class="stack gap-2">
-          <h2 id="sm-h" class="section-title">61 seats today, $145,000 of USDC</h2>
-        </div>
-      </div>
-      <div class="sm-track">
-        <div class="sm-zone" style="flex:105 1 0">
-          <div class="sm-bar z25"></div>
-          <div class="sm-meta">
-            <div class="row gap-3"><span class="band band-25">$25K</span><span class="sm-seats">21 seats</span></div>
-            <span class="sm-l">Score <b class="num">77</b> and above</span>
-            <span class="sm-w">5,000 USDC each</span>
-          </div>
-        </div>
-        <div class="sm-zone" style="flex:40 1 0">
-          <div class="sm-bar z5"><span class="sm-bub" style="width:12.5%" aria-hidden="true"><span class="sm-bub-tag">Near 70</span></span></div>
-          <div class="sm-meta">
-            <div class="row gap-3"><span class="band band-5">$5K</span><span class="sm-seats">40 seats</span></div>
-            <span class="sm-l">Score <b class="num">70</b> to <b class="num">76</b></span>
-            <span class="sm-w">1,000 USDC each</span>
-          </div>
-        </div>
-        <div class="sm-cut" aria-label="Score to beat, 70"><span class="sm-cut-tag"><b>Score to beat, 70</b></span></div>
-        <div class="sm-zone sm-out">
-          <div class="sm-bar zout"><span class="sm-bub out" style="width:30%" aria-hidden="true"></span></div>
-          <div class="sm-meta"><span class="sm-seats">No seat, below 70</span><span class="sm-l">2,253 traders</span></div>
-        </div>
-      </div>
-      <p class="sm-foot t-small dim"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <line x1="9" x2="15" y1="15" y2="9" /> </svg><span><b class="w6 hi">58 traders are past 25% drawdown.</b> They keep their rank, with no seat.</span></p>
-    </section>
+    <div class="sm-head">
+      <h2 id="sm-h" class="section-title">Seats by tier</h2>
+      <span class="t-small muted">77 seats, $169,000 of USDC. 74 trading, 3 offered now.</span>
+    </div>
+    <table class="table smt">
+      <colgroup><col style="width:96px"><col style="width:130px"><col><col style="width:110px"><col style="width:130px"><col style="width:250px"></colgroup>
+      <thead><tr><th>Tier</th><th>Score</th><th>Seats held</th><th class="r">Open now</th><th class="r">In contention</th><th>Next offer</th></tr></thead>
+      <tbody>
+<tr><td><span class="band band-200">$20K</span></td><td class="sm-sc">80 or more</td><td><div class="held"><span class="meter"><i style="width:100.0%"></i></span><span class="num"><b>2</b> of 2</span></div></td><td class="r"><span class="muted">0</span></td><td class="r">3</td><td><span class="nx"><span class="trader"><span class="avatar" style="filter:hue-rotate(241deg) saturate(0.55)">A</span><span class="tn">atlas</span></span><b class="num">83</b></span></td></tr>
+<tr><td><span class="band band-100">$10K</span></td><td class="sm-sc">74 to 79</td><td><div class="held"><span class="meter"><i style="width:100.0%"></i></span><span class="num"><b>3</b> of 3</span></div></td><td class="r"><span class="muted">0</span></td><td class="r">5</td><td><span class="nx"><span class="trader"><span class="avatar" style="filter:hue-rotate(14deg) saturate(0.55)">S</span><span class="tn">sable_fx</span></span><b class="num">77</b></span></td></tr>
+<tr><td><span class="band band-50">$5K</span></td><td class="sm-sc">68 to 73</td><td><div class="held"><span class="meter"><i style="width:100.0%"></i></span><span class="num"><b>6</b> of 6</span></div></td><td class="r"><span class="muted">0</span></td><td class="r">8</td><td><span class="nx"><span class="trader"><span class="avatar" style="filter:hue-rotate(297deg) saturate(0.55)">I</span><span class="tn">ibis</span></span><b class="num">72</b></span></td></tr>
+<tr><td><span class="band band-25">$2.5K</span></td><td class="sm-sc">62 to 67</td><td><div class="held"><span class="meter"><i style="width:100.0%"></i></span><span class="num"><b>12</b> of 12</span></div></td><td class="r"><span class="muted">0</span></td><td class="r">14</td><td><span class="nx"><span class="trader"><span class="avatar" style="filter:hue-rotate(249deg) saturate(0.55)">M</span><span class="tn">morrow</span></span><b class="num">67</b></span></td></tr>
+<tr><td><span class="band band-5">$1K</span></td><td class="sm-sc">56 to 61</td><td><div class="held"><span class="meter"><i style="width:95.8%"></i></span><span class="num"><b>23</b> of 24</span></div></td><td class="r"><span class="open-n">1</span></td><td class="r">19</td><td><span class="nx-off"><span class="dot"></span>1 offered, 31h left</span></td></tr>
+<tr><td><span class="band band-5 band-05">$500</span></td><td class="sm-sc">50 to 55</td><td><div class="held"><span class="meter"><i style="width:93.3%"></i></span><span class="num"><b>28</b> of 30</span></div></td><td class="r"><span class="open-n">2</span></td><td class="r">26</td><td><span class="nx-off"><span class="dot"></span>2 offered</span></td></tr>
+      </tbody>
+    </table>
+    <p class="sm-foot t-small dim"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /> </svg><span>A freed seat goes to the top score in contention in its tier. 48 hours to accept.</span></p>
+  </section>
 
   <section class="ownbar own-guest" aria-label="Sign in">
     <span class="own-guest-ico"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg></span>
-    <div class="stack grow"><b class="w6">Sign in to see your rank and your seat</b><span class="t-small muted">Same account as onchain.cc.</span></div>
+    <div class="stack grow"><b class="w6">Sign in to see your rank, your day and your tier</b><span class="t-small muted">Same account as onchain.cc.</span></div>
     <a class="btn btn-primary btn-sm" href="#/f01-onboarding/04-sign-in"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m10 17 5-5-5-5" /> <path d="M15 12H3" /> <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /> </svg>Sign in</a>
   </section>
 
   <div class="lb-tools">
-    <span class="seg lb-seg"><a href="#/f01-onboarding/02-leaderboard" aria-current="true">All</a><a href="#">In seats <span class="cnt">61</span></a><a href="#">Near 70 <span class="cnt">14</span></a><a href="#">Over 25% drawdown <span class="cnt">58</span></a></span>
+    <span class="seg lb-seg"><a href="#/f01-onboarding/02-leaderboard" aria-current="true">All <span class="cnt">2,314</span></a><a href="#">In contention <span class="cnt">75</span></a><a href="#/f01-onboarding/04-sign-in" class="locked" title="Sign in to use">My tier</a><a href="#/f01-onboarding/04-sign-in" class="locked" title="Sign in to use">Around me</a></span>
     <label class="input input-sm lb-search"><svg class="ico ico-sm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /> </svg><input type="search" placeholder="Alias or wallet" aria-label="Search alias or wallet"></label>
   </div>
 
   <section class="lbt-wrap" aria-label="Leaderboard">
     <table class="table lbt">
-      <colgroup><col class="w-r"><col class="w-t"><col class="w-sc"><col class="w-ret"><col class="w-dd"><col class="w-d"><col class="w-seat"></colgroup>
-      <thead><tr><th>Rank</th><th><span class="th-trader">Trader<a class="cut-chip" href="#cut"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 5v14" /> <path d="m19 12-7 7-7-7" /> </svg>Score to beat, 70</a></span></th><th class="r">Score</th><th class="r">Return</th><th class="r" title="Biggest drop from a high, own account. 25% or less to qualify">Max drawdown</th><th class="r" title="15 needed to qualify">Trading days</th><th>Seat today</th></tr></thead>
+      <colgroup><col class="w-r"><col class="w-t"><col class="w-sc"><col class="w-day"><col class="w-ret"><col class="w-dd"><col class="w-seat"></colgroup>
+      <thead><tr><th>Rank</th><th>Trader</th><th class="r">Score</th><th class="r">Day</th><th class="r">Return</th><th class="r" title="Biggest drop from a high, own account">Max drawdown</th><th>Tier</th></tr></thead>
       <tbody>
-<tr class="zone"><td colspan="7"><div class="zone-in"><span class="band band-25">$25K</span><b>$25K seats</b><span class="muted zone-n">$25,000 position cap</span></div></td></tr>
-<tr><td class="c-r"><b class="rk">#1</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(355deg) saturate(0.55)">O</span><span class="tn">ormond</span></span></td><td class="r c-sc">94</td><td class="r up">+61.2%</td><td class="r c-dd">8.1%</td><td class="r"><span class="dn ok">18</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#2</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(9deg) saturate(0.55)">T</span><span class="tn">tidewater</span></span></td><td class="r c-sc">92</td><td class="r up">+48.3%</td><td class="r c-dd">6.4%</td><td class="r"><span class="dn ok">17</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#3</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(52deg) saturate(0.55)">Q</span><span class="tn">quillon</span></span></td><td class="r c-sc">90</td><td class="r up">+72.4%</td><td class="r c-dd">12.9%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#4</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(315deg) saturate(0.55)">N</span><span class="tn">nightjar</span></span></td><td class="r c-sc">89</td><td class="r up">+39.8%</td><td class="r c-dd">5.2%</td><td class="r"><span class="dn ok">18</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#5</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(210deg) saturate(0.55)">B</span><span class="tn">brasswork</span></span></td><td class="r c-sc">87</td><td class="r up">+61.3%</td><td class="r c-dd">10.2%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#6</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0xe03d…19f2</span></span></span></td><td class="r c-sc">86</td><td class="r up">+38.9%</td><td class="r c-dd">5.7%</td><td class="r"><span class="dn ok">18</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#7</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(272deg) saturate(0.55)">F</span><span class="tn">ferro</span></span></td><td class="r c-sc">84</td><td class="r up">+57.0%</td><td class="r c-dd">11.8%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#8</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(99deg) saturate(0.55)">L</span><span class="tn">lumen.trade</span></span></td><td class="r c-sc">83</td><td class="r up">+49.8%</td><td class="r c-dd">9.9%</td><td class="r"><span class="dn">14 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#9</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(262deg) saturate(0.55)">O</span><span class="tn">okapi</span></span></td><td class="r c-sc">83</td><td class="r up">+36.4%</td><td class="r c-dd">7.0%</td><td class="r"><span class="dn ok">17</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#10</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x5be1…77c4</span></span></span></td><td class="r c-sc">82</td><td class="r up">+52.1%</td><td class="r c-dd">13.5%</td><td class="r"><span class="dn">12 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#11</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(141deg) saturate(0.55)">H</span><span class="tn">halyard</span></span></td><td class="r c-sc">82</td><td class="r up">+33.8%</td><td class="r c-dd">6.9%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#12</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(347deg) saturate(0.55)">C</span><span class="tn">corvid</span></span></td><td class="r c-sc">81</td><td class="r up">+22.6%</td><td class="r c-dd">4.1%</td><td class="r"><span class="dn ok">18</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#13</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x2fa8…d051</span></span></span></td><td class="r c-sc">81</td><td class="r up">+44.2%</td><td class="r c-dd">12.2%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#14</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(53deg) saturate(0.55)">M</span><span class="tn">meridian_k</span></span></td><td class="r c-sc">80</td><td class="r up">+29.5%</td><td class="r c-dd">8.3%</td><td class="r"><span class="dn">13 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#15</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(159deg) saturate(0.55)">M</span><span class="tn">marlowe</span></span></td><td class="r c-sc">80</td><td class="r up">+38.1%</td><td class="r c-dd">10.6%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#16</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(180deg) saturate(0.55)">V</span><span class="tn">vandal</span></span></td><td class="r c-sc">79</td><td class="r up">+41.7%</td><td class="r c-dd">14.2%</td><td class="r"><span class="dn">13 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#17</b></td><td class="c-t"><span class="trader"><span class="avatar">K</span><span class="tn">kestrel</span></span></td><td class="r c-sc">78</td><td class="r up">+32.1%</td><td class="r c-dd">11.4%</td><td class="r"><span class="dn">11 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#18</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x91c2…4ab0</span></span></span></td><td class="r c-sc">77</td><td class="r up">+19.4%</td><td class="r c-dd">5.9%</td><td class="r"><span class="dn ok">17</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#19</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(116deg) saturate(0.55)">S</span><span class="tn">sable_fx</span></span></td><td class="r c-sc">77</td><td class="r up">+27.9%</td><td class="r c-dd">9.4%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#20</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(158deg) saturate(0.55)">T</span><span class="tn">tamarind</span></span></td><td class="r c-sc">77</td><td class="r up">+23.5%</td><td class="r c-dd">7.7%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#21</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0xc47e…0b9a</span></span></span></td><td class="r c-sc">77</td><td class="r up">+30.2%</td><td class="r c-dd">12.8%</td><td class="r"><span class="dn">14 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-25">$25K</span></td></tr>
-<tr class="zone"><td colspan="7"><div class="zone-in"><span class="band band-5">$5K</span><b>$5K seats</b><span class="muted zone-n">$5,000 position cap</span></div></td></tr>
-<tr><td class="c-r"><b class="rk">#22</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(88deg) saturate(0.55)">P</span><span class="tn">pelorus</span></span></td><td class="r c-sc">76</td><td class="r up">+16.8%</td><td class="r c-dd">4.9%</td><td class="r"><span class="dn ok">18</span></td><td class="c-seat"><span class="band band-5">$5K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#23</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(97deg) saturate(0.55)">G</span><span class="tn">gannet</span></span></td><td class="r c-sc">76</td><td class="r up">+29.4%</td><td class="r c-dd">13.1%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="band band-5">$5K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#24</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x08dd…e6a1</span></span></span></td><td class="r c-sc">76</td><td class="r up">+14.1%</td><td class="r c-dd">3.8%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="band band-5">$5K</span></td></tr>
-<tr><td class="c-r"><b class="rk">#25</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(311deg) saturate(0.55)">O</span><span class="tn">ostinato</span></span></td><td class="r c-sc">75</td><td class="r up">+25.6%</td><td class="r c-dd">11.0%</td><td class="r"><span class="dn ok">17</span></td><td class="c-seat"><span class="band band-5">$5K</span></td></tr>
-<tr class="gap"><td colspan="7"><a class="gap-btn" href="#/f01-onboarding/02-leaderboard"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m7 15 5 5 5-5" /> <path d="m7 9 5-5 5 5" /> </svg>Show ranks #26 to #55, 30 traders</a></td></tr>
-<tr class="bub-head"><td colspan="7"><div class="bub-in"><b>Near 70</b><span class="muted">Last 6 seats, next 8 traders</span></div></td></tr>
-<tr class="bub"><td class="c-r"><b class="rk">#56</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(138deg) saturate(0.55)">W</span><span class="tn">wicklow</span></span></td><td class="r c-sc">71</td><td class="r up">+22.6%</td><td class="r c-dd">16.4%</td><td class="r"><span class="dn">13 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="band band-5">$5K</span><span class="tocut" title="Points above 70">1 above</span></td></tr>
-<tr class="bub"><td class="c-r"><b class="rk">#57</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(350deg) saturate(0.55)">T</span><span class="tn">thrum</span></span></td><td class="r c-sc">71</td><td class="r up">+12.0%</td><td class="r c-dd">6.6%</td><td class="r"><span class="dn ok">17</span></td><td class="c-seat"><span class="band band-5">$5K</span><span class="tocut" title="Points above 70">1 above</span></td></tr>
-<tr class="bub"><td class="c-r"><b class="rk">#58</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x6a10…3c2e</span></span></span></td><td class="r c-sc">70</td><td class="r up">+12.7%</td><td class="r c-dd">8.1%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="band band-5">$5K</span><span class="tocut" title="Level with 70">At 70</span></td></tr>
-<tr class="bub"><td class="c-r"><b class="rk">#59</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(256deg) saturate(0.55)">B</span><span class="tn">brindle</span></span></td><td class="r c-sc">70</td><td class="r up">+18.2%</td><td class="r c-dd">12.6%</td><td class="r"><span class="dn ok">17</span></td><td class="c-seat"><span class="band band-5">$5K</span><span class="tocut" title="Level with 70">At 70</span></td></tr>
-<tr class="bub"><td class="c-r"><b class="rk">#60</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(284deg) saturate(0.55)">L</span><span class="tn">latch</span></span></td><td class="r c-sc">70</td><td class="r up">+9.4%</td><td class="r c-dd">5.0%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="band band-5">$5K</span><span class="tocut" title="Level with 70">At 70</span></td></tr>
-<tr class="bub"><td class="c-r"><b class="rk">#61</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(245deg) saturate(0.55)">C</span><span class="tn">corsair_7</span></span></td><td class="r c-sc">70</td><td class="r up">+11.0%</td><td class="r c-dd">7.3%</td><td class="r"><span class="dn ok">18</span></td><td class="c-seat"><span class="band band-5">$5K</span><span class="tocut" title="Level with 70">At 70</span></td></tr>
-<tr class="cutrow" id="cut"><td colspan="7"><div class="cutbar"><span class="cut-rule"></span><span class="cut-pill"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5.42 9.42 8 12" /> <circle cx="4" cy="8" r="2" /> <path d="m14 6-8.58 8.58" /> <circle cx="4" cy="16" r="2" /> <path d="M10.8 14.8 14 18" /> <path d="M16 12h-2" /> <path d="M22 12h-2" /> </svg><b>Score to beat, 70</b></span><span class="cut-rule"></span></div></td></tr>
-<tr class="below bub"><td class="c-r"><b class="rk">#62</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x3e77…a915</span></span></span></td><td class="r c-sc">69</td><td class="r up">+15.3%</td><td class="r c-dd">11.9%</td><td class="r"><span class="dn">14 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="muted">No seat</span><span class="tocut out" title="Points short of 70">1 short</span></td></tr>
-<tr class="below bub"><td class="c-r"><b class="rk">#63</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(113deg) saturate(0.55)">F</span><span class="tn">fenwick</span></span></td><td class="r c-sc">69</td><td class="r up">+8.8%</td><td class="r c-dd">6.2%</td><td class="r"><span class="dn">12 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="muted">No seat</span><span class="tocut out" title="Points short of 70">1 short</span></td></tr>
-<tr class="over below bub"><td class="c-r"><b class="rk">#64</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(106deg) saturate(0.55)">N</span><span class="tn">nadir</span></span></td><td class="r c-sc">68</td><td class="r up">+47.9%</td><td class="r c-dd hi-dd">31.2%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="dd-tag" tabindex="0" title="Max drawdown passed 25% on the trader's own account. They keep their rank, with no seat on Nov 19."><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <line x1="9" x2="15" y1="15" y2="9" /> </svg>Over 25% drawdown</span></td></tr>
-<tr class="below bub"><td class="c-r"><b class="rk">#65</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0xb1f0…2d47</span></span></span></td><td class="r c-sc">68</td><td class="r up">+5.8%</td><td class="r c-dd">4.4%</td><td class="r"><span class="dn">9 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="muted">No seat</span><span class="tocut out" title="Points short of 70">2 short</span></td></tr>
-<tr class="below bub"><td class="c-r"><b class="rk">#66</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(179deg) saturate(0.55)">R</span><span class="tn">rookery</span></span></td><td class="r c-sc">67</td><td class="r up">+10.4%</td><td class="r c-dd">9.8%</td><td class="r"><span class="dn">13 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="muted">No seat</span><span class="tocut out" title="Points short of 70">3 short</span></td></tr>
-<tr class="over below bub"><td class="c-r"><b class="rk">#67</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x7d21…a0c3</span></span></span></td><td class="r c-sc">67</td><td class="r up">+38.6%</td><td class="r c-dd hi-dd">27.4%</td><td class="r"><span class="dn ok">15</span></td><td class="c-seat"><span class="dd-tag" tabindex="0" title="Max drawdown passed 25% on the trader's own account. They keep their rank, with no seat on Nov 19."><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <line x1="9" x2="15" y1="15" y2="9" /> </svg>Over 25% drawdown</span></td></tr>
-<tr class="below bub"><td class="c-r"><b class="rk">#68</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(269deg) saturate(0.55)">T</span><span class="tn">tallow</span></span></td><td class="r c-sc">66</td><td class="r up">+9.1%</td><td class="r c-dd">7.5%</td><td class="r"><span class="dn">11 <span class="muted">of 15</span></span></td><td class="c-seat"><span class="muted">No seat</span><span class="tocut out" title="Points short of 70">4 short</span></td></tr>
-<tr class="below bub"><td class="c-r"><b class="rk">#69</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(165deg) saturate(0.55)">O</span><span class="tn">orrery</span></span></td><td class="r c-sc">66</td><td class="r up">+4.4%</td><td class="r c-dd">3.1%</td><td class="r"><span class="dn ok">16</span></td><td class="c-seat"><span class="muted">No seat</span><span class="tocut out" title="Points short of 70">4 short</span></td></tr>
+<tr class="zone"><td colspan="7"><div class="zone-in"><span class="band band-200">$20K</span><b>$20K tier</b><span class="muted">Score 80 or more</span><span class="muted zone-n">2 seats, all trading</span></div></td></tr>
+<tr><td class="c-r"><b class="rk">#1</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(185deg) saturate(0.55)">W</span><span class="tn">wren</span></span></td><td class="r c-sc">84</td><td class="r c-day">22<span class="muted">/30</span></td><td class="r up">+38.4%</td><td class="r c-dd">6.2%</td><td class="c-seat"><span class="band band-200">$20K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#2</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(117deg) saturate(0.55)">O</span><span class="tn">osprey</span></span></td><td class="r c-sc">81</td><td class="r c-day">9<span class="muted">/30</span></td><td class="r up">+21.7%</td><td class="r c-dd">4.8%</td><td class="c-seat"><span class="band band-200">$20K</span></td></tr>
+<tr class="zone"><td colspan="7"><div class="zone-in"><span class="band band-100">$10K</span><b>$10K tier</b><span class="muted">Score 74 to 79</span><span class="muted zone-n">3 seats, all trading</span></div></td></tr>
+<tr><td class="c-r"><b class="rk">#3</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(334deg) saturate(0.55)">M</span><span class="tn">marlowe</span></span></td><td class="r c-sc">79</td><td class="r c-day">26<span class="muted">/30</span></td><td class="r up">+44.1%</td><td class="r c-dd">9.6%</td><td class="c-seat"><span class="band band-100">$10K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#4</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(121deg) saturate(0.55)">V</span><span class="tn">vandal</span></span></td><td class="r c-sc">77</td><td class="r c-day">14<span class="muted">/30</span></td><td class="r up">+27.3%</td><td class="r c-dd">8.9%</td><td class="c-seat"><span class="band band-100">$10K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#5</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(14deg) saturate(0.55)">S</span><span class="tn">sable_fx</span></span></td><td class="r c-sc"><span class="frz" title="Day 30. This score is final."><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /> </svg>Frozen</span> 76</td><td class="r c-day">30<span class="muted">/30</span></td><td class="r up">+31.0%</td><td class="r c-dd">10.4%</td><td class="c-seat"><span class="band band-100">$10K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#6</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(329deg) saturate(0.55)">C</span><span class="tn">corvid</span></span></td><td class="r c-sc">75</td><td class="r c-day">5<span class="muted">/30</span></td><td class="r up">+12.6%</td><td class="r c-dd">3.1%</td><td class="c-seat"><span class="band band-100">$10K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#7</b></td><td class="c-t"><span class="trader"><span class="avatar wallet-av"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /> </svg></span><span class="tn"><span class="mono">0x91c2…4ab0</span></span></span></td><td class="r c-sc">74</td><td class="r c-day">19<span class="muted">/30</span></td><td class="r up">+24.8%</td><td class="r c-dd">7.7%</td><td class="c-seat"><span class="band band-100">$10K</span></td></tr>
+<tr class="zone"><td colspan="7"><div class="zone-in"><span class="band band-50">$5K</span><b>$5K tier</b><span class="muted">Score 68 to 73</span><span class="muted zone-n">6 seats, all trading</span></div></td></tr>
+<tr><td class="c-r"><b class="rk">#8</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(39deg) saturate(0.55)">P</span><span class="tn">pike</span></span></td><td class="r c-sc">73</td><td class="r c-day">11<span class="muted">/30</span></td><td class="r up">+18.9%</td><td class="r c-dd">6.5%</td><td class="c-seat"><span class="band band-50">$5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#9</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(171deg) saturate(0.55)">T</span><span class="tn">tern</span></span></td><td class="r c-sc">72</td><td class="r c-day">27<span class="muted">/30</span></td><td class="r up">+29.4%</td><td class="r c-dd">12.1%</td><td class="c-seat"><span class="band band-50">$5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#10</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(288deg) saturate(0.55)">H</span><span class="tn">heron</span></span></td><td class="r c-sc">71</td><td class="r c-day">3<span class="muted">/30</span></td><td class="r up">+8.2%</td><td class="r c-dd">2.4%</td><td class="c-seat"><span class="band band-50">$5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#11</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(319deg) saturate(0.55)">L</span><span class="tn">lumen</span></span></td><td class="r c-sc">70</td><td class="r c-day">16<span class="muted">/30</span></td><td class="r up">+19.6%</td><td class="r c-dd">8.0%</td><td class="c-seat"><span class="band band-50">$5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#12</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(89deg) saturate(0.55)">J</span><span class="tn">juno_t</span></span></td><td class="r c-sc">69</td><td class="r c-day">24<span class="muted">/30</span></td><td class="r up">+22.5%</td><td class="r c-dd">10.9%</td><td class="c-seat"><span class="band band-50">$5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#13</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(242deg) saturate(0.55)">A</span><span class="tn">ash</span></span></td><td class="r c-sc">68</td><td class="r c-day">8<span class="muted">/30</span></td><td class="r up">+11.3%</td><td class="r c-dd">5.7%</td><td class="c-seat"><span class="band band-50">$5K</span></td></tr>
+<tr class="zone"><td colspan="7"><div class="zone-in"><span class="band band-25">$2.5K</span><b>$2.5K tier</b><span class="muted">Score 62 to 67</span><span class="muted zone-n">12 seats, all trading</span></div></td></tr>
+<tr><td class="c-r"><b class="rk">#14</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(357deg) saturate(0.55)">Q</span><span class="tn">quill</span></span></td><td class="r c-sc">67</td><td class="r c-day">20<span class="muted">/30</span></td><td class="r up">+20.1%</td><td class="r c-dd">9.8%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#15</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(107deg) saturate(0.55)">M</span><span class="tn">merlin</span></span></td><td class="r c-sc">66</td><td class="r c-day">12<span class="muted">/30</span></td><td class="r up">+14.7%</td><td class="r c-dd">7.2%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#16</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(188deg) saturate(0.55)">F</span><span class="tn">fen</span></span></td><td class="r c-sc">65</td><td class="r c-day">29<span class="muted">/30</span></td><td class="r up">+25.6%</td><td class="r c-dd">13.4%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#17</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(161deg) saturate(0.55)">K</span><span class="tn">kestrel</span></span></td><td class="r c-sc">64</td><td class="r c-day">18<span class="muted">/30</span></td><td class="r up">+32.1%</td><td class="r c-dd">11.4%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#18</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(200deg) saturate(0.55)">R</span><span class="tn">rook</span></span></td><td class="r c-sc">64</td><td class="r c-day">6<span class="muted">/30</span></td><td class="r up">+9.8%</td><td class="r c-dd">4.6%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#19</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(41deg) saturate(0.55)">B</span><span class="tn">bramble</span></span></td><td class="r c-sc">63</td><td class="r c-day">21<span class="muted">/30</span></td><td class="r up">+17.2%</td><td class="r c-dd">10.1%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
+<tr><td class="c-r"><b class="rk">#20</b></td><td class="c-t"><span class="trader"><span class="avatar" style="filter:hue-rotate(340deg) saturate(0.55)">N</span><span class="tn">nyx</span></span></td><td class="r c-sc">62</td><td class="r c-day">15<span class="muted">/30</span></td><td class="r up">+13.5%</td><td class="r c-dd">8.3%</td><td class="c-seat"><span class="band band-25">$2.5K</span></td></tr>
       </tbody>
     </table>
-    <div class="lb-more"><span class="t-caption muted">Showing 39 of 2,314</span><a class="btn btn-glass btn-sm" href="#">Load more</a></div>
+    <div class="lb-more"><span class="t-caption muted">Showing 20 of 2,314</span><a class="btn btn-glass btn-sm" href="#">Load more</a></div>
   </section>
   <p class="lb-legend t-caption muted">
-      <span class="row gap-2"><span class="dd-tag"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <line x1="9" x2="15" y1="15" y2="9" /> </svg>Over 25% drawdown</span>Biggest drop from a high, own account</span>
-      <a class="link" href="#/f01-onboarding/03-rules">How the score works</a>
-      <a class="link" href="#/f01-onboarding/05-payouts">Payouts to funded traders</a>
-    </p>
+    <span class="row gap-2"><span class="frz"><svg class="ico ico-xs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /> </svg>Frozen</span>Day 30, score is final</span>
+    <span>Scores are provisional until day 30.</span>
+    <a class="link" href="#/f01-onboarding/03-rules">How the score works</a>
+    <a class="link" href="#/f01-onboarding/05-payouts">Payouts to funded traders</a>
+  </p>
 </main>
 <style>
-/* leaderboard experience (page level, built on kit tokens) */
 .lb { max-width: 1280px; margin: 0 auto; padding: 20px 16px 120px; }
-.lb .hi { color: #fff; }
 .ico-xs { width: 12px; height: 12px; flex: none; stroke-width: 2; }
 .lb-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
 .lb-upd { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.board-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.board-switch { height: 36px; padding: 3px; }
+.board-switch a { height: 30px; padding: 0 18px; font-size: 13px; }
+.band-05 { background: rgb(255 255 255 / 0.05); color: var(--muted); }
 
-/* seat map: one bar sized by seats, zones labelled under it */
-.sm { margin-top: 16px; padding: 18px 20px 16px; }
-.sm-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
-.sm-lead { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
-.sm-lead .k { font-size: 12px; color: var(--label); }
-.sm-track { position: relative; display: flex; align-items: stretch; gap: 3px; margin-top: 44px; }
-.sm-zone { position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.sm-bar { position: relative; height: 12px; border-radius: 3px; }
-.sm-bar.z200, .sm-bar.z100, .sm-bar.z50, .sm-bar.z25, .sm-bar.z5 { background: rgb(255 255 255 / 0.22); }
-.lb .band { background: rgb(255 255 255 / 0.07); color: var(--text-2); }
-.sm-bar.zout { background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.07) 0 4px, transparent 4px 8px); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
-.sm-meta { display: flex; flex-direction: column; gap: 3px; font-size: 12px; line-height: 16px; padding-right: 6px; white-space: nowrap; }
-.sm-meta .row { white-space: nowrap; }
-.sm-meta .row { margin-bottom: 3px; }
-.sm-seats { font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
-.sm-l { color: var(--muted); font-variant-numeric: tabular-nums; }
-.sm-l b { color: var(--text-2); font-weight: 600; }
-.sm-w { color: var(--text-3); }
-.sm-you { position: absolute; top: 50%; transform: translateX(-50%); }
-.sm-you-dot { position: absolute; left: 0; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--primary), 0 0 0 7px var(--primary-15); }
-.sm-you-tag { position: absolute; bottom: 14px; left: 0; transform: translateX(-50%); font-size: 11px; line-height: 14px; font-weight: 700; color: var(--primary); white-space: nowrap; }
-.sm-bub { position: absolute; top: -5px; bottom: -5px; right: 0; border-radius: 4px; border: 1px dashed rgb(255 255 255 / 0.4); background: rgb(255 255 255 / 0.08); }
-.sm-bub.out { right: auto; left: 0; }
-.sm-zone.z5wrap { }
-.sm-cut { position: relative; flex: none; width: 2px; margin: -26px 2px 0; border-radius: 2px; background: #e8e8e8; }
-.sm-cut-tag { position: absolute; top: -4px; left: 8px; display: inline-flex; gap: 6px; font-size: 11px; line-height: 14px; white-space: nowrap; color: var(--text-2); }
-.sm-cut-tag .num { color: var(--muted); }
-.sm-out { flex: none; width: 150px; }
-.sm-out .sm-meta { padding-left: 4px; }
-.sm-foot { display: flex; align-items: flex-start; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--glass-sep); }
-.sm-foot .ico { margin-top: 2px; }
+/* seat map */
+.sm { margin-top: 16px; padding: 18px 20px 14px; }
+.sm-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 6px; }
+.smt { table-layout: fixed; }
+.smt th, .smt td { padding: 9px 10px; }
+.smt th:first-child, .smt td:first-child { padding-left: 0; }
+.smt th:last-child, .smt td:last-child { padding-right: 0; }
+.smt .band { height: 20px; }
+.sm-sc { color: var(--text-2); font-variant-numeric: tabular-nums; }
+.held { display: flex; align-items: center; gap: 12px; }
+.meter { flex: 1; max-width: 260px; height: 8px; border-radius: 4px; background: rgb(255 255 255 / 0.08); overflow: hidden; }
+.meter i { display: block; height: 100%; border-radius: 4px; background: rgb(255 255 255 / 0.4); }
+.held .num { font-size: 13px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.held .num b { color: var(--text); font-weight: 600; }
+.open-n { color: var(--buy-light); font-weight: 600; }
+.nx { display: inline-flex; align-items: center; gap: 10px; }
+.nx .trader { gap: 8px; }
+.nx .avatar { width: 20px; height: 20px; font-size: 10px; }
+.nx .num { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
+.nx-off { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--buy-light); }
+.nx-off .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--buy-light); }
+.sm-foot { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--glass-sep); }
 
-/* own bar, sticky under the app header */
-.ownbar {
-  position: sticky; top: 60px; z-index: 20; margin-top: 12px; height: 56px;
-  display: flex; align-items: center; gap: 22px; padding: 0 10px 0 16px; border-radius: var(--r-lg); white-space: nowrap;
-  background: linear-gradient(0deg, var(--primary-15), var(--primary-15)), rgb(14 14 18 / 0.88);
-  backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
-  box-shadow: inset 0 0 0 1px rgb(144 149 253 / 0.35), inset 0 1px 0 0 var(--glass-glow), 0 8px 24px rgb(0 0 0 / 0.4);
-}
-.own-id { gap: 8px; }
-.own-fig { display: flex; align-items: baseline; gap: 8px; padding-right: 22px; border-right: 1px solid var(--glass-sep); }
-.ownbar .stat .k { font-size: 11px; line-height: 14px; }
-.ownbar .band { height: 20px; }
-.ownbar .btn { margin-left: auto; }
-.own-guest { position: static; background: var(--glass-subtle); box-shadow: var(--rim); }
+/* sign in bar */
+.ownbar { margin-top: 12px; height: 56px; display: flex; align-items: center; gap: 22px; padding: 0 10px 0 16px; border-radius: var(--r-lg); white-space: nowrap; }
+.own-guest { background: var(--glass-subtle); box-shadow: var(--rim); }
 .own-guest-ico { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: rgb(255 255 255 / 0.06); color: var(--text-3); flex: none; }
-@media (max-width: 1360px) { .ownbar { gap: 16px; } .own-fig { padding-right: 16px; } }
+.ownbar .btn { margin-left: auto; }
 
 /* tools */
 .lb-tools { display: flex; align-items: center; gap: 12px; margin: 12px 0 8px; }
 .lb-seg .cnt { margin-left: 5px; font-weight: 500; color: var(--muted); }
 .lb-seg [aria-current="true"] .cnt { color: rgb(255 255 255 / 0.7); }
+.lb-seg .locked { color: var(--disabled); }
 .lb-search { width: 200px; }
-.jumps { display: flex; align-items: center; gap: 4px; }
-.jumps .t-caption { margin-right: 4px; }
-.jump { height: 26px; padding: 0 9px; display: inline-flex; align-items: center; border-radius: var(--r-full); font-size: 12px; font-weight: 600; color: var(--text-3); background: rgb(255 255 255 / 0.05); font-variant-numeric: tabular-nums; }
-.jump:hover { background: rgb(255 255 255 / 0.1); color: #fff; }
 
 /* table */
 .lbt-wrap { background: var(--glass-subtle); box-shadow: var(--rim); border-radius: var(--r-lg); overflow: clip; }
 .lbt { table-layout: fixed; }
-.lbt .w-s { width: 140px; } .lbt .w-b { width: 64px; } .lbt .w-sc { width: 66px; } .lbt .w-td { width: 62px; } .lbt .w-m { width: 50px; }
-.lbt .w-pnl { width: 132px; } .lbt .w-ret { width: 84px; } .lbt .w-lr { width: 100px; } .lbt .w-d { width: 150px; } 
+.lbt .w-r { width: 84px; } .lbt .w-sc { width: 150px; } .lbt .w-day { width: 100px; } .lbt .w-ret { width: 120px; } .lbt .w-dd { width: 150px; } .lbt .w-seat { width: 190px; }
 .lbt th, .lbt td { padding: 8px 8px; }
 .lbt th:first-child, .lbt td:first-child { padding-left: 14px; }
-.lbt th:last-child, .lbt td:last-child { padding-right: 14px; }
-.lbt thead th { position: sticky; top: var(--th-top); z-index: 8; background: #0e0e0e; box-shadow: inset 0 -1px 0 var(--glass-sep); border-bottom: 0; height: 40px; padding-top: 14px; }
-.lbt tbody tr:not(.zone):not(.gap):not(.cutrow):not(.bub-head) { cursor: pointer; }
-.lbt tr[id], .lbt tr.zone { scroll-margin-top: calc(var(--th-top) + 80px); }
-.c-b { color: var(--muted); font-weight: 500; }
-.seatn { color: #fff; font-weight: 700; }
-.c-sc { font-weight: 600; color: #fff; }
-.c-td.pos { color: var(--text-2); } .c-td.neg { color: var(--muted); }
-.mv { display: inline-flex; align-items: center; gap: 2px; font-weight: 600; font-size: 12px; }
-.mv.upm { color: var(--text-2); } .mv.dnm, .mv.eq { color: var(--muted); }
+.lbt th:last-child, .lbt td:last-child { padding-right: 14px; padding-left: 40px; }
+.lbt thead th { background: #0e0e0e; box-shadow: inset 0 -1px 0 var(--glass-sep); height: 40px; }
 .lbt .trader { gap: 8px; min-width: 0; }
 .lbt .trader .tn { overflow: hidden; text-overflow: ellipsis; }
-.lbt a.trader:hover .tn { color: var(--primary-subtle); }
 .wallet-av { background: #2c2c2c !important; color: var(--text-3); }
-.lr { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; }
-.lr.ok { color: var(--text-2); } .lr.ok .ico { color: var(--buy-light); }
-.lr.no { color: #ff6b6e; }
-.dd { display: inline-flex; align-items: center; gap: 8px; }
-.segs.mini { grid-auto-columns: 3px; gap: 1.5px; }
-.segs.mini i { width: 3px; height: 10px; border-radius: 1px; }
-.dn { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.dn .of { color: var(--muted); font-weight: 500; }
-.dn.ok { color: var(--buy-light); }
-.dn.ok .of { color: rgb(0 178 114 / 0.6); }
-.cant-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #ff6b6e; text-decoration: underline dotted rgb(255 107 110 / 0.5); text-underline-offset: 3px; }
-.tocut { display: inline-flex; align-items: center; height: 18px; margin-left: 8px; padding: 0 6px; border-radius: var(--r-full); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; background: rgb(255 255 255 / 0.08); color: var(--text-2); }
-.tocut.out { background: transparent; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.18); color: var(--text-3); }
-
-/* row states */
-.lbt tr.me td { background: var(--primary-15); }
-.lbt tr.me td:first-child { box-shadow: inset 3px 0 0 var(--primary); }
-.lbt tr.bub td { background: rgb(255 255 255 / 0.035); }
-.lbt tr.bub td:first-child { box-shadow: inset 2px 0 0 rgb(255 255 255 / 0.35); }
-.lbt tr.hov td { background: rgb(255 255 255 / 0.05); }
-.lbt tr.sel td { background: var(--primary-15); }
-.lbt tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--primary); }
-.lbt tr.below td { opacity: 1; }
-.lbt tr.below { opacity: 0.72; }
-.lbt tr.below:hover { opacity: 0.9; }
-.lbt tr.cant td:not(.c-s):not(.c-rq), .lbt tr.cant td:not(.c-s):not(.c-rq) .up, .lbt tr.cant td:not(.c-s):not(.c-rq) .down, .lbt tr.cant .c-sc, .lbt tr.cant .c-b, .lbt tr.cant .mv, .lbt tr.cant .tn { color: var(--disabled); }
-.lbt tr.cant .avatar, .lbt tr.cant .segs, .lbt tr.cant .dn .ico { opacity: 0.45; }
-.lbt tr.below.cant { opacity: 1; }
+.rk { color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
+.c-sc { font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; }
+.c-day { color: var(--text-2); font-variant-numeric: tabular-nums; }
+.c-day .muted { font-size: 12px; }
+.c-dd { color: var(--text-2); }
+.c-seat .band { height: 20px; }
+.frz { display: inline-flex; align-items: center; gap: 4px; height: 18px; margin-right: 8px; padding: 0 6px; border-radius: var(--r-full); font-size: 10px; font-weight: 700; vertical-align: 1px; background: rgb(255 255 255 / 0.08); color: var(--text-2); }
+.lb-legend .frz { margin-right: 0; }
 .lbt tr.zone td { padding: 0; border-bottom: 1px solid var(--glass-sep); background: rgb(255 255 255 / 0.025); }
-.lbt tr.zone:hover { background: none; }
 .zone-in { display: flex; align-items: center; gap: 12px; padding: 12px 14px 8px; font-size: 12px; }
 .zone-in b { color: var(--text); font-weight: 600; }
 .zone-in .band { height: 20px; }
-.lbt tr.bub-head td { padding: 0; border-bottom: 0; }
-.bub-in { display: flex; align-items: center; gap: 12px; padding: 10px 14px 6px; font-size: 12px; background: rgb(255 255 255 / 0.035); box-shadow: inset 2px 0 0 rgb(255 255 255 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.1); }
-.bub-in b { color: var(--text-2); font-weight: 600; }
-.lbt tr.gap td { padding: 0; text-align: center; border-bottom: 1px solid var(--glass-sep); }
-.gap-btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 34px; font-size: 12px; font-weight: 600; color: var(--muted); background: repeating-linear-gradient(135deg, rgb(255 255 255 / 0.02) 0 6px, transparent 6px 12px); }
-.gap-btn:hover { color: var(--text-2); }
-
-/* the cut: an ordinary row at the real cut; the header chip points to it when it is off screen */
-.lbt tr.cutrow td { padding: 0; height: auto; border: 0; background: #0e0e0e; }
-.th-trader { display: inline-flex; align-items: center; gap: 12px; }
-.cut-chip { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 8px; border-radius: var(--r-full); font-size: 11px; font-weight: 600; color: var(--text-2); background: #1d1d1d; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25); }
-.cut-chip:hover { color: #fff; }
-.lbt tr.cutrow:hover { background: none; }
-.cutbar { display: flex; align-items: center; gap: 12px; height: 38px; padding: 0 14px; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), inset 0 -1px 0 rgb(255 255 255 / 0.06); }
-.cut-rule { flex: 1; height: 2px; border-radius: 2px; background: #e8e8e8; }
-.cut-pill { display: inline-flex; align-items: center; gap: 8px; height: 26px; padding: 0 12px; border-radius: var(--r-full); font-size: 12px; color: #fff; background: #1d1d1d; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.35); white-space: nowrap; }
-.cut-pill b { font-weight: 600; }
-
-/* tooltips, shown open in the mockup */
-.lbt td.tipcell { position: relative; overflow: visible; }
-.lbt .tip { white-space: normal; text-align: left; z-index: 6; }
-.wtip { top: 50%; left: 150px; transform: translateY(-50%); display: flex; flex-direction: column; gap: 2px; width: max-content; }
-.ctip { top: 50%; left: calc(100% + 4px); transform: translateY(-50%); width: 400px; max-width: none; padding-top: 6px; padding-bottom: 6px; }
-
-/* footer, legend */
-.lb-foot { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-top: 1px solid var(--glass-sep); }
-.pager { display: flex; align-items: center; gap: 2px; font-size: 13px; font-variant-numeric: tabular-nums; }
-.pager > a:not(.icon-btn) { min-width: 30px; height: 30px; display: inline-grid; place-items: center; border-radius: var(--r-full); color: var(--text-3); }
-.pager > a:not(.icon-btn):hover { background: rgb(255 255 255 / 0.06); }
-.pager [aria-current="page"] { background: var(--primary-35); color: #fff !important; font-weight: 600; }
-.pager > span { padding: 0 6px; }
-.pager [aria-disabled="true"] { opacity: 0.35; pointer-events: none; }
-.lb-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 12px; }
-.lb-legend .tocut { margin-left: 0; }
-
-/* how the cut moves (07) */
-.moves { margin-top: 12px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; padding: 20px; }
-.mv-steps { counter-reset: mv; display: flex; flex-direction: column; gap: 12px; }
-.mv-steps li { counter-increment: mv; display: grid; grid-template-columns: 24px 1fr; column-gap: 12px; font-size: 13px; line-height: 18px; }
-.mv-steps li::before { content: counter(mv); grid-row: span 2; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 700; background: rgb(255 255 255 / 0.07); color: var(--text-3); }
-.mv-ex { display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: var(--r-md); background: rgb(10 10 10 / 0.45); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.05); }
-.mv-cols { display: flex; align-items: center; gap: 16px; }
-.mv-col { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.mv-list li { display: flex; align-items: center; gap: 8px; height: 26px; font-size: 13px; white-space: nowrap; }
-.mv-list li > span:first-child { width: 30px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.mv-list li.out { opacity: 0.5; }
-.mv-list li.gone { color: var(--muted); text-decoration: line-through; }
-.mv-list li.mv-up { color: #fff; font-weight: 600; }
-.mv-list li.mv-up > span:first-child { color: #fff; }
-.mv-list li.mv-cut { height: 14px; font-size: 10px; color: var(--text-3); gap: 6px; }
-.mv-list li.mv-cut > span:first-child { flex: 1; width: auto; height: 2px; border-radius: 2px; background: #e8e8e8; }
-.mv-arrow { flex: none; }
-
-.sm-bub-tag { position: absolute; right: -1px; bottom: calc(100% + 6px); font-size: 11px; line-height: 14px; font-weight: 600; color: var(--text-3); white-space: nowrap; }
-
-.sm-compact { padding-bottom: 14px; }
-.sm-compact .sm-head p, .sm-compact .sm-l, .sm-compact .sm-w { display: none; }
-.sm-compact .sm-track { margin-top: 36px; }
-.sm-compact .sm-meta .row { margin-bottom: 0; }
-.sm-compact .sm-foot { margin-top: 12px; }
-.sm-compact .sm-cut { margin-top: -24px; }
-.sm-compact .sm-head { align-items: center; }
-.sm-compact .sm-lead { flex-direction: row; align-items: baseline; gap: 8px; }
-.sm-compact .sm-lead .t-figure-sm { font-size: 20px; line-height: 24px; }
-
-
-.board-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
-.board-switch { height: 36px; padding: 3px; }
-.board-switch a { height: 30px; padding: 0 18px; font-size: 13px; }
-
-.lbt .w-r { width: 84px; } .lbt .w-sc { width: 90px; } .lbt .w-ret { width: 110px; } .lbt .w-dd { width: 130px; } .lbt .w-d { width: 120px; } .lbt .w-seat { width: 250px; }
-.lbt th:nth-child(6), .lbt td:nth-child(6) { padding-right: 28px; }
-.lbt th:last-child, .lbt td:last-child { padding-left: 16px; }
-.rk { color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
-.lbt tr.below .rk { color: var(--text-3); font-weight: 600; }
-.c-dd { color: var(--text-2); }
-.c-seat .band { height: 20px; }
-.c-seat .tocut { margin-left: 10px; }
-.dd-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #ff6b6e; text-decoration: underline dotted rgb(255 107 110 / 0.5); text-underline-offset: 3px; white-space: nowrap; }
-.lbt tr.over td:not(.c-seat):not(.c-dd), .lbt tr.over .up, .lbt tr.over .down, .lbt tr.over .c-sc, .lbt tr.over .rk, .lbt tr.over .tn, .lbt tr.over .dn { color: var(--disabled); }
-.lbt tr.over .avatar { opacity: 0.45; }
-.lbt tr.over .hi-dd { color: #ff6b6e; font-weight: 600; }
-.lbt tr.below.over { opacity: 1; }
 .zone-in .zone-n { margin-left: auto; color: var(--text-3); }
-.sm-bar.z25, .sm-bar.z5 { background: rgb(255 255 255 / 0.22); }
-.sm-out { width: 190px; }
-.sm-head { margin-bottom: 4px; }
-.lb-legend { gap: 10px 24px; }
-.sm-cut { overflow-x: clip; overflow-clip-margin: 160px; }
-
 .lb-more { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 16px 16px; border-top: 1px solid var(--glass-sep); }
+.lb-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; margin-top: 12px; }
 </style>
 
 <nav class="mockbar" aria-label="Mockup navigation">

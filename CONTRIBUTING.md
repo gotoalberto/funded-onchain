@@ -7,7 +7,7 @@
 - The story: `src/stages.json` lists the eight flows in date order. Each flow has a name, dates, a description and its screens. Each screen has a page key, a screen name, a type (`account`, `trade`, `lb`, `funded`, `payouts`, `stats`, `money`, `score`, `referrals`, `rules`, `landing`, `modal`) and the one question it answers. A screen can live in any folder; its flow comes from `stages.json`.
 - Titles: a story screen's title, mockbar label and index entry come from its name in `src/stages.json`. `src/titles.json` lists every page key with a fallback title, used for pages outside the story. The build reads pages in that order, so a new page must be added there too.
 - Shared styles: `src/template.html`, the single-page shell. Page-specific styles stay in the page's own `<style>` block.
-- Product rules every screen follows: `brief/`. `STORY_FACTS.md` is the truth every screen must agree with; `FINAL_PASS.md`, `ACCOUNT_BASE.md` and `DAILY_PNL.md` add the later decisions on top of `BRIEF.md`.
+- Product rules every screen follows: `brief/`. `MODEL.md` is the seat allocation model (rolling entry windows). `STORY_FACTS.md` turns it into rules, words and demo data, and is the truth every screen must agree with; it wins over the older `BRIEF.md`, `FINAL_PASS.md`, `ACCOUNT_BASE.md` and `DAILY_PNL.md`, which still hold for layout and copy style.
 
 ## What the build does
 
@@ -44,4 +44,4 @@ Do not commit `dist/` or `funded-onchain-mockups.html`; they are generated. Pref
 - Screens are in English. No em or en dashes in visible copy.
 - One question, one leading figure and one primary action per screen.
 - Never mention Bitso or Hyperliquid, and never link off the site.
-- Payout, never claim. Qualification, never epoch or season. Score to beat, never the bar.
+- Payout, never claim. Qualification, never epoch, season or cycle. Tier for the score band, seat for the funded side. No request window, no waitlist: seats are offered.

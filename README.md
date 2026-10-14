@@ -2,7 +2,9 @@
 
 **Live:** https://gotoalberto.github.io/funded-onchain/
 
-Navigable mockups of **onchain.cc Funded**. Traders compete with their own money in a 30-day qualification window. The best of them get a funded seat, trade our USDC and keep 80% of the profit. The mockups follow one trader, kestrel, from sign-up to a funded seat, a payout, a closed seat and back to competing. All figures are demo data.
+Navigable mockups of **onchain.cc Funded**. Every trader competes with their own money in their own 30-day qualification window, starting the day they clear the entry gate. The frozen score sets one of six seat tiers, from $500 to $20,000 of USDC. A seat is offered the moment one frees up, to the highest score in that tier; the trader trades our USDC and keeps 80% of the profit. The mockups follow one trader, kestrel, from sign-up to a funded seat, a payout, a closed seat and back to competing. All figures are demo data.
+
+The seat allocation model is `brief/MODEL.md`; the rules and demo data every screen follows are in `brief/STORY_FACTS.md`.
 
 ## Flows
 
@@ -10,14 +12,14 @@ Eight flows in date order, 71 screens. Screens named "Variant" show other outcom
 
 | # | Flow | Dates | What happens | Screens |
 |---|---|---|---|---|
-| 1 | Discover | Nov 6 | A visitor lands, sees real seats and real payouts, reads how it works and signs up. | 6 |
-| 2 | Get on the board | Oct 20 | kestrel signs up on day one, adds $250, makes two trades and lands on the leaderboard. | 13 |
-| 3 | Compete | Nov 6 | Day 18 of 30. kestrel holds a $25K seat today and is working on the last requirements. | 10 |
-| 4 | Request a seat | Nov 18 to 19 | Scores freeze. kestrel requests a seat and gets funded. The other outcomes follow as variants. | 9 |
-| 5 | Trade the seat | Nov 19 to 28 | kestrel trades 5,000 USDC with a $25,000 cap. The seat is up $923. | 8 |
-| 6 | Get paid | Nov 28 to 30 | kestrel closes their positions, takes a $738 payout and keeps trading. | 6 |
+| 1 | Discover | Nov 7 | A visitor lands, sees the six seat tiers and real payouts, reads how it works and signs up. | 6 |
+| 2 | Get on the board | Oct 20 to 21 | kestrel signs up on launch day, adds $250 and clears the entry gate on the tenth closed trade. Their own 30-day window starts. | 13 |
+| 3 | Compete | Nov 7 | Day 18 of 30. kestrel's provisional score of 64 sits in the $2.5K tier, 4 points from $5K. | 10 |
+| 4 | Get a seat offer | Nov 19 to 21 | Day 30: the score freezes at 66 and kestrel qualifies for the $2.5K tier. A lower seat is offered first, then a $2,500 seat frees up and kestrel is funded on the daily run. | 9 |
+| 5 | Trade the seat | Nov 21 to 30 | kestrel trades 2,500 USDC at up to 10x. The seat is up $462. | 8 |
+| 6 | Get paid | Nov 30 | kestrel closes their positions, takes a $370 payout and keeps trading. | 6 |
 | 7 | Pause and close | Dec 1 to 2 | A bad run: the daily pause, then the seat closes at its loss limit. The payout stays theirs. | 4 |
-| 8 | Back to competing | Dec 2 to 18 | kestrel keeps their payout, competes again with their own money and requests a new seat. | 15 |
+| 8 | Back to competing | Dec 2 to 19 | kestrel keeps their payout, keeps competing in window 2 with their own money and qualifies again for the $1K tier. | 15 |
 
 The flows, their screens and the order come from `src/stages.json`.
 

@@ -7,7 +7,7 @@ Product: onchain.cc Funded. Every trader has their own 30-day qualification wind
 ## Rules
 
 - **Entry gate:** $100 deposited, $1,000 of volume traded, 10 closed trades. Clearing it starts the trader's window and puts them on the leaderboard. Before that, the Account shows the three steps.
-- **Launch:** Oct 20. Traders who cleared the gate before launch, with past onchain.cc trades, start their window on Oct 20.
+- **Launch:** Oct 1. Traders who cleared the gate before launch, with past onchain.cc trades, started their window on Oct 1, so the first scores froze Oct 30 and seats have been offered since then. By Nov 7 seats are held in every tier.
 - **Window:** 30 days from the start date, the trader's own. No shared rounds, no group start, no shared freeze date. It cannot be restarted early. On day 30 the score freezes. If the trader keeps trading, the next window starts the next day, with no gap.
 - **Score:** 0 to 100, whole numbers. Provisional during the window, frozen on day 30. Built from return for the risk taken (75%), worst trade (15%) and steadiness (10%). Volume, trade count, win rate and balance are not score factors. Withdrawals never affect the score.
 - **There are no other requirements.** No 20 trades, no 15 trading days, no "in profit so far", no 25% drawdown floor. The score alone decides. Remove every requirement checklist; the only checklist left is the entry gate.
@@ -38,7 +38,7 @@ Product: onchain.cc Funded. Every trader has their own 30-day qualification wind
   - The seat closes at a loss of 50% of its USDC. The most a seat can lose is its USDC. Nothing else closes a seat (no "days below start").
   - At 10x, the pause comes at a 2.5% move against the trader and the close at a 5% move. Use this in the pre-trade impact line.
   - Allowed markets only (keep the "Market not allowed" screen).
-- **Payouts:** any time the seat has no open positions. All profit above the start, 80% to the trader's own account, 20% to us. The seat then resets to its starting USDC. Payouts stay on the public Payouts board and the trader's profile for good, even after a seat closes.
+- **Payouts:** any time the seat has no open positions. All profit above the start, 80% to the trader's own account, 20% to us, paid straight away (no 72h wait). The seat then resets to its starting USDC. Payouts stay on the public Payouts board and the trader's profile for good, even after a seat closes.
 - No KYC. Never mention Bitso or Hyperliquid, never link off the site.
 
 ## Leaderboard
@@ -60,7 +60,7 @@ Product: onchain.cc Funded. Every trader has their own 30-day qualification wind
 
 ## kestrel's timeline (main character)
 
-1. **Oct 20, launch day:** signs up with $0, deposits $250 by card, makes two trades ($600 then $400 of volume). Deposit and volume done, 2 of 10 closed trades. Not on the board yet: "8 more closed trades to start your window."
+1. **Oct 20, kestrel's first day:** signs up with $0, deposits $250 by card, makes two trades ($600 then $400 of volume). Deposit and volume done, 2 of 10 closed trades. Not on the board yet: "8 more closed trades to start your window."
 2. **Oct 21:** tenth closed trade. Gate cleared, window 1 starts: Oct 21 to Nov 19. "You're on the leaderboard": #812 of 1,040, day 1 of 30, provisional score 40. Own balance $254.
 3. **Nov 7, day 18 of 30:** provisional score 64, #17 of 2,314, $2.5K tier, 4 points to the $5K tier. Return +$413, max drawdown 11.4%. Own balance $1,284.
 4. **Nov 19, day 30:** score freezes at 66. Qualified, $2.5K tier, in contention until Dec 19, 2nd in contention in the $2.5K tier. Own balance $1,370. Window 2 starts Nov 20 and runs to Dec 19.
@@ -78,7 +78,7 @@ Assumption used until Alberto decides: accepting a seat uses up that qualificati
 
 ## Variants (other people or other outcomes, labelled "Variant")
 
-- **marten:** past onchain.cc trades cleared the gate before launch, so the window started on launch day, Oct 20.
+- **marten:** past onchain.cc trades cleared the gate before launch, so the window started on launch day, Oct 1.
 - **Not qualified:** a window frozen at 41. "Window 2 started today." 9 points to qualify.
 - **Waiting for an offer:** qualified, 3rd in contention in the tier, no seat free yet.
 - **Lower seat offered:** a $1,000 seat offered while qualified for $2.5K. Take it now or keep waiting; the $2.5K qualification stays valid until Dec 19.

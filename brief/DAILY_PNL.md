@@ -1,5 +1,7 @@
 # Daily PnL widget (Kevin prefers the line plus day cells view)
 
+> Superseded where it clashes with `MODEL.md` and `STORY_FACTS.md` (rolling entry windows, 2026-10-14): no shared calendar, no request window, no requirements checklist, six tiers instead of $25K/$5K seats. Layout and copy style rules still apply.
+
 Bring back the earlier view: a cumulative PnL line on top and a row of day cells underneath. Fix what looked broken: the line stopped halfway with no continuation.
 
 - **Header:** left "Daily PnL"; right the running total in green or red ("+$413 so far", or "since Nov 19" on a seat) and a muted "8 green · 3 red".
