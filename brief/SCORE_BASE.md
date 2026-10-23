@@ -1,8 +1,41 @@
-# La base de los porcentajes del score
+# El método del score
 
-> **Current definition of how the score is calculated (Alberto, 2026-10-23).** It sits above any other definition of the score in this repo, `STORY_FACTS.md` and `MODEL.md` included. Where they disagree on how the score is computed, this file wins.
+> **Método definitivo del score (Alberto, 2026-10-23).** Está por encima de cualquier otra definición del score en este repo, `STORY_FACTS.md` y `MODEL.md` incluidos. Sustituye a la base de los porcentajes de más abajo, que queda descartada.
 
-## El problema
+## El método
+
+El score se calcula **sin el saldo de la cuenta**, solo con las operaciones del trader. Depositar, retirar, comprar en spot, prestar, pedir prestado o recibir transferencias no lo cambian.
+
+- **Calidad del retorno:** a partir del PnL diario en dólares.
+- **Peor operación:** en relación con lo que ha ganado.
+- **Caída máxima (max drawdown):** en relación con su PnL.
+- **Tamaño:** a partir del tamaño medio de sus posiciones.
+
+El límite de caída del 25% desaparece. Estaba sobre todo para dejar fuera a los traders muy apalancados, y lo sustituyen dos límites:
+
+- **Nunca pasar de un apalancamiento máximo** durante los 30 días, medido minuto a minuto.
+- **No ser liquidado nunca** durante los 30 días.
+
+El PnL sale de los trades de perps: lo realizado (`closedPnl − fee + funding`) más lo abierto (posiciones abiertas a precio de marca).
+
+## Por qué no hay base
+
+La base sería el valor de la cuenta del trader, que es suyo y cambia constantemente: depósitos, retiros, spot, supply, borrowing y transferencias. Cualquiera de esos cambios mueve los porcentajes sin que opere mejor ni peor. Se probó a usar como base el valor más bajo de los últimos 30 días, leído cada minuto, y se descartó: quien lo retira todo menos 1 USDC, aunque sea unos minutos, ve su base hundida 30 días y no se clasifica en un mes. No se puede penalizar a nadie por sacar su dinero.
+
+## Por definir
+
+Puntos que salieron al revisarlo y que todavía no están decididos:
+
+1. **Valor de la cuenta para el apalancamiento.** Apalancamiento = tamaño de las posiciones / valor de la cuenta, así que el valor minuto a minuto hay que recogerlo igualmente. Falta decidir si en cuentas unificadas se resta lo pedido prestado.
+2. **Pérdida frente al dinero.** Con estas reglas alguien puede perder un 40% de su cuenta sin pasar del apalancamiento máximo ni ser liquidado, y clasificarse, mientras que el seat se cierra al perder un 10% del capital. Propuesta: medir la caída en dólares contra el seat del tier al que aspira.
+3. **PnL cerca de cero o negativo.** La peor operación y la caída frente al PnL se disparan o no tienen sentido. Hace falta un mínimo de PnL o de trades antes de calcularlas.
+4. **Tamaño medio.** Premia el apalancamiento y se infla con coberturas entre cuentas. Propuesta: ponderarlo por tiempo y ponerle un tope.
+5. **Posiciones perdedoras abiertas** cuentan a precio de marca, para que no se pueda esconder una mala operación sin cerrarla.
+6. **El auto deleveraging (ADL)** de Hyperliquid no cuenta como liquidación.
+
+## Descartado: la base de los porcentajes (texto original del 2026-10-23)
+
+### El problema
 
 Para dar una nota a un trader usamos algunos porcentajes: su caída máxima no puede pasar del 25%,
 su peor trade se mide como % de su cuenta y las cuentas pequeñas puntúan menos. Todo porcentaje es
@@ -35,7 +68,7 @@ Hay que mirar además **a quién le conviene cada base**:
 
 Una fórmula que es segura para un porcentaje puede ser trucable para otro.
 
-## Lo que no tiene el problema: el PnL
+### Lo que no tiene el problema: el PnL
 
 El PnL no lo sacamos de restar saldos, sino de los **trades de perps**: lo realizado (`closedPnl −
 fee + funding`) más lo abierto (posiciones abiertas × precio de marca). Depositar, retirar, mover
@@ -46,7 +79,7 @@ Además, varios ingredientes del score se calculan en dólares y son cocientes, 
 cancela y no hace falta (calidad del retorno, concentración, % de trades ganados). La base solo es
 imprescindible para la caída máxima ≤ 25% y para el recorte por tamaño de cuenta.
 
-## La propuesta
+### La propuesta
 
 1. **Leer el valor de la cuenta cada minuto**: USDC de spot (precompile `0x801`) más el valor en
    cada dex de perps soportado (`0x80F`), que ya incluye lo abierto. Lo comprobamos contra el valor
@@ -68,7 +101,7 @@ Ejemplo: Ana tiene $2,000 todo el mes y un día deposita $1M durante un minuto. 
 sigue siendo $2,000 todos los días, así que su base es $2,000. Su peor caída de $300 es un 15%: se
 clasifica, y la misma cuenta con $1,000 no se clasificaría.
 
-## Lo que cuesta y lo que queda abierto
+### Lo que cuesta y lo que queda abierto
 
 - **Es conservadora a propósito.** Quien retira beneficios o deposita a mitad de mes arrastra una
   base más baja hasta 30 días, y sus porcentajes salen peores. Preferimos equivocarnos contra el
