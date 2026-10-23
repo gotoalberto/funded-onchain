@@ -2,6 +2,8 @@
 
 Product: onchain.cc Funded. Every trader has their own 30-day qualification window, starting the day they clear the entry gate. The frozen score on day 30 sets a tier. A seat in that tier is offered the moment one frees up, to the highest-scoring qualified trader in the tier. The trader trades our USDC and keeps 80% of the profit.
 
+How the score is calculated lives in `SCORE_BASE.md` (2026-10-23), which wins over this file and every other brief on that point.
+
 `MODEL.md` is the seat allocation model as decided. This file turns it into the rules, words and demo data the screens use. Where an older brief (`BRIEF.md`, `FINAL_PASS.md`, `ACCOUNT_BASE.md`, `DAILY_PNL.md`) clashes with this file, this file wins.
 
 ## Rules
