@@ -4,7 +4,7 @@
 
 Navigable mockups of **onchain.cc Funded**. Every trader competes with their own money in their own 30-day qualification window, starting the day they clear the entry gate. The frozen score sets one of six seat tiers, from $500 to $20,000 of USDC. A seat is offered the moment one frees up, to the highest score in that tier; the trader trades our USDC and keeps 80% of the profit. The mockups follow one trader, kestrel, from sign-up to a funded seat, a payout, a closed seat and back to competing. All figures are demo data.
 
-The seat allocation model is `brief/MODEL.md`; the rules and demo data every screen follows are in `brief/STORY_FACTS.md`.
+The seat allocation model is `brief/MODEL.md`; the rules and demo data every screen follows are in `brief/STORY_FACTS.md`. How the score is calculated is `brief/SCORE_BASE.md`, which wins over any other score definition.
 
 ## Flows
 
